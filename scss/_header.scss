@@ -1,0 +1,10 @@
+header{
+    .container{
+        .row{
+            justify-content: space-between;
+        }
+        .navbar-collapse{
+            justify-content: flex-end;
+        }
+    }
+}

@@ -267,6 +267,119 @@ function footer1_widgets_init()
 }
 add_action('widgets_init', 'footer1_widgets_init');
 
+/*Added homepost Post in Wordpress*/
+function homepost_post_type()
+{
+
+  $homepost_labels = array(
+    'name' => __('homepost', 'medicalStore_site'),
+    'singular_name' => __('homepost', 'medicalStore_site'),
+    'add_new' => __('Add new homepost', 'medicalStore_site'),
+    'add_new_item' => __('Add new homepost', 'medicalStore_site'),
+    'featured_image' => __('homepost post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set homepost image', 'medicalStore_site'),
+
+  );
+
+  $homepost_args = array(
+
+    'labels' =>  $homepost_labels,
+    'public' => true,
+    'show_ui' => true,
+    // 'rewrite' => array('slug' => 'homepost'),
+    'capability_type' => 'post',
+    'menu_position' => null,
+    'show_in_rest' => true,
+
+    'supports' => array(
+      'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+      'comments', 'revisions', 'custom-fields'
+    ),
+    'taxonomies'          => array('category','post_tag'),
+  
+
+  );
+
+  register_post_type('homepost', $homepost_args);
+}
+
+add_action('init', 'homepost_post_type');
+
+/*Added homepost Post in Wordpress*/
+/*register homepost sidebar in Wordpress*/
+function homepost_widget_init()
+
+{
+  register_sidebar(array(
+    'name'          => 'homepost Post Sidebar',
+    'id'            => 'homepost-post-sidebar',
+    'before_widget' => '<div class="card">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h5 class="card-title">',
+    'after_title'   => '</h5>',
+    
+    
+  ));
+}
+add_action('widgets_init', 'homepost_widget_init');
+
+/*Added blogtype1 Post in Wordpress*/
+
+/*Add aboutpost Post in Wordpress*/
+function aboutpost_post_type()
+{
+
+  $aboutpost_labels = array(
+    'name' => __('aboutpost', 'medicalStore_site'),
+    'singular_name' => __('aboutpost', 'medicalStore_site'),
+    'add_new' => __('Add new aboutpost', 'medicalStore_site'),
+    'add_new_item' => __('Add new aboutpost', 'medicalStore_site'),
+    'featured_image' => __('aboutpost post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set aboutpost image', 'medicalStore_site'),
+
+  );
+
+  $aboutpost_args = array(
+
+    'labels' =>  $aboutpost_labels,
+    'public' => true,
+    'show_ui' => true,
+    // 'rewrite' => array('slug' => 'aboutpost'),
+    'capability_type' => 'post',
+    'menu_position' => null,
+    'show_in_rest' => true,
+
+    'supports' => array(
+      'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+      'comments', 'revisions', 'custom-fields'
+    ),
+    'taxonomies'          => array('category','post_tag'),
+  
+
+  );
+
+  register_post_type('aboutpost', $aboutpost_args);
+}
+
+add_action('init', 'aboutpost_post_type');
+
+/*Added aboutpost Post in Wordpress*/
+/*register aboutpost sidebar in Wordpress*/
+function aboutpost_widget_init()
+
+{
+  register_sidebar(array(
+    'name'          => 'aboutpost Post Sidebar',
+    'id'            => 'aboutpost-post-sidebar',
+    'before_widget' => '<div class="card">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h5 class="card-title">',
+    'after_title'   => '</h5>',
+    
+    
+  ));
+}
+add_action('widgets_init', 'aboutpost_widget_init');
 
 /*Added blogtype1 Post in Wordpress*/
 function blogtype1_post_type()

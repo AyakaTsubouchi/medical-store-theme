@@ -2,10 +2,10 @@
 
 	<?php
 
-	if ('tips' == get_post_type()) {
-		include('custom-single-post/single-tips.php');
-	} elseif ('recomend' == get_post_type()) {
-		include('custom-single-post/single-customer.php');
+	if ('blog' == get_post_type()) {
+		include('custom-single-post/single-blog.php');
+	} elseif ('blogtype1' == get_post_type()) {
+		include('custom-single-post/single-blogtype1.php');
 	} elseif ('promotion' == get_post_type()) {
 		include('custom-single-post/single-promotion.php');
 	} elseif ('customerservice' == get_post_type()) {

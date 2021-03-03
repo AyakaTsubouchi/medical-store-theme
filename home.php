@@ -12,64 +12,130 @@ if (have_posts()) :
 ?>
         <?php include('inc/slider.php'); ?>
         <div class="home container">
-            <section>
-                <h2>
-                    <h2 class="lighter"><span>Company Overview</span></h2>
-                </h2>
-                <p>
-                    We take pride in our unwavering commitment to producing high-quality products. You can order with confidence, knowing that Puritan products are manufactured, packaged, and shipped from our state-of-the-art manufacturing facility in Guilford, Maine. We maintain valuable relationships with many of America’s top distributors and kit manufacturers to ensure they have access to our extensive product line.
-                </p>
-                <div class="quotes">
-                    <p>
-                        "The customized swab, and more importantly, the team at Puritan who worked with us starting with our rep provided us with the perfect sampling tool. And we’re excited to see the results of this research using this swab."— Emily Curd, Research Associate, University of California
-                    </p>
-                </div>
-                <p>
-                    Ready to learn more about our cutting-edge products? Contact Us to speak with one of our knowledgeable and friendly product specialists.
-                </p>
+            <section class="product-cat"> <?php include('inc/home-categorylist.php'); ?>
             </section>
-            <section style="background:gray;">
-                <h2>Why Choose Puritan</h2>
-                <div class="description">
-                    <p>
-                        Quality, consistency, availability—that’s our promise, and it’s why our customers continue doing business with us year after year. Our comprehensive product line offers one-stop shopping for standard and specialty swabs and applicators.</p>
-                    <p>
-                        Not finding the specific product you’re looking for? Don’t worry—we can prototype and customize the ideal product for your specific application. Our skilled research and development team is always eager to provide custom solutions including configurations and packaging, private labeling, and custom media filling. No other company is as capable of filling specific requests—including single-use devices for detecting emerging diseases and testing for bioterrorism.</p>
-                </div>
-                <div class="logos">
-                    <img src="https://www.puritanmedproducts.com/media/wysiwyg/logos.png" alt="logos">
-                </div>
-            </section>
-            <section>
-                <h2>
-                    <h2 class="lighter"><span>Green Initiatives
-                        </span></h2>
-                </h2>
-                <p>
-                    Puritan values our environment and natural resources. When Puritan was established in 1919, we used Northern white birch in the manufacturing of single-use items, and we still use it for many of our wood products today. Our company has long been involved in the stewardship of the woodlands of Northern New England.
-                </p>
-                <h3>A packaging manufacturing facility that runs on renewable energy and recycling</h3>
-                <div class="col one">
-                    <div class="icons"></div>
-                    <p>Puritan runs on 100% <br>renewable energy (wood <br>process waste) for all <br>building heat, hot water, <br>and manufacturing.</p>
-                </div>
-                <div class="col two">
-                    <div class="icons"></div>
-                    <p>Puritan runs on 100% <br>renewable energy (wood <br>process waste) for all <br>building heat, hot water, <br>and manufacturing.</p>
-                </div>
-                <div class="col three">
-                    <div class="icons"></div>
-                    <p>Puritan runs on 100% <br>renewable energy (wood <br>process waste) for all <br>building heat, hot water, <br>and manufacturing.</p>
-                </div>
-            </section>
-            <section>
-                <h2>
-                    <h2 class="lighter"><span>Company Overview Video
-                        </span></h2>
-                </h2>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/AHCEehbI3zo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </section>
+
+            <?php
+            global $post;
+
+
+            $homepost_posts = get_posts(array(
+                'post_type' => 'homepost',
+                'posts_per_page' => 100
+
+            ));
+
+            if ($homepost_posts) {
+                foreach ($homepost_posts as $post) :
+                    setup_postdata($post);
+
+            ?>
+                    <?php
+                    $style_type =  get_field('style');
+                    $bg = get_field('background_image');
+
+                    !$bg ? $background = "background-color:white;" : $background = "background-image: url(" . $bg . ");";
+                    $btn = get_field('button_name');
+                    !$btn ? $button = null :  $button = '<div class="custom-btn">
+                   <a href="' . get_field('button_url') . '">' . get_field('button_name') . '</a></div>';
+
+
+
+
+                    switch ($style_type) {
+                        case "two-col": ?>
+                            <section class="image-text-two-col" style="<?php echo $background ?>">
+                                <div class="row">
+
+
+                                    <div class="col-lg-6 col md-12">
+
+                                        <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                    </div>
+                                    <div class="col-lg-6 col md-12">
+                                        <h2 class="lighter"><span><?php the_title(); ?></span></h2>
+                                        <div class="content">
+
+                                            <?php the_content();
+                                            echo $button; ?>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        <?php
+                            break;
+                        case "banner":
+                        ?>
+                            <section class="banner" style="<?php echo $background ?>">
+                                <h2 class="lighter"><span><?php the_title(); ?></span></h2>
+                                <div class="content">
+                                    <?php the_content();
+                                    echo $button; ?>
+
+                                </div>
+                            </section>
+                            <section>
+                            <?php
+                            break;
+                        case "standard":
+                            ?>
+                                <section class="standard" style="<?php echo $background ?>">
+                                    <h2 class="lighter"><span><?php the_title(); ?></span></h2>
+                                    <div class="content">
+                                        <?php the_content();
+                                        echo $button;
+                                        $link1 = get_field('post_link1');
+                                        $link2 = get_field('post_link2');
+                                        if ($link1) :
+                                        ?>
+                                            <div class="card">
+                                                <a href="<?php get_post_permalink($link1); ?>">
+                                                    <img src="<?php echo get_the_post_thumbnail_url($link1);
+                                                                ?>" class="card-img-top" alt="<?php echo $link2->post_title; ?>">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title"><?php echo $link1->post_title; ?></h5>
+                                                        <P><?php echo get_the_date('Y-m-d', $link1); ?>/<?php echo get_the_author($link1); ?></P>
+                                                </a>
+                                            </div>
+                                    </div>
+                                <?php endif;
+                                        if ($link2) : ?>
+                                    <div class="card">
+                                        <a href="<?php get_post_permalink($link2); ?>">
+                                            <img src="<?php echo get_the_post_thumbnail_url($link2);
+                                                        ?>" class="card-img-top" alt="<?php echo $link2->post_title; ?>">
+                                            <div class="card-body">
+                                                <h5 class="card-title"><?php echo $link2->post_title; ?></h5>
+                                                <P><?php echo get_the_date('Y-m-d', $link2); ?>/<?php echo get_the_author($link2); ?></P>
+                                        </a>
+                                    </div>
         </div>
+    <?php endif; ?>
+    </div>
+
+    </section>
+    <section>
+    <?php
+                            break;
+                        default: ?>
+        <h1>this is default</h1>
+<?php
+                    }
+?>
+<?php
+                endforeach;
+                wp_reset_postdata();
+            }
+?>
+
+<?php
+        if (is_active_sidebar('home-footer-widget')) {
+            dynamic_sidebar('home-footer-widget');
+        }
+?>
+</div>
 
 
 <?php

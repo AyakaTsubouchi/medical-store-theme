@@ -9,7 +9,7 @@
                 for ($i = 0; $i < $count; $i++) :
 
             ?>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i ?>" ></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $i ?>"></li>
             <?php
                 endfor;
             }
@@ -28,9 +28,19 @@
             foreach ($gallery_post as $post) :
                 setup_postdata($post);
 
+                $btn = get_field('button_name');
+                !$btn ? $button = null :  $button = '<div class="custom-btn">
+               <a href="' . get_field('button_url') . '">' . get_field('button_name') . '</a></div>';
+
         ?>
                 <div class="carousel-item active carousel_one">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                    <a href="<?php get_post_permalink(); ?>">
+                        <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px">
+                            <?php the_content();
+                            echo $button;
+                            ?>
+                        </div>
+                    </a>
                 </div>
 
         <?php
@@ -50,11 +60,20 @@
         if ($gallery_post) {
             foreach ($gallery_post as $post) :
                 setup_postdata($post);
+                $btn = get_field('button_name');
+                !$btn ? $button = null :  $button = '<div class="custom-btn">
+               <a href="' . get_field('button_url') . '">' . get_field('button_name') . '</a></div>';
 
         ?>
 
                 <div class="carousel-item carousel_one">
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                    <a href="<?php get_post_permalink(); ?>">
+                        <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px">
+                            <?php the_content();
+                            echo $button;
+                            ?>
+                        </div>
+                    </a>
                 </div>
 
         <?php

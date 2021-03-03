@@ -20,35 +20,35 @@
             <div class="row">
                <div class="logo">
                   <div class="logo-wrapper">
-                  <?php echo get_custom_logo(); ?> 
+                     <?php echo get_custom_logo(); ?>
                   </div>
                </div>
-
-               <nav class="navbar navbar-expand-lg nav-toggler-right no-padding-on-mobile">
-                  <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                     <i class="fas fa-bars"></i>
-                  </button>
-                  <?php
-                  wp_nav_menu(array(
-                     'theme_location'  => 'interior_header_menu',
-                     'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
-                     'container'       => 'div',
-                     'container_class' => 'collapse navbar-collapse nav-contents',
-                     'container_id'    => 'navbarNavAltMarkup',
-                     'menu_class'      => 'navbar-nav',
-                     'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                     'walker'          => new WP_Bootstrap_Navwalker(),
-                  ));
-                  ?>
-
-               </nav>
                <?php
-               if (is_active_sidebar('custom-topheader-widget')) {
-                  dynamic_sidebar('custom-topheader-widget');
+               if (is_active_sidebar('custom-header-widget')) {
+                  dynamic_sidebar('custom-header-widget');
                }
                ?>
             </div>
+            <nav class="navbar navbar-expand-lg nav-toggler-right no-padding-on-mobile">
+               <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fas fa-bars"></i>
+               </button>
+               <?php
+               wp_nav_menu(array(
+                  'theme_location'  => 'medical_header_menu',
+                  'depth'           => 1, // 1 = no dropdowns, 2 = with dropdowns.
+                  'container'       => 'div',
+                  'container_class' => 'collapse navbar-collapse nav-contents',
+                  'container_id'    => 'navbarNavAltMarkup',
+                  'menu_class'      => 'navbar-nav',
+                  'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                  'walker'          => new WP_Bootstrap_Navwalker(),
+               ));
+               ?>
+
+            </nav>
          </div>
+
 
 
       </header>
