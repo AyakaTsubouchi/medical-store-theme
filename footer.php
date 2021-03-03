@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" style="overflow:hidden;">
    <div class="row">
       <div class="col">
          <div class="row">

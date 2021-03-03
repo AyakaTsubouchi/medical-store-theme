@@ -1,0 +1,23 @@
+@import 'color';
+.about{
+    .hero-image{
+        height: 400px;
+        // padding-top: 20px;
+        .content{
+            background: $main-color;
+            width: 30%;           
+            transform: translate(20% ,30%);
+            color: white;
+            padding: 20px;
+            h2{
+                padding-left: 20px;
+            }
+            p{
+                font-size: 14px;
+                border-left: 2px solid $accent-color;
+                padding-left: 20px;
+                font-size: 11px;
+            }
+            }
+        }
+    }
