@@ -61,14 +61,26 @@ $(document).ready(function() {
 /*--------------------------------------
 End of Footer
 -------------------------------------*/
+/*--------------------------------------
+ Material List
+-------------------------------------*/
 
+// TODO
+$(document).ready(function() {
+ $('.material-list .content .card .right-container .read-toggle').on('click',function(){
+   if(!$('.material-list .content .right-container .more').hasClass('shown')){
+     $('.material-list .content .right-container .more').addClass('shown');
+     $('.material-list .content .right-container .read-toggle').replaceWith('<div class="read-toggle">Read Less</div>');
+   }else{
+     alert('ge');
+    $('.material-list .content .right-container .more').removeClass('shown');
+    $('.material-list .content .right-container .read-toggle').replaceWith('<div class="read-toggle">Read More</div>');
+   }
+ });
+});
 
 /*--------------------------------------
-HOME
------------------------------------------------------*/
-
-/*--------------------------------------
-End of HOME
+End of Material List
 -------------------------------------*/
 
 /*--------------------------------------
@@ -88,18 +100,7 @@ End of HOME
 End of Contact
 -------------------------------------*/
 
-/*--------------------------------------
-End of quick view modal
--------------------------------------*/
 
-/*--------------------------------------
-single product page
--------------------------------------*/
-
-
-/*--------------------------------------
-End of single product page
--------------------------------------*/
 
 
 /*--------------------------------------

@@ -5,7 +5,13 @@
 @import "shared";
 @import "header";
 @import "home";
-@import "inc-categorylist";
 @import "page-post";
+@import "product-materials";
 @import "about";
+@import "archive-blogtype1.scss";
+//inc
+@import "inc-categorylist";
+@import "inc-page-post-style-material-list";
 
+//templete
+@import "single-blogtype1";

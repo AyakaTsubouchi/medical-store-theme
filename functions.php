@@ -323,8 +323,63 @@ function homepost_widget_init()
 }
 add_action('widgets_init', 'homepost_widget_init');
 
-/*Added blogtype1 Post in Wordpress*/
+/*Added pmpost Post in Wordpress*/
+function pmpost_post_type()
+{
 
+  $pmpost_labels = array(
+    'name' => __('pmpost', 'medicalStore_site'),
+    'singular_name' => __('pmpost', 'medicalStore_site'),
+    'add_new' => __('Add new pmpost', 'medicalStore_site'),
+    'add_new_item' => __('Add new pmpost', 'medicalStore_site'),
+    'featured_image' => __('pmpost post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set pmpost image', 'medicalStore_site'),
+
+  );
+
+  $pmpost_args = array(
+
+    'labels' =>  $pmpost_labels,
+    'public' => true,
+    'show_ui' => true,
+    // 'rewrite' => array('slug' => 'pmpost'),
+    'capability_type' => 'post',
+    'menu_position' => null,
+    'show_in_rest' => true,
+
+    'supports' => array(
+      'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+      'comments', 'revisions', 'custom-fields'
+    ),
+    'taxonomies'          => array('category','post_tag'),
+  
+
+  );
+
+  register_post_type('pmpost', $pmpost_args);
+}
+
+add_action('init', 'pmpost_post_type');
+
+/*Added pmpost Post in Wordpress*/
+/*register pmpost sidebar in Wordpress*/
+function pmpost_widget_init()
+
+{
+  register_sidebar(array(
+    'name'          => 'pmpost Post Sidebar',
+    'id'            => 'pmpost-post-sidebar',
+    'before_widget' => '<div class="card">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h5 class="card-title">',
+    'after_title'   => '</h5>',
+    
+    
+  ));
+}
+add_action('widgets_init', 'pmpost_widget_init');
+
+/*Added blogtype1 Post in Wordpress*/
 /*Add aboutpost Post in Wordpress*/
 function aboutpost_post_type()
 {
@@ -400,9 +455,11 @@ function blogtype1_post_type()
     'labels' =>  $blogtype1_labels,
     'public' => true,
     'show_ui' => true,
-    // 'rewrite' => array('slug' => 'blogtype1'),
+    // 'rewrite' => array('slug' => 'aboutpost'),
     'capability_type' => 'post',
     'menu_position' => null,
+    'show_in_rest' => true,
+
     'supports' => array(
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
@@ -751,6 +808,46 @@ function gallery_post_type()
 add_action('init', 'gallery_post_type');
 
 /*Added gallery Post in Wordpress*/
+
+/*Added mtlist Post in Wordpress*/
+function mtlist_post_type()
+{
+
+  $mtlist_labels = array(
+    'name' => __('Material List', 'medicalStore_site'),
+    'singular_name' => __('mtlist', 'medicalStore_site'),
+    'add_new' => __('Add new mtlist', 'medicalStore_site'),
+    'add_new_item' => __('Add new mtlist', 'medicalStore_site'),
+    'featured_image' => __('mtlist post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set mtlist image', 'medicalStore_site'),
+
+  );
+
+  $mtlist_args = array(
+
+    'labels' =>  $mtlist_labels,
+    'public' => true,
+    'show_ui' => true,
+    // 'rewrite' => array('slug' => 'mtlist'),
+    'capability_type' => 'post',
+    'menu_position' => null,
+    'show_in_rest' => true,
+
+    'supports' => array(
+      'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+      'comments', 'revisions', 'custom-fields'
+    ),
+    'taxonomies'          => array('category','post_tag'),
+  
+
+  );
+
+  register_post_type('mtlist', $mtlist_args);
+}
+
+add_action('init', 'mtlist_post_type');
+
+/*Added mtlist Post in Wordpress*/
 
 /*Added businessInfo Post in Wordpress*/
 function businessInfo_post_type()
