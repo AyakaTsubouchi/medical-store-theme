@@ -2,3 +2,17 @@
     overflow-x: hidden;
     min-height: calc(100vh - 100px);
   }
+  .custom-btn {
+    transition: 0.2s;
+    color: white;
+    background: green;
+    padding:6px 34px;
+    border-radius: 16px;
+    text-decoration: none;
+}
+.custom-btn:hover {
+    background: white;
+    border: 1px solid green;
+    color: green;
+    cursor: pointer;
+}

@@ -10924,6 +10924,22 @@ p {
   min-height: calc(100vh - 100px);
 }
 
+.custom-btn {
+  transition: 0.2s;
+  color: white;
+  background: green;
+  padding: 6px 34px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.custom-btn:hover {
+  background: white;
+  border: 1px solid green;
+  color: green;
+  cursor: pointer;
+}
+
 header .container .row {
   justify-content: space-between;
 }
@@ -11184,6 +11200,55 @@ header .container .navbar-collapse {
   font-size: 11px;
 }
 
+.contactus h2 {
+  font-weight: 600;
+  line-height: 75px;
+}
+
+.contactus h2 span {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+
+.contactus h2 span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 2px solid #248066;
+  top: 39px;
+  width: calc(100% - 300px);
+}
+
+.contactus h2 span:after {
+  margin-left: 10px;
+}
+
+.contactus h3,
+.contactus h5 {
+  color: #248066;
+}
+
+.contactus .google-map {
+  height: 400px;
+}
+
+.contactus input.custom-btn {
+  transition: 0.2s;
+  color: white;
+  background: green;
+  padding: 6px 34px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.contactus input.custom-btn:hover {
+  background: white;
+  border: 1px solid green;
+  color: green;
+  cursor: pointer;
+}
+
 .archive-blogtype1 .contents {
   margin-top: 50px;
 }
@@ -11216,8 +11281,83 @@ header .container .navbar-collapse {
   color: #248066;
 }
 
-.archive-blogtype1 .contents .row {
+.archive-blogtype1 .contents .flex-container {
   margin-top: 40px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.archive-blogtype1 .contents .flex-container .my-card {
+  width: 250px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex-shrink: 0;
+}
+
+.archive-blogtype1 .contents .flex-container .my-card img {
+  width: 100%;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.archive-blogtype1 .banner {
+  padding: 30px;
+}
+
+.archive-blogtype1 .banner .container {
+  text-align: center;
+}
+
+.archive-blogtype1 .banner .container h2 {
+  line-height: 75px;
+}
+
+.archive-blogtype1 .banner .container h2 span {
+  display: inline-block;
+  position: relative;
+}
+
+.archive-blogtype1 .banner .container h2 span:before,
+.archive-blogtype1 .banner .container h2 span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 2px solid #248066;
+  top: 39px;
+  width: 20px;
+}
+
+.archive-blogtype1 .banner .container h2 span:before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.archive-blogtype1 .banner .container h2 span:after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.archive-blogtype1 .banner .container .custom-btn {
+  transition: 0.2s;
+  color: white;
+  background: green;
+  padding: 6px 34px;
+  border-radius: 16px;
+  text-decoration: none;
+}
+
+.archive-blogtype1 .banner .container .custom-btn:hover {
+  background: white;
+  border: 1px solid green;
+  color: green;
+}
+
+.archive-blogtype1 .banner .container p {
+  font-size: 17px;
 }
 
 .product-cat {

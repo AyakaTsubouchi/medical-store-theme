@@ -968,3 +968,23 @@ add_filter( 'woocommerce_products_widget_query_args', function( $query_args ){
   return $query_args;
 }, 10, 1 );
 
+function query_post_type($query) {
+  $post_types = get_post_types();
+
+  if ( is_category() || is_tag()) {
+
+      $post_type = get_query_var('blogtype2');
+
+      if ( $post_type ) {
+          $post_type = $post_type;
+      } else {
+          $post_type = $post_types;
+      }
+
+      $query->set('post_type', $post_type);
+
+      return $query;
+  }
+}
+
+add_filter('pre_get_posts', 'query_post_type');

@@ -225,7 +225,7 @@ if (have_posts()) :
                                         break;
                                     case "material-list":
                          
-                                        include('inc/page-post-styles/material-list.php');
+                                        include('inc/styles/material-list.php');
                                         break;
                                     default: ?>
                                             <h1>this is default</h1>

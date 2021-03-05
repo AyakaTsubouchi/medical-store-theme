@@ -1,0 +1,45 @@
+@import 'color';
+.contactus{
+    h2 {
+        font-weight: 600;
+        line-height: 75px;
+        span {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+        }
+
+        span:after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            border-top: 2px solid $accent-color;
+            top: 39px;
+            width: calc(100% - 300px);
+        }
+
+        span:after {
+            margin-left: 10px;
+        }
+    }
+    h3,h5{
+        color: $accent-color;
+    }
+    .google-map{
+        height: 400px;
+    }
+    input.custom-btn {
+        transition: 0.2s;
+        color: white;
+        background: green;
+        padding:6px 34px;
+        border-radius: 16px;
+        text-decoration: none;
+    }
+    input.custom-btn:hover {
+        background: white;
+        border: 1px solid green;
+        color: green;
+        cursor: pointer;
+    }
+}
