@@ -968,23 +968,27 @@ add_filter( 'woocommerce_products_widget_query_args', function( $query_args ){
   return $query_args;
 }, 10, 1 );
 
-function query_post_type($query) {
-  $post_types = get_post_types();
 
-  if ( is_category() || is_tag()) {
+    // add_filter( 'pre_get_posts', 'slug_cpt_category_archives' );
+    // function slug_cpt_category_archives( $query ) {
+    // if ( $query->is_category() && $query->is_main_query()  )  {
+    //     $query->set( 'post_type',
+    //         array(
+    //             'post',
+    //             'blogtype2'
+    //         )
+    //     );
+    // }
 
-      $post_type = get_query_var('blogtype2');
+    // return $query;
 
-      if ( $post_type ) {
-          $post_type = $post_type;
-      } else {
-          $post_type = $post_types;
-      }
-
-      $query->set('post_type', $post_type);
-
-      return $query;
-  }
-}
-
-add_filter('pre_get_posts', 'query_post_type');
+    // }
+    // add_action( 'pre_get_posts', 'slug_cpt_category_archives' );
+    // function slug_cpt_category_archives( $query ) {
+    //     if ( is_tax( 'educations') )  {
+    //         $tax_query = $query->tax_query->queries;
+    //         $tax_query['include_children'] = 0;
+    //         $query->set( 'tax_query', $tax_query );
+    //     };
+      
+    // }

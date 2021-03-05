@@ -14,44 +14,51 @@ Template name: Education
 
     ?>
 
- 
-       
- <?php
-    global $post;
-    $blogtype2_posts = get_posts(array(
-        'post_type' => 'blogtype2',
-        'posts_per_page' => 100
-    ));
-    if ($blogtype2_posts) {
-        foreach ($blogtype2_posts as $post) :
-            setup_postdata($post);
-    ?>
+            <?php
+            $args = array(
+                'type'                     => 'blogtype2',
+                'child_of'                 => 0,
+                'parent'                   => '',
+                'orderby'                  => 'name',
+                'order'                    => 'ASC',
+                'hide_empty'               => 0,
+                'hierarchical'             => 1,
+                'taxonomy'                 => 'educations',
+                'pad_counts'               => false
+            );
+            $categories = get_categories($args);
+          
 
-<?php
-    $args = array(
-        'type'                     => 'blogtype2',
-        'child_of'                 => 0,
-        'parent'                   => '',
-        'orderby'                  => 'name',
-        'order'                    => 'ASC',
-        'hide_empty'               => 1,
-        'hierarchical'             => 1,
-        'exclude'                  => '',
-        'include'                  => '',
-        'number'                   => '',
-        // 'taxonomy'                 => '',
-        'pad_counts'               => false );
-        $categories = get_categories( $args);
-    foreach( $categories as $cat){
-        echo $cat;
-    }
-    echo "sd";
-    ?>
-<?php
-                                    endforeach;
-                                    wp_reset_postdata();
-                                }
-                                ?>
+            foreach ($categories as $category) {
+                $url = get_term_link($category);
+                $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+                // $term = get_queried_object($category);
+                $imgurl = the_field( 'image',$category->term_id);
+              
+                // $thumb_id = get_term_meta( $term->term_id, 'thumbnail_id', true );
+                $term_img = wp_get_attachment_url(  $thumbnail_id );
+                
+                echo $category->term_id.$imgurl  ;
+                ?>
+                <div class="card-body">
+                    <div class="image-wrapper">
+                        <a href="<?php echo  $url;  ?>">
+                            <img class="card-img-top" src="<?php echo  $imgurl; ?>" alt="Card image cap">
+                        </a>
+                    </div>
+                    <div class="card-content">
+
+                        <h5 class="card-title"> <?php echo  $category->name;  ?></h5>
+                        <p class="card-text"><?php echo $catefory->description; ?></p>
+                        <a href="<?php echo $url;  ?>" class="btn btn-primary">View More</a>
+                    </div>
+
+                </div>
+            <?php
+            }
+            echo '</ul>';
+            ?>
+
 
 
 
