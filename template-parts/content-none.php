@@ -1,10 +1,6 @@
-<section class="header-banner">
-    <div style="background-image:linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(http://www.kungfuhotpot.us/wp-content/uploads/2020/05/22.jpg); background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top;
-  height: 300px;">
+<section class="no-page">
+<h1>What the Flock?</h1>
 
-    </div>
+<h3>Sorry, we couldn't find that page, please go to our<a href="#"> homepage.</a></h3>
+<img src="https://images.unsplash.com/photo-1614867687973-b9a07b237dd8?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzMnx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="">
 </section>
-this is 404 page
-tetst

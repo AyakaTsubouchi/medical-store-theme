@@ -1,0 +1,49 @@
+.fixed-btn-wrapper {
+    position: fixed;
+    bottom: 50%;
+    right: 50px;
+    text-align: center;
+    .message-button {
+        background-color: $accent-color;
+        border-radius: 50px;
+        color: white;
+        box-shadow: 2px 1px 5px #888887;
+        display: inline-block;
+        i {
+            padding: 20px;
+            font-size: 30px;
+        }
+        @media (max-width: 991px) {
+            i {
+                padding: 3vw;
+                font-size: 3vw;
+            }
+        }
+        @media (max-width: 540px) {
+            i {
+                padding: 3vw;
+                font-size: 3vw;
+            }
+        }
+    }
+    .message-button:hover {
+        cursor: pointer;
+    }
+
+    .hiring-button {
+        a {
+            color: white;
+        }
+        background-color: $accent-color;
+        border-radius: 50px;
+        margin-top: 50px;
+        box-shadow: 2px 1px 5px #888887;
+        i {
+            padding: 50px;
+            font-size: 30px;
+        }
+        @media (max-width: 991px) {
+            display: none;
+        }
+    }
+}

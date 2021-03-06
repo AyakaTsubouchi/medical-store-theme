@@ -71,7 +71,7 @@ $(document).ready(function() {
    if(!$('.material-list .content .right-container .more').hasClass('shown')){
      $('.material-list .content .right-container .more').addClass('shown');
      $('.material-list .content .right-container .read-toggle').replaceWith('<div class="read-toggle">Read Less</div>');
-   }else{
+   }else if($('.material-list .content .right-container .more').hasClass('shown')){
      alert('ge');
     $('.material-list .content .right-container .more').removeClass('shown');
     $('.material-list .content .right-container .read-toggle').replaceWith('<div class="read-toggle">Read More</div>');

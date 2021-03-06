@@ -10924,7 +10924,7 @@ p {
   min-height: calc(100vh - 100px);
 }
 
-.custom-btn {
+.custom-btn a {
   transition: 0.2s;
   color: white;
   background: green;
@@ -10933,7 +10933,7 @@ p {
   text-decoration: none;
 }
 
-.custom-btn:hover {
+.custom-btn:hover a {
   background: white;
   border: 1px solid green;
   color: green;
@@ -11249,22 +11249,26 @@ header .container .navbar-collapse {
   cursor: pointer;
 }
 
-.archive-blogtype1 .contents {
+.archive-blogtype .woocommerce-breadcrumb {
+  margin-left: 5vw;
+}
+
+.archive-blogtype .contents {
   margin-top: 50px;
 }
 
-.archive-blogtype1 .contents h1 {
+.archive-blogtype .contents h1 {
   font-weight: 600;
   line-height: 75px;
 }
 
-.archive-blogtype1 .contents h1 span {
+.archive-blogtype .contents h1 span {
   display: inline-block;
   position: relative;
   width: 100%;
 }
 
-.archive-blogtype1 .contents h1 span:after {
+.archive-blogtype .contents h1 span:after {
   content: "";
   position: absolute;
   height: 5px;
@@ -11273,15 +11277,15 @@ header .container .navbar-collapse {
   width: calc(100% - 300px);
 }
 
-.archive-blogtype1 .contents h1 span:after {
+.archive-blogtype .contents h1 span:after {
   margin-left: 10px;
 }
 
-.archive-blogtype1 .contents h3 {
+.archive-blogtype .contents h3 {
   color: #248066;
 }
 
-.archive-blogtype1 .contents .flex-container {
+.archive-blogtype .contents .flex-container {
   margin-top: 40px;
   display: flex;
   text-align: center;
@@ -11289,7 +11293,7 @@ header .container .navbar-collapse {
   flex-flow: wrap;
 }
 
-.archive-blogtype1 .contents .flex-container .my-card {
+.archive-blogtype .contents .flex-container .my-card {
   width: 250px;
   display: inline-block;
   margin-left: 5px;
@@ -11297,32 +11301,32 @@ header .container .navbar-collapse {
   flex-shrink: 0;
 }
 
-.archive-blogtype1 .contents .flex-container .my-card img {
+.archive-blogtype .contents .flex-container .my-card img {
   width: 100%;
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.archive-blogtype1 .banner {
+.archive-blogtype .banner {
   padding: 30px;
 }
 
-.archive-blogtype1 .banner .container {
+.archive-blogtype .banner .container {
   text-align: center;
 }
 
-.archive-blogtype1 .banner .container h2 {
+.archive-blogtype .banner .container h2 {
   line-height: 75px;
 }
 
-.archive-blogtype1 .banner .container h2 span {
+.archive-blogtype .banner .container h2 span {
   display: inline-block;
   position: relative;
 }
 
-.archive-blogtype1 .banner .container h2 span:before,
-.archive-blogtype1 .banner .container h2 span:after {
+.archive-blogtype .banner .container h2 span:before,
+.archive-blogtype .banner .container h2 span:after {
   content: "";
   position: absolute;
   height: 5px;
@@ -11331,17 +11335,17 @@ header .container .navbar-collapse {
   width: 20px;
 }
 
-.archive-blogtype1 .banner .container h2 span:before {
+.archive-blogtype .banner .container h2 span:before {
   right: 100%;
   margin-right: 10px;
 }
 
-.archive-blogtype1 .banner .container h2 span:after {
+.archive-blogtype .banner .container h2 span:after {
   left: 100%;
   margin-left: 10px;
 }
 
-.archive-blogtype1 .banner .container .custom-btn {
+.archive-blogtype .banner .container .custom-btn {
   transition: 0.2s;
   color: white;
   background: green;
@@ -11350,14 +11354,90 @@ header .container .navbar-collapse {
   text-decoration: none;
 }
 
-.archive-blogtype1 .banner .container .custom-btn:hover {
+.archive-blogtype .banner .container .custom-btn:hover {
   background: white;
   border: 1px solid green;
   color: green;
 }
 
-.archive-blogtype1 .banner .container p {
+.archive-blogtype .banner .container p {
   font-size: 17px;
+}
+
+.no-page {
+  text-align: center;
+}
+
+.no-page h3 {
+  color: green;
+}
+
+.no-page img {
+  width: 50%;
+  height: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 30px auto;
+}
+
+.fixed-btn-wrapper {
+  position: fixed;
+  bottom: 50%;
+  right: 50px;
+  text-align: center;
+}
+
+.fixed-btn-wrapper .message-button {
+  background-color: #248066;
+  border-radius: 50px;
+  color: white;
+  box-shadow: 2px 1px 5px #888887;
+  display: inline-block;
+}
+
+.fixed-btn-wrapper .message-button i {
+  padding: 20px;
+  font-size: 30px;
+}
+
+@media (max-width: 991px) {
+  .fixed-btn-wrapper .message-button i {
+    padding: 3vw;
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 540px) {
+  .fixed-btn-wrapper .message-button i {
+    padding: 3vw;
+    font-size: 3vw;
+  }
+}
+
+.fixed-btn-wrapper .message-button:hover {
+  cursor: pointer;
+}
+
+.fixed-btn-wrapper .hiring-button {
+  background-color: #248066;
+  border-radius: 50px;
+  margin-top: 50px;
+  box-shadow: 2px 1px 5px #888887;
+}
+
+.fixed-btn-wrapper .hiring-button a {
+  color: white;
+}
+
+.fixed-btn-wrapper .hiring-button i {
+  padding: 50px;
+  font-size: 30px;
+}
+
+@media (max-width: 991px) {
+  .fixed-btn-wrapper .hiring-button {
+    display: none;
+  }
 }
 
 .product-cat {

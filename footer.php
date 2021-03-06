@@ -1,4 +1,13 @@
 <footer class="site-footer" style="overflow:hidden;">
+   <section class="fixed-btn-wrapper">
+      <div class="message-button" data-toggle="modal" data-target="#messageModal">
+         <i class="fas fa-comment-alt"></i>
+      </div>
+      <div class="hiring-button">
+         <a href="#">Now Hiring</a>
+      </div>
+   </section>
+   <?php include('inc/message-modal.php'); ?>
    <div class="row">
       <div class="col">
          <div class="row">
