@@ -3,37 +3,39 @@ Header
 -----------------------------------------------------*/
 
 //to close an open collapsed nav when clicking the element.
-$(document).ready(function() {
-  $(".nav-link").click(function() {
-    $(".navbar-collapse").collapse("hide");
-    $("body").removeClass("sidebar-margin");
-    $(".sidenav-backdrop").removeClass("show");
-  });
-});
-//get back the screen from shrinked
-$(document).ready(function() {
-  $(".navbar-toggler").click(function(event) {
-    // var clickover = $(event.target);
-    var _opened = $("#navbarNavAltMarkup").hasClass("show");
-    if (_opened === true) {
-      $("body").removeClass("sidebar-margin");
-      $(".sidenav-backdrop").removeClass("show");
-    }
-  });
-});
-//to close an open collapsed nav when clicking outside of the nav elements.
-$(document).ready(function() {
-  $(document).click(function(event) {
-    var clickover = $(event.target);
-    var _opened = $("#navbarNavAltMarkup").hasClass("show");
-    if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-      $(".navbar-toggler").click();
-      $("body").removeClass("sidebar-margin");
-      $(".sidenav-backdrop").removeClass("show");
-    }
-  });
-});
+// $(document).ready(function() {
+//   $(".nav-link").click(function() {
+//     $(".navbar-collapse").collapse("hide");
+//     $("body").removeClass("sidebar-margin");
+//     $(".sidenav-backdrop").removeClass("show");
+//   });
+// });
 
+//to close an open collapsed nav when clicking outside of the nav elements.
+// $(document).ready(function() {
+//   $(document).click(function(event) {
+//     var clickover = $(event.target);
+//     var _opened = $("#navbarNavAltMarkup").hasClass("show");
+//     if (_opened === true && !clickover.hasClass("navbar-toggler")) {
+//       $(".navbar-toggler").click();
+//       $("body").removeClass("sidebar-margin");
+//       $(".sidenav-backdrop").removeClass("show");
+//     }
+//   });
+// });
+
+// $(document).ready(function() {
+//   $(document).click(function(event) {
+//     var clickover = $(event.target);
+//     var _opened = $(".dropdown-menu").hasClass("show");
+//     if (_opened === false && clickover.hasClass(" menu-item-has-children")) {
+//       $(".dropdown-menu").addClass("show");
+//     }
+//     else{
+//       $(".dropdown-menu").removeClass("show");
+//     }
+//   });
+// });
 
 //slider
 $(document).ready(function() {
@@ -107,23 +109,7 @@ End of Contact
 Gallery page
 -------------------------------------*/
 
-// camera js
-$(document).ready(function() {
-  $('#gallery-camera_wrap_3').camera({
-    height: '40%',
-    hover: true,
-    time:1000,
-    pagination: false,
-    thumbnails: true,
-    fx: 'random',
-    // imagePath: '../images/',
-    onLoaded: function(){
-      var slide = jQuery('.camera_target .cameraSlide.cameranext').index();
-        console.log(slide);
-       
-    }        
-});
-});
+
 
 /*--------------------------------------
 End of Gallery page

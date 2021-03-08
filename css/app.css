@@ -11508,3 +11508,8 @@ header .container .navbar-collapse {
   color: #248066;
 }
 
+.woocommerce-page .content-area {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
