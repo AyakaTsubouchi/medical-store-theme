@@ -19,6 +19,21 @@
 defined('ABSPATH') || exit;
 
 get_header('shop');
+/**
+ * Display category image on category archive
+ */
+add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
+function woocommerce_category_image() {
+    if ( is_product_category() ){
+	    global $wp_query;
+	    $cat = $wp_query->get_queried_object();
+	    $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
+	    $image = wp_get_attachment_url( $thumbnail_id );
+	    if ( $image ) {
+		    echo '<img src="' . $image . '" alt="' . $cat->name . '"  class="cat-image"/>';
+		}
+	}
+}
 
 /**
  * Hook: woocommerce_before_main_content.
@@ -43,6 +58,7 @@ do_action('woocommerce_before_main_content');
 	 * @hooked woocommerce_taxonomy_archive_description - 10
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
+
 	do_action('woocommerce_archive_description');
 	?>
 </header>

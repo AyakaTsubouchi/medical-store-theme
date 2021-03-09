@@ -11511,5 +11511,74 @@ header .container .navbar-collapse {
 .woocommerce-page .content-area {
   padding-left: 50px;
   padding-right: 50px;
+  margin-bottom: 150px;
+}
+
+.woocommerce-page .content-area .cat-image {
+  width: 100%;
+  height: 400px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.woocommerce-page .content-area .products a {
+  color: #248066;
+}
+
+.woocommerce-page .content-area .products .price {
+  display: none !important;
+}
+
+.woocommerce-page .content-area .products .add_to_cart_button {
+  display: none;
+}
+
+.woocommerce-page .content-area .container {
+  margin-top: 30px;
+}
+
+.woocommerce-page .content-area .woocommerce-product-gallery .woocommerce-product-gallery__image {
+  height: 500px;
+}
+
+.woocommerce-page .content-area .woocommerce-product-gallery .flex-control-nav li img {
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.woocommerce-page .content-area .summary .custom-btn {
+  margin-top: 40px;
+  border-radius: 16px;
+}
+
+.woocommerce-page .content-area .summary .custom-btn a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 22px;
+}
+
+.woocommerce-page .content-area .summary .contact-us {
+  margin-top: 30px;
+}
+
+.woocommerce-page .content-area .summary .contact-us a {
+  color: #248066;
+}
+
+.woocommerce-page .content-area .summary .contact-us a i {
+  padding-right: 10px;
+}
+
+.woocommerce-page .content-area .summary .resources {
+  margin-top: 10px;
+}
+
+.woocommerce-page .content-area .summary .resources a {
+  color: #248066;
+}
+
+.woocommerce-page .content-area .summary .resources a i {
+  padding-right: 10px;
 }
 

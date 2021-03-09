@@ -36,7 +36,7 @@
                <?php
                wp_nav_menu(array(
                   'theme_location'  => 'medical_header_menu',
-                  'depth'           => 2, // 1 = no dropdowns, 2 = with dropdowns.
+                  'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
                   'container'       => 'div',
                   'container_class' => 'collapse navbar-collapse nav-contents',
                   'container_id'    => 'navbarNavAltMarkup',
