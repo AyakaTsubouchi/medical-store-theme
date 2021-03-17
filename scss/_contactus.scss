@@ -1,7 +1,7 @@
 @import 'color';
 .contactus{
     h2 {
-        font-weight: 600;
+        font-weight: 100;
         line-height: 75px;
         span {
             display: inline-block;
@@ -15,7 +15,7 @@
             height: 5px;
             border-top: 2px solid $accent-color;
             top: 39px;
-            width: calc(100% - 300px);
+            width: calc(100% - 100px);
         }
 
         span:after {
@@ -26,6 +26,9 @@
         color: $accent-color;
     }
     .google-map{
+        height: 400px;
+    }
+    img.map{
         height: 400px;
     }
     input.custom-btn {
@@ -41,5 +44,42 @@
         border: 1px solid green;
         color: green;
         cursor: pointer;
+    }
+    .contact-section{
+        p.title{
+            color: $accent-color;
+          
+        }
+        p{
+            margin-bottom: 0;
+        }
+        .get-quote{
+            margin-top: 40px;
+            .custom-btn{
+                margin-top: 15px;
+            }
+        }
+        .sns{
+            .sns-box{
+                display: flex;
+                i{
+                    margin: 10px 10px 10px 0;
+                    background: green;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 22px;
+                }
+                .fa-facebook-f{
+                    padding: 10px 13px 10px 13px;
+                }
+            }
+        }
+        .quote{
+            margin-top: 0px!important;
+            label,p{
+                font-size: 13px;
+            }
+            
+        }
     }
 }

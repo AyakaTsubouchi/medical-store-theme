@@ -1,0 +1,30 @@
+@import 'color';
+
+.modal-content{
+    color: gray;
+    .modal-header{
+        background: $accent-color;
+        color: white;
+        font-size: 30px;
+        .close{
+            color: white;
+        }
+    }
+    .modal-body{
+        background: #f0f0f0;
+        .col-12{
+            margin-top: 10px;
+        }
+        label{
+            font-size: 12px ;
+            margin-bottom: 0;
+        }
+        p{
+            font-size: 10px;
+        }
+    }
+    .custom_btn{
+        background: $accent-color;
+        color: white;
+    }
+}

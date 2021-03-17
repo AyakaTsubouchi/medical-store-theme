@@ -2,7 +2,10 @@
     display: flex;
     background-color: #F3F3F3;
     flex-wrap: wrap;
+    padding-top: 20px;
+    padding-bottom: 10px;
     .category-list{
       display: flex;
+      text-align: center;
     }
 }

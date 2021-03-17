@@ -16,43 +16,72 @@
 <body <?php body_class(); ?>>
    <div class="overflow">
       <header>
-         <div class="container">
-            <div class="row">
-               <div class="logo">
-                  <div class="logo-wrapper">
-                     <?php echo get_custom_logo(); ?>
-                  </div>
+         <div class="top-header">
+            <div class="container">
+               <div class="row">
+
+                  <p>ALERT: Tremendous demand for COVID-19 testing supplies may lead to delays in response times, orders and fulfillment for many of our products. We’re committed to your needs and are working virtually nonstop to meet them.</p>
                </div>
                <?php
-               if (is_active_sidebar('custom-header-widget')) {
-                  dynamic_sidebar('custom-header-widget');
+               if (is_active_sidebar('custom-topheader-widget')) {
+                  dynamic_sidebar('custom-topheader-widget');
                }
                ?>
             </div>
-            <nav class="navbar navbar-expand-lg nav-toggler-right no-padding-on-mobile">
-               <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <i class="fas fa-bars"></i>
-               </button>
-               <?php
-               wp_nav_menu(array(
-                  'theme_location'  => 'medical_header_menu',
-                  'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
-                  'container'       => 'div',
-                  'container_class' => 'collapse navbar-collapse nav-contents',
-                  'container_id'    => 'navbarNavAltMarkup',
-                  'menu_class'      => 'navbar-nav',
-                  'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
-                  'walker'          => new WP_Bootstrap_Navwalker(),
-               ));
-               ?>
 
-            </nav>
+
+         </div>
+         <div class="middle-header">
+
+
+            <div class="container">
+               <div class="row">
+                  <div class="logo col-lg-4 col-md-6">
+                     <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                     </button>
+                     <div class="logo-wrapper">
+                        <?php echo get_custom_logo(); ?>
+                     </div>
+                  </div>
+                  <div class="search-btn-for-mobile col-md-6">
+                     <!-- <i class="fas fa-search"></i> -->
+                     <?php
+                     if (is_active_sidebar('custom-header-widget')) {
+                        dynamic_sidebar('custom-header-widget');
+                     }
+                     ?>
+                  </div>
+                  <div class="search-wrapper col-lg-8">
+
+                     <?php
+                     if (is_active_sidebar('custom-header-widget')) {
+                        dynamic_sidebar('custom-header-widget');
+                     }
+                     ?>
+                  </div>
+
+               </div>
+               <nav class="navbar navbar-expand-lg nav-toggler-right no-padding-on-mobile">
+                  <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                     <i class="fas fa-bars"></i>
+                  </button> -->
+                  <?php
+                  wp_nav_menu(array(
+                     'theme_location'  => 'medical_header_menu',
+                     'depth'           => 3, // 1 = no dropdowns, 2 = with dropdowns.
+                     'container'       => 'div',
+                     'container_class' => 'collapse navbar-collapse nav-contents',
+                     'container_id'    => 'navbarNavAltMarkup',
+                     'menu_class'      => 'navbar-nav',
+                     'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+                     'walker'          => new WP_Bootstrap_Navwalker(),
+                  ));
+                  ?>
+
+               </nav>
+            </div>
+
          </div>
 
-
-
       </header>
-
-
-
-      <!-- <div class="adjusting-header-height" style="height: 10px;"></div> -->

@@ -10,9 +10,9 @@ if (have_posts()) :
 ?>
         <div class="about">
             <section class="hero-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
-            <div class="content">                
-                <?php the_content(); ?>
-            </div>
+                <div class="content">
+                    <?php the_content(); ?>
+                </div>
             </section>
             <?php
             global $post;

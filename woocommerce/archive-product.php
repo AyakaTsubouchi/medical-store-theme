@@ -22,16 +22,24 @@ get_header('shop');
 /**
  * Display category image on category archive
  */
-add_action( 'woocommerce_archive_description', 'woocommerce_category_image', 2 );
-function woocommerce_category_image() {
-    if ( is_product_category() ){
-	    global $wp_query;
-	    $cat = $wp_query->get_queried_object();
-	    $thumbnail_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
-	    $image = wp_get_attachment_url( $thumbnail_id );
-	    if ( $image ) {
-		    echo '<img src="' . $image . '" alt="' . $cat->name . '"  class="cat-image"/>';
+add_action('woocommerce_archive_description', 'woocommerce_category_image', 2);
+function woocommerce_category_image()
+{
+	if (is_product_category()) {
+		global $wp_query;
+		$cat = $wp_query->get_queried_object();
+		$thumbnail_id = get_term_meta($cat->term_id, 'thumbnail_id', true);
+		$image = wp_get_attachment_url($thumbnail_id);
+		if ($image) {
+			echo '<img src="' . $image . '" alt="' . $cat->name . '"  class="cat-image"/>';
 		}
+	}
+}
+add_filter('loop_shop_columns', 'loop_columns', 999);
+if (!function_exists('loop_columns')) {
+	function loop_columns()
+	{
+		return 3; // 3 products per row
 	}
 }
 
@@ -42,13 +50,18 @@ function woocommerce_category_image() {
  * @hooked woocommerce_breadcrumb - 20
  * @hooked WC_Structured_Data::generate_website_data() - 30
  */
-do_action('woocommerce_before_main_content');
+// do_action('woocommerce_before_main_content');
+remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
 ?>
 <header class="woocommerce-products-header">
-	<?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
-		<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
-	<?php endif; ?>
+	<?php
+	// if (apply_filters('woocommerce_show_page_title', true)) : 
+	?>
+	<!-- <h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1> -->
+	<?php
+	// endif; 
+	?>
 
 
 	<?php
@@ -59,7 +72,7 @@ do_action('woocommerce_before_main_content');
 	 * @hooked woocommerce_product_archive_description - 10
 	 */
 
-	do_action('woocommerce_archive_description');
+	// do_action('woocommerce_archive_description');
 	?>
 </header>
 <div class="container">
@@ -67,17 +80,36 @@ do_action('woocommerce_before_main_content');
 
 	<div class="row">
 		<div class="col-lg-3">
-			<?php if (is_active_sidebar('product-sidebar')) {
-				dynamic_sidebar('product-sidebar');
-			}
-			// get_sidebar(); 
-			?>
+			<div class="sorting">
+				<h3>Sorting Options</h3>
+				<?php if (is_active_sidebar('product-sidebar')) {
+					dynamic_sidebar('product-sidebar');
+				}
 
+				?>
+			</div>
+			<div class="contact">
+
+				<h3>Need Help?</h3>
+				<p>
+					Have questions about our products? Get in contact with one of our swab experts!
+				</p>
+				<div class="custom-btn">
+					<a href="/contact">Contact Us</a>
+				</div>
+			</div>
 		</div>
 		<div class="col-lg-9">
-
-
 			<?php
+			do_action('woocommerce_before_main_content'); ?>
+			<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
+			<?php
+			do_action('woocommerce_archive_description');
+
+			?>
+			<hr>
+			<?php
+
 			if (woocommerce_product_loop()) {
 
 				/**

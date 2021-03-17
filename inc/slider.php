@@ -34,13 +34,17 @@
 
         ?>
                 <div class="carousel-item active carousel_one">
-                    <a href="<?php get_post_permalink(); ?>">
-                        <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px">
+
+                    <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px; background-position: center; background-repeat: no-repeat; background-size: cover;">
+                        <div class="content">
                             <?php the_content();
                             echo $button;
                             ?>
+
                         </div>
-                    </a>
+                        
+                    </div>
+
                 </div>
 
         <?php
@@ -67,13 +71,13 @@
         ?>
 
                 <div class="carousel-item carousel_one">
-                    <a href="<?php get_post_permalink(); ?>">
-                        <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px">
-                            <?php the_content();
-                            echo $button;
-                            ?>
-                        </div>
-                    </a>
+
+                    <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px; background-position: center; background-repeat: no-repeat; background-size: cover;">
+                        <?php the_content();
+                        echo $button;
+                        ?>
+                    </div>
+
                 </div>
 
         <?php

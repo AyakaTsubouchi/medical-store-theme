@@ -19,23 +19,7 @@
         font-size: 23px;
         color: #008066;
     }
-    .custom-btn {
-        a {
-            transition: 0.2s;
-            color: white;
-            background: green;
-            padding: 4px 9px;
-            border-radius: 16px;
-            text-decoration: none;
-        }
-    }
-    .custom-btn:hover {
-        a {
-            background: white;
-            border: 1px solid green;
-            color: green;
-        }
-    }
+   
 
     .image-text-two-col {
         h2 {
@@ -58,10 +42,19 @@
                 margin-bottom: 2rem;
             }
             max-width: 800px;
-            margin: 0 auto;
-            padding-top: 30px;
-            padding-bottom: 30px;
+            position: relative;
+            padding: 40px;
+            overflow: hidden;
+
+            // transform: translate(20px,20%);
             .content {
+                // background-color: rgba(255, 255, 255, 0.8);
+                padding: 10px;
+                border-left: 1px #008066 solid;
+                margin-bottom: 10px;
+                p {
+                    padding-bottom: 0px;
+                }
                 img {
                     width: 100%;
                     object-fit: contain;
@@ -70,8 +63,10 @@
         }
     }
     .standard {
-        max-width: 850px;
+        // max-width: 850px;
         margin: 0 auto;
+        margin-top: 30px;
+        padding-bottom: 40px;
         h2 {
             text-align: center;
             line-height: 75px;
@@ -102,15 +97,34 @@
             .wp-block-embed.is-type-video {
                 text-align: center;
             }
-            .custom-btn{
+            .custom-btn {
                 text-align: center;
             }
         }
 
         .card {
+            h5{
+                text-align: center;
+                color: $accent-color;
+            }
             img {
                 height: 300px;
                 object-fit: cover;
+            }
+            a {
+                color: $accent-color;
+            }
+        }
+      
+    }
+    .image-text-two-col {
+        .img-wrapper {
+            text-align: center;
+        }
+        .custom-btn{
+            margin-top: 35px;
+            a{
+                padding: 10px 34px;
             }
         }
     }
@@ -128,5 +142,10 @@
                 font-size: 13px;
             }
         }
+    }
+}
+.tribe-events-widget-events-list{
+    a{
+        color: $accent-color;
     }
 }

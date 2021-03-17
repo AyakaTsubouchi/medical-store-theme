@@ -136,8 +136,8 @@ add_action('after_setup_theme', 'consilting_register_nav_menu');
 function html5_search_form( $form ) { 
   $form = '<section class="search"><form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
  <label class="screen-reader-text" for="s">' . __('',  'domain') . '</label>
-  <input class="search-text" type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Keyword" />
-  <input class="search-btn" type="submit" id="searchsubmit" value="'. esc_attr__('Go!', 'domain') .'" />
+  <input class="search-text" type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search for Products, Category, ETC" />
+  <button class="search-btn" type="submit" id="searchsubmit" ><i class="fas fa-search"></i></button>
   </form></section>';
   return $form;
 }
@@ -242,17 +242,17 @@ function product_sidebar_init()
 }
 add_action('widgets_init', 'product_sidebar_init');
 //Register custom footer6
-function footer6_widgets_init()
+function footer4_widgets_init()
 
 {
   register_sidebar(array(
-    'name'          => 'Footer6 Widget',
-    'id'            => 'footer6-widget',
-    'before_widget' => '<div class="footer6-widget">',
+    'name'          => 'Footer4 Widget',
+    'id'            => 'footer4-widget',
+    'before_widget' => '<div class="footer4-widget">',
     'after_widget'  => '</div>',
   ));
 }
-add_action('widgets_init', 'footer6_widgets_init');
+add_action('widgets_init', 'footer4_widgets_init');
 
 //Register custom footer1
 function footer1_widgets_init()
@@ -992,3 +992,46 @@ add_filter( 'woocommerce_products_widget_query_args', function( $query_args ){
     //     };
       
     // }
+
+    //woocommerce disable the image zoom
+    function remove_image_zoom_support()
+    {
+      remove_theme_support('wc-product-gallery-zoom');
+    }
+    add_action('wp', 'remove_image_zoom_support', 100);
+    
+    //woocommerce: add navigation for gallery slider
+    add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
+/** 
+ * Filer WooCommerce Flexslider options - Add Navigation Arrows
+ */
+// function sf_update_woo_flexslider_options( $options ) {
+
+//     $options = array(
+//       'rtl'            => is_rtl(),
+//       'animation'      => 'slide',
+//       'smoothHeight'   => true,
+//       'directionNav'   => true,
+//       'controlNav'     => 'thumbnails',
+     
+//       'slideshow'      => false,
+//       'animationSpeed' => 500,
+//       'animationLoop'  => false, // Breaks photoswipe pagination if true.
+//       'allowOneSlide'  => true,
+//     );
+
+//     return $options;
+// }
+    
+    
+    //allow to upload svg file
+    function cc_mime_types($mimes) {
+      $mimes['svg'] = 'image/svg+xml';
+      return $mimes;
+    }
+    add_filter('upload_mimes', 'cc_mime_types');
+    
+    
+    
+    
+   

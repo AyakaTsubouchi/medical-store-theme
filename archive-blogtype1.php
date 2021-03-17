@@ -17,8 +17,6 @@ Template name: Blog type1 archive
 
     <div class="contents">
         <div class="container">
-
-
             <?php
             if (have_posts()) :
 

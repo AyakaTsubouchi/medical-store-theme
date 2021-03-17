@@ -1,12 +1,15 @@
+@import 'color';
+
 .archive-blogtype {
   .woocommerce-breadcrumb{
     margin-left: 5vw;
+  
   }
     .contents {
         margin-top: 50px;
 
         h1 {
-            font-weight: 600;
+            font-weight: 100;
             line-height: 75px;
             span {
                 display: inline-block;
@@ -41,23 +44,31 @@
                 width: 250px;
 
                 display: inline-block;
-                margin-left: 5px;
-                margin-right: 5px;
+                margin-left: 15px;
+                margin-right: 15px;
                 flex-shrink: 0;
                 img {
                     width: 100%;
                     height: 250px;
                     object-fit: cover;
+                    border-bottom: 3px solid $accent-color;
+                }
+                img:hover {
+                    opacity: 0.5;
+                }
+                .card-title{
+                    color: $accent-color;
                 }
             }
         }
     }
     .banner {
-        padding: 30px;
+        padding: 60px;
         .container {
             text-align: center;
             h2 {
                 line-height: 75px;
+                font-weight: 100;
                 span {
                     display: inline-block;
                     position: relative;
@@ -81,18 +92,21 @@
                     margin-left: 10px;
                 }
             }
+            p{
+                margin-bottom: 3rem;
+            }
             .custom-btn {
                 transition: 0.2s;
                 color: white;
-                background: green;
-                padding:6px 34px;
-                border-radius: 16px;
+                background: $accent-color;
+                padding: 16px 34px;
+                border-radius: 30px;
                 text-decoration: none;
             }
             .custom-btn:hover {
                 background: white;
-                border: 1px solid green;
-                color: green;
+                border: 1px solid $accent-color;
+                color: $accent-color;
             }
             p{
                 font-size: 17px;

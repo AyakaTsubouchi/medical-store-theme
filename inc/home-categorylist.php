@@ -27,25 +27,26 @@ foreach ($all_categories as $cat) {
     }
     if ($cat->category_parent == 0) {
         $category_id = $cat->term_id;
-
+        $cat_id = "product_cat_$category_id"
 ?>
 
         <div class="category-list  col">
 
-           
-                <div class="image-wrapper" style="backgroundimage:url('http://localhost:8888/wp-content/uploads/2021/03/cheese.png'); height:100px;">
-                    <a href="<?php echo  get_term_link($cat->slug, 'product_cat');  ?>" >
-                      <img src="http://localhost:8888/wp-content/uploads/2021/03/cheese.png" alt="" style="width:80px;">
+            <div class="container">
+
+
+                <div class="image-wrapper">
+                    <a href="<?php echo  get_term_link($cat->slug, 'product_cat');  ?>">
+                        <img src="<?php echo get_field('icon', $cat_id); ?>" alt="" style="width:60px;    width: 60px; background: <?php echo get_field('icon_background_color', $cat_id); ?>;   border-radius: 40px; padding: 10px;">
                     </a>
-             
 
 
-                <h5 class="title"> <?php echo  $cat->name;  ?></h5>
+                    <h5 class="title"> <?php echo  $cat->name;  ?></h5>
 
+                </div>
             </div>
+
         </div>
-
-
 
 
 

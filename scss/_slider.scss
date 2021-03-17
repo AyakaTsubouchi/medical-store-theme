@@ -1,0 +1,23 @@
+@import 'color';
+
+.slider_section{
+    .content{
+
+        background: rgba(255,255,255,0.8);
+        display: inline-block;
+        padding: 50px;
+        transform: translate(0px, 50%);
+        font-size: 30px;
+        border-radius: 0 37px 0 37px;
+        h2{
+            span:before,
+            span:after{
+                width:0;
+            }
+        }
+    }
+    .custom-btn{
+        font-size: 14px;
+    }
+    
+}

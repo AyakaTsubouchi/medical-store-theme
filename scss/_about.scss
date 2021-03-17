@@ -1,16 +1,23 @@
 @import 'color';
 .about{
+    h2{
+        font-weight: 100;
+    }
     .hero-image{
+        overflow: hidden;
         height: 400px;
-        // padding-top: 20px;
+        background-size:cover;
         .content{
+          
             background: $main-color;
-            width: 30%;           
+            width: 45%;           
             transform: translate(20% ,30%);
             color: white;
             padding: 20px;
+        
             h2{
                 padding-left: 20px;
+               
             }
             p{
                 font-size: 14px;
@@ -18,6 +25,43 @@
                 padding-left: 20px;
                 font-size: 11px;
             }
+            }
+            @media (max-width: 992px) {
+                .content{
+                    width: 70%; 
+                    transform: translate(15%, 60%);
+                }
+             }
+            @media (max-width: 600px) {
+                .content{
+                    width: 90%; 
+                    transform: translate(5%, 100px);
+                }
+             }
+            @media (max-width: 400px) {
+                .content{
+                    width: 100%; 
+                    transform: translate(0%, 30px);
+                }
+             }
+        }
+        .banner{
+            .content{
+                border-left: none!important;
+            }
+        }
+        iframe{
+            width: 100%;
+            height: 500px;
+        }
+        .standard{
+            .content{
+                .is-style-rounded{
+                    // img{
+                    //     background-color: $accent-color;
+                    //     padding: 10px;
+                    // }
+                }
             }
         }
     }

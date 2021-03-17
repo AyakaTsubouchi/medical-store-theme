@@ -1,6 +1,8 @@
+@import "color";
 .fixed-btn-wrapper {
     position: fixed;
-    bottom: 50%;
+    bottom: 40%;
+    transform: translate(0px, 200px);
     right: 50px;
     text-align: center;
     .message-button {
@@ -34,16 +36,50 @@
         a {
             color: white;
         }
-        background-color: $accent-color;
         border-radius: 50px;
         margin-top: 50px;
-        box-shadow: 2px 1px 5px #888887;
-        i {
-            padding: 50px;
-            font-size: 30px;
+        img {
+            width: 100px;
+            transition: 0.4s;
+        }
+        img:hover {
+            transform: rotate(-25deg);
         }
         @media (max-width: 991px) {
             display: none;
+        }
+    }
+}
+.site-footer {
+    background: $secondary-color;
+    padding-top: 20px;
+    a{
+        color: white;
+    }
+    li {
+        list-style: none;
+        a {
+            color: black;
+        }
+    }
+    li.footer-title {
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    .footer4-widget {
+        margin-left: 30px;
+        margin-top: -10px;
+    }
+    .footer-bottom {
+        background: green;
+        color: white;
+        text-align: center;
+        .copyright_txt {
+            height: 50px;
+            p {
+                line-height: 40px;
+            }
         }
     }
 }

@@ -1,45 +1,24 @@
 /*--------------------------------------
 Header
 -----------------------------------------------------*/
+// add background color when scrolling some amount
+$(document).ready(function() {
+  $(window).scroll(function() {
+    var scrollPos = $(document).scrollTop();
 
-//to close an open collapsed nav when clicking the element.
-// $(document).ready(function() {
-//   $(".nav-link").click(function() {
-//     $(".navbar-collapse").collapse("hide");
-//     $("body").removeClass("sidebar-margin");
-//     $(".sidenav-backdrop").removeClass("show");
-//   });
-// });
-
-//to close an open collapsed nav when clicking outside of the nav elements.
-// $(document).ready(function() {
-//   $(document).click(function(event) {
-//     var clickover = $(event.target);
-//     var _opened = $("#navbarNavAltMarkup").hasClass("show");
-//     if (_opened === true && !clickover.hasClass("navbar-toggler")) {
-//       $(".navbar-toggler").click();
-//       $("body").removeClass("sidebar-margin");
-//       $(".sidenav-backdrop").removeClass("show");
-//     }
-//   });
-// });
-
-// $(document).ready(function() {
-//   $(document).click(function(event) {
-//     var clickover = $(event.target);
-//     var _opened = $(".dropdown-menu").hasClass("show");
-//     if (_opened === false && clickover.hasClass(" menu-item-has-children")) {
-//       $(".dropdown-menu").addClass("show");
-//     }
-//     else{
-//       $(".dropdown-menu").removeClass("show");
-//     }
-//   });
-// });
+    if (scrollPos > 10) {
+      $("header .middle-header").addClass("sticky");
+      $(".adjusting-header-heigh").addClass("add-height");
+    } else {
+      $("header .middle-header").removeClass("sticky");
+      $(".adjusting-header-heigh").removeClass("add-height");
+    }
+  });
+});
 
 //slider
 $(document).ready(function() {
- $('.carousel-indicators li::firstchild').addClass('active');
+  $(".carousel-indicators li::firstchild").addClass("active");
 });
 
 /*--------------------------------------
@@ -49,17 +28,17 @@ End of Header
 Footer
 -------------------------------------*/
 // to show the button after scrolling
-$(document).ready(function() {
-  $(window).scroll(function() {
-    var scrollPos = $(document).scrollTop();
+// $(document).ready(function() {
+//   $(window).scroll(function() {
+//     var scrollPos = $(document).scrollTop();
 
-    if (scrollPos < 200) {
-      $(".back-to-top").removeClass("shown");
-    } else if (scrollPos >= 200) {
-      $(".back-to-top").addClass("shown");
-    }
-  });
-});
+//     if (scrollPos < 200) {
+//       $(".back-to-top").removeClass("shown");
+//     } else if (scrollPos >= 200) {
+//       $(".back-to-top").addClass("shown");
+//     }
+//   });
+// });
 /*--------------------------------------
 End of Footer
 -------------------------------------*/
@@ -69,16 +48,18 @@ End of Footer
 
 // TODO
 $(document).ready(function() {
- $('.material-list .content .card .right-container .read-toggle').on('click',function(){
-   if(!$('.material-list .content .right-container .more').hasClass('shown')){
-     $('.material-list .content .right-container .more').addClass('shown');
-     $('.material-list .content .right-container .read-toggle').replaceWith('<div class="read-toggle">Read Less</div>');
-   }else if($('.material-list .content .right-container .more').hasClass('shown')){
-     alert('ge');
-    $('.material-list .content .right-container .more').removeClass('shown');
-    $('.material-list .content .right-container .read-toggle').replaceWith('<div class="read-toggle">Read More</div>');
-   }
- });
+  $(".material-list .content .card .right-container .read-toggle").on(
+    "click",
+    function(e) {
+      if(!$(this).siblings('.right-container .more').hasClass("shown")){
+        $(this).siblings('.right-container .more').addClass("shown");
+        $(this).text("Read Less");
+      }else{
+        $(this).siblings('.right-container .more').removeClass("shown");
+        $(this).text("Read More");
+      }
+    }
+  );
 });
 
 /*--------------------------------------
@@ -90,27 +71,95 @@ End of Material List
 -------------------------------------*/
 // change iframe default width and height
 
-  $(window).on("load", function() {
-    $(".contact-section .my-container .google-map iframe").removeAttr("width");
-    $(".contact-section .my-container .google-map iframe").removeAttr("height");
-    $(".contact-section .my-container .google-map iframe").attr("width", "100%");
-    $(".contact-section .my-container .google-map iframe").attr("height", "100%");
-  });
-
+// $(window).on("load", function() {
+//   $(".contact-section .my-container .google-map iframe").removeAttr("width");
+//   $(".contact-section .my-container .google-map iframe").removeAttr("height");
+//   $(".contact-section .my-container .google-map iframe").attr("width", "100%");
+//   $(".contact-section .my-container .google-map iframe").attr("height", "100%");
+// });
 
 /*--------------------------------------
 End of Contact
 -------------------------------------*/
 
-
-
-
 /*--------------------------------------
-Gallery page
+Product page
 -------------------------------------*/
-
+//TODO product archive sidebar for accordion
+$(document).ready(function() {
+  $(".widget-1 h5.card-title").addClass('plus');
+  $(".widget-2 h5.card-title").addClass('plus');
+  $(".widget-3 h5.card-title").addClass('plus');
+  
+  $(".widget-1 h5.card-title").on("click", function(e) {
+    if (
+      !$(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .hasClass("show")
+    ) {
+      $(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .addClass("show");
+        $(".widget-1 h5.card-title").removeClass('plus');
+        $(".widget-1 h5.card-title").addClass('minus');
+        
+    } else {
+      $(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .removeClass("show");
+        $(".widget-1 h5.card-title").removeClass('minus');
+        $(".widget-1 h5.card-title").addClass('plus');
+    }
+  
+  });
+  $(".widget-2 h5.card-title").on("click", function(e) {
+    // event.preventDefault();
+    // alert("hi");
+    if (
+      !$(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .hasClass("show")
+    ) {
+      $(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .addClass("show");
+        $(".widget-2 h5.card-title").removeClass('plus');
+        $(".widget-2 h5.card-title").addClass('minus');
+        
+    } else {
+      $(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .removeClass("show");
+        $(".widget-2 h5.card-title").removeClass('minus');
+        $(".widget-2 h5.card-title").addClass('plus');
+    }
+  
+  });
+  $(".widget-3 h5.card-title").on("click", function(e) {
+    if (
+      !$(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .hasClass("show")
+    ) {
+      $(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .addClass("show");
+        $(".widget-3 h5.card-title").removeClass('plus');
+        $(".widget-3 h5.card-title").addClass('minus');
+        
+    } else {
+      $(this)
+        .siblings(".woocommerce-widget-layered-nav-list")
+        .removeClass("show");
+        $(".widget-3 h5.card-title").removeClass('minus');
+        $(".widget-3 h5.card-title").addClass('plus');
+    }
+  
+  });
+  
+});
 
 
 /*--------------------------------------
-End of Gallery page
+End of Product page
 -------------------------------------*/

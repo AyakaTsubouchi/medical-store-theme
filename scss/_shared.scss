@@ -1,12 +1,16 @@
 .overflow {
     overflow-x: hidden;
-    min-height: calc(100vh - 100px);
+   
+  }
+  
+  a{
+    color: $main-color;
   }
   .custom-btn {
     a{    
       transition: 0.2s;
       color: white;
-      background: green;
+      background: $btn-color;
       padding:6px 34px;
       border-radius: 16px;
       text-decoration: none;
@@ -14,7 +18,7 @@
 }
 .custom-btn:hover a{
     background: white;
-    border: 1px solid green;
-    color: green;
+    border: 1px solid $btn-color;
+    color: $btn-color!important;
     cursor: pointer;
 }

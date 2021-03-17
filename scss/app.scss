@@ -12,14 +12,23 @@
 @import "archive-blogtype";
 @import "404";
 @import "footer";
+@import "slider";
+@import "quoteform";
+@import "form-mail";
+@import "search-result";
+@import "taxonomy-educations";
 
 
 //inc
 @import "inc-categorylist";
 @import "inc-page-post-style-material-list";
+@import "_message-modal";
 
 //templete
 @import "single-blogtype1";
+@import "single-blogtype3";
 
 //woocommerce
-@import "woo-product-category";
+// @import "woo-product-category";
+@import "_woo-single-product";
+@import "woo-product-archive";

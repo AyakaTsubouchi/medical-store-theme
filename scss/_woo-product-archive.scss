@@ -1,0 +1,121 @@
+.attachment-woocommerce_thumbnail {
+}
+.woocommerce {
+    h3 {
+        font-weight: 100;
+    }
+    .container {
+        // margin-top: 30px;
+
+        h3 {
+            color: $accent-color;
+            font-size: 24px;
+        }
+        .plus::after {
+            content: "+";
+            margin-left: 20px;
+        }
+        .minus::after {
+            content: "-";
+            margin-left: 20px;
+        }
+        .sorting {
+            .card-title {
+                color: gray;
+                font-size: 15px;
+            }
+            .card-title:hover {
+                cursor: pointer;
+            }
+
+            a {
+                color: gray;
+                font-size: 13px;
+            }
+            .count {
+                color: gray!important;
+                font-size: 13px!important;
+            }
+            ul {
+                display: none;
+            }
+            .show {
+                display: block !important;
+            }
+
+            .widget-1 {
+                border: none;
+                border-bottom: 1px solid gray;
+            }
+            .widget-2 {
+                margin-top: 10px;
+                border: none;
+                border-bottom: 1px solid gray;
+            }
+            .widget-3 {
+                margin-top: 10px;
+                border: none;
+                border-bottom: 1px solid gray;
+            }
+            .widget-4 {
+                margin-top: 10px;
+                border: none;
+                border-bottom: 1px solid gray;
+            }
+        }
+        .contact {
+            margin-top: 30px;
+            // @media (max-width: 400px) {
+            //    display: none;
+            // }
+        }
+    }
+    .site-main {
+        @media (max-width: 992px) {
+           margin-top: 100px;
+        }
+        .page-title {
+            font-size: 30px;
+            font-weight: 100;
+        }
+        .cat-image{
+            @media (max-width: 992px) {
+                height: auto;
+            }
+        }
+        
+    }
+
+    .onsale {
+        display: none;
+    }
+    ul.products {
+        li.product-category{
+            img{
+                opacity: 1z;
+            }
+        }
+        li.product-category:hover{
+            img{
+                opacity: 0.3;
+            }
+        }
+        li.product {
+            a {
+                color: gray;
+                img {
+                    height: 200px;
+                    object-fit: contain;
+                    border: 1px solid #ccc;
+                    padding: 10px;
+                }
+            }
+            .price {
+                display: none !important;
+            }
+            .add_to_cart_button {
+                display: none;
+            }
+        }
+    }
+}
