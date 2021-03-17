@@ -1,7 +1,7 @@
 @import 'color';
 
 .slider_section{
-    .content{
+    .button-wrapper{
 
         background: rgba(255,255,255,0.8);
         display: inline-block;
@@ -15,9 +15,43 @@
                 width:0;
             }
         }
+        @media (max-width:570px) {
+            padding: 50px;
+            transform: translate(0px, 20%);
+            h2{
+                line-height: 1.2;
+            }
+        }
+    }
+    .content{
+        width: 60%;
+        color: white;
+        background: rgb(43, 52, 59);
+        display: inline-block;
+        padding: 20px;
+        transform: translate(30%, 10%);
+        h2{
+            line-height: 1;
+        }
+        
+       
+        p{
+            border-left: 3px solid $accent-color;
+            padding-left: 20px;
+        }
+        @media (max-width:700px) {
+            width: 100%;
+            transform: translate(0%, 10%);
+        }
+        
     }
     .custom-btn{
         font-size: 14px;
+        text-align: end;
+        margin-top: 20px;
+        @media (max-width:700px) {
+            margin-top: 10px;
+        }
     }
     
 }

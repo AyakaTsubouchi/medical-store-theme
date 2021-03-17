@@ -88,7 +88,7 @@ remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
 				?>
 			</div>
-			<div class="contact">
+			<div class="contact contact-for-large-screen">
 
 				<h3>Need Help?</h3>
 				<p>
@@ -163,6 +163,16 @@ remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 
 
 			?>
+			<div class="contact contact-for-mobile">
+
+				<h3>Need Help?</h3>
+				<p>
+					Have questions about our products? Get in contact with one of our swab experts!
+				</p>
+				<div class="custom-btn">
+					<a href="/contact">Contact Us</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

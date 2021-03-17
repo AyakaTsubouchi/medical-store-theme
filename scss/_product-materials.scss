@@ -1,15 +1,18 @@
 @import 'color';
 .pm-post {
     .hero-image{
+        overflow: hidden;
         height: 400px;
+        background-size:cover;
         .content{
             background: $main-color;
-            width: 30%;           
+            width: 45%;               
             transform: translate(20% ,30%);
             color: white;
             padding: 20px;
             h2{
                 padding-left: 20px;
+                color: white;
             }
             p{
                 font-size: 14px;
@@ -18,6 +21,24 @@
                 font-size: 11px;
             }
             }
+            @media (max-width: 992px) {
+                .content{
+                    width: 70%; 
+                    transform: translate(15%, 60%);
+                }
+             }
+            @media (max-width: 600px) {
+                .content{
+                    width: 90%; 
+                    transform: translate(5%, 100px);
+                }
+             }
+            @media (max-width: 400px) {
+                .content{
+                    width: 100%; 
+                    transform: translate(0%, 30px);
+                }
+             }
         }
     h2 {
         text-align: center;

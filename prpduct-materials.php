@@ -15,7 +15,6 @@ if (have_posts()) :
 
             <section class="hero-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
                 <div class="content">
-
                     <?php the_content(); ?>
                 </div>
             </section>

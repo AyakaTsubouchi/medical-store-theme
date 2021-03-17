@@ -23,13 +23,14 @@
             }
         }
         .card:hover {
-          
+            .read-toggle {
+                cursor: pointer;
+            }
             .left-container {
                 img {
                     transform: scale(1.2);
                 }
             }
         }
-      
     }
 }

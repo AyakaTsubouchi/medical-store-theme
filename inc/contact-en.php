@@ -15,23 +15,19 @@
 					<div class="col">
 						<h5>Puritan Medical Products</h5>
 						<div class="office-one">
-							<p class="title">Puritan Medical Products
-								Corporate Headquarters and Manufacturing</p>
-							<p>31 School St.</p>
-							<p>P.O. Box 149</p>
-							<p>Guilford, ME 04443-0149</p>
+							<p class="title"><?php echo get_field("address_label", 533); ?></p>
+							<p class="address"><?php echo get_field("address", 533); ?></p>
+
 							<br>
 						</div>
 						<div class="office-two">
-							<p class="title">Manufacturing Plant</p>
-							<p>129 N Main St</p>
-							<p>Pittsfield, ME 04967</p>
+							<p class="title"><?php echo get_field("address_2_label", 533); ?></p>
+							<p class="address"><?php echo get_field("address_2", 533); ?></p>
 							<br>
 						</div>
 						<div class="office-three">
-							<p class="title">Sales and Marketing</p>
-							<p>5 Fundy Rd. Suite 1</p>
-							<p>Falmouth, ME 04105</p>
+							<p class="title"><?php echo get_field("address_3_label", 533); ?></p>
+							<p class="address"><?php echo get_field("address_3", 533); ?></p>
 							<br>
 						</div>
 					</div>
@@ -40,13 +36,15 @@
 				<div class="row">
 					<div class="col">
 						<p class="title">Phone</p>
-						<p>800-321-2313(US + CANADA)</p>
-						<p>207-876-3311</p>
+						<p><?php echo get_field("phone_label", 533);
+							echo get_field("phone", 533); ?></p>
+
 					</div>
 					<div class="col">
 						<p class="title">Fax</p>
-						<p>800-323-4153(US + CANADA)</p>
-						<p>207-876-3130</p>
+						<p><?php echo get_field("fax_label", 533);
+							echo get_field("fax", 533); ?></p>
+
 					</div>
 				</div>
 				<hr>
@@ -62,10 +60,19 @@
 					<h5>Get Social with Puritan</h5>
 					<div class="sns-box">
 
-						<a href="#"><i class="fab fa-twitter"></i></a>
-						<a href="#"><i class="fab fa-facebook-f"></i></a>
-						<a href="#"><i class="fab fa-linkedin-in"></i></a>
-						<a href="#"><i class="fab fa-youtube"></i></a>
+					
+						<?php if (get_field("instagram_link", 533))
+							echo '<a href="' . get_field("finstagram_link", 533) . '" target="_blank" ><i class="fab fa-instagram"></i></a>' ?>
+						<?php if (get_field("facebook_link", 533))
+							echo '<a href="' . get_field("facebook_link", 533) . '" target="_blank" ><i class="fab fa-facebook-f"></i></a>' ?>
+						<?php if (get_field("twitter_link", 533))
+							echo '<a href="' . get_field("twitter_link", 533) . '" target="_blank" ><i class="fab fa-twitter"></i></a>' ?>
+						<?php if (get_field("linkedin", 533))
+							echo '<a href="' . get_field("linkedin", 533) . '" target="_blank" ><i class="fab fa-linkedin-in"></i></a>' ?>
+						<?php if (get_field("youtube_link", 533))
+							echo '<a href="' . get_field("youtube_link", 533) . '" target="_blank" ><i class="fab fa-youtube"></i></a>' ?>
+
+
 					</div>
 				</div>
 
@@ -148,10 +155,10 @@
 				</div>
 			</div>
 		</div>
-		<?php  echo do_shortcode('[freeworldhtml5map id="0"]') ?>
-		<?php 
+		<?php echo do_shortcode('[freeworldhtml5map id="0"]') ?>
+		<?php
 		// include('contact_sales_for_mobile.php');
-		 ?>
-		
+		?>
+
 	</div>
-</section> 
+</section>

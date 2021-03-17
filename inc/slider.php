@@ -29,20 +29,41 @@
                 setup_postdata($post);
 
                 $btn = get_field('button_name');
+                $btnUrl = get_field('button_url');
+                $btnLabel = get_field('button_label');
+
+                $contentLabel = get_field('content_label');
+                $content = get_field('content_text');
+
                 !$btn ? $button = null :  $button = '<div class="custom-btn">
-               <a href="' . get_field('button_url') . '">' . get_field('button_name') . '</a></div>';
+               <a href="' . $btnUrl . '">' . $btn . '</a></div>';
 
         ?>
                 <div class="carousel-item active carousel_one">
 
                     <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                        <div class="content">
-                            <?php the_content();
-                            echo $button;
-                            ?>
+                        <?php
+                        if ($btnLabel) : ?>
+                            <div class="button-wrapper">
+                                <?php echo $btnLabel;
+                                echo $button;
+                                ?>
 
-                        </div>
-                        
+                            </div>
+
+                        <?php endif; ?>
+
+                        <?php
+                        if ($content) : ?>
+                            <div class="content">
+                                <div class="text-wrapper">
+                                    <h2><?php echo $contentLabel; ?></h2>
+                                    <p><?php echo  $content; ?></p>
+
+                                </div>
+                            </div>
+                        <?php endif;?>
+
                     </div>
 
                 </div>
@@ -65,17 +86,43 @@
             foreach ($gallery_post as $post) :
                 setup_postdata($post);
                 $btn = get_field('button_name');
+                $btnUrl = get_field('button_url');
+                $btnLabel = get_field('button_label');
+                $contentLabel = get_field('content_label');
+                $content = get_field('content_text');
+
                 !$btn ? $button = null :  $button = '<div class="custom-btn">
-               <a href="' . get_field('button_url') . '">' . get_field('button_name') . '</a></div>';
+               <a href="' . $btnUrl . '">' . $btn . '</a></div>';
 
         ?>
 
                 <div class="carousel-item carousel_one">
 
                     <div class="bg-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>');height:400px; background-position: center; background-repeat: no-repeat; background-size: cover;">
-                        <?php the_content();
-                        echo $button;
+                        <?php
+                        if ($btnLabel) : ?>
+                            <div class="button-wrapper">
+                                <?php echo $btnLabel;
+                                echo $button;
+                                ?>
+                            </div>
+                        <?php endif;
                         ?>
+
+                        <?php
+                        if ($content) : ?>
+                            <div class="content">
+                                <div class="text-wrapper">
+                                    <h2><?php echo $contentLabel; ?></h2>
+                                    <p><?php echo  $content; ?></p>
+
+                                </div>
+                            </div>
+                        <?php endif;?>
+
+
+
+
                     </div>
 
                 </div>
