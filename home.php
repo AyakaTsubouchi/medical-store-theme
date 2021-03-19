@@ -5,19 +5,10 @@ Template name: Home
 ?>
 <?php get_header(); ?>
 <div class="home min-height">
-
-
-    <?php
-    // if (have_posts()) :
-
-    //     while (have_posts()) : the_post();
-
-    ?>
     <?php include('inc/slider.php'); ?>
 
     <section class="product-cat"> <?php include('inc/home-categorylist.php'); ?>
     </section>
-    <!-- <div class="home"> -->
     <?php
     global $post;
 
@@ -118,15 +109,6 @@ Template name: Home
         </div>
     </section>
 
-
-
-
-
-    <?php
-
-    //     endwhile;
-    // endif;
-    ?>
 
 </div>
 <?php get_footer(); ?>

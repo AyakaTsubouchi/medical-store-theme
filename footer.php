@@ -1,15 +1,14 @@
-
 <div class="site-footer" style="overflow:hidden;">
    <section class="fixed-btn-wrapper">
       <div class="message-button" data-toggle="modal" data-target="#messageModal">
-         <i class="fas fa-comment-alt"></i>
+         <i class="far fa-envelope"></i>
       </div>
       <div class="hiring-button">
          <a href="/contact"><img src="http://localhost:8888/wp-content/uploads/2021/03/announcement-1.svg" alt="hiring"></a>
       </div>
    </section>
    <?php include('inc/message-modal.php'); ?>
-   
+
    <div class="container">
 
 
@@ -32,6 +31,23 @@
             if (is_active_sidebar('footer4-widget')) {
                dynamic_sidebar('footer4-widget');
             } ?>
+            <div class="sns-box">
+
+
+               <?php if (get_field("instagram_link", 533))
+                  echo '<a href="' . get_field("finstagram_link", 533) . '" target="_blank" ><i class="fab fa-instagram"></i></a>' ?>
+               <?php if (get_field("facebook_link", 533))
+                  echo '<a href="' . get_field("facebook_link", 533) . '" target="_blank" ><i class="fab fa-facebook-f"></i></a>' ?>
+               <?php if (get_field("twitter_link", 533))
+                  echo '<a href="' . get_field("twitter_link", 533) . '" target="_blank" ><i class="fab fa-twitter"></i></a>' ?>
+               <?php if (get_field("linkedin", 533))
+                  echo '<a href="' . get_field("linkedin", 533) . '" target="_blank" ><i class="fab fa-linkedin-in"></i></a>' ?>
+               <?php if (get_field("youtube_link", 533))
+                  echo '<a href="' . get_field("youtube_link", 533) . '" target="_blank" ><i class="fab fa-youtube"></i></a>' ?>
+
+
+            </div>
+
          </div>
 
       </div>
@@ -45,12 +61,6 @@
                      ?> All rights reserved, Powered by <a href="https://www.goopter.com/">Goopter</a></p>
 
       </div>
-      <!-- <a href="#">
-         <div class="back-to-top">
-
-            <p>↑Top</p>
-         </div>
-      </a> -->
 
    </div>
 </div>

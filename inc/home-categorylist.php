@@ -30,7 +30,7 @@ foreach ($all_categories as $cat) {
         $cat_id = "product_cat_$category_id"
 ?>
 
-        <div class="category-list  col">
+        <div class="category-list col">
 
             <div class="container">
 

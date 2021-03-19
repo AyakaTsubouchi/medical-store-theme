@@ -27,18 +27,7 @@ End of Header
 /*--------------------------------------
 Footer
 -------------------------------------*/
-// to show the button after scrolling
-// $(document).ready(function() {
-//   $(window).scroll(function() {
-//     var scrollPos = $(document).scrollTop();
 
-//     if (scrollPos < 200) {
-//       $(".back-to-top").removeClass("shown");
-//     } else if (scrollPos >= 200) {
-//       $(".back-to-top").addClass("shown");
-//     }
-//   });
-// });
 /*--------------------------------------
 End of Footer
 -------------------------------------*/
@@ -47,17 +36,21 @@ End of Footer
 -------------------------------------*/
 //slide in animation
 $(document).ready(function() {
-  $(window).scroll(function() {
-    
-    var scrollPos = $(document).scrollTop();
-    var clumn = $(".wp-block-image img").offset().top - 500; // .offset() ...
-    // var clumn = $(".wp-block-image img").offset().top - 200; // .offset() ...
-
-    if (scrollPos > clumn) {
-      $(".pm-post .wp-block-columns img").addClass("come-in");
-      $(".pm-post .wp-block-image img").addClass("come-in");
-    }
-  });
+  // if ($('body.pm-post').length > 0)
+  // {
+    $(window).scroll(function() {
+   
+      var scrollPos = $(document).scrollTop();
+      var clumn = $(".wp-block-image img").offset().top - 500; // .offset() ...
+  
+  
+      if (scrollPos > clumn) {
+        $(".pm-post .wp-block-columns img").addClass("come-in");
+        $(".pm-post .wp-block-image img").addClass("come-in");
+      }
+    });
+  // }
+ 
 });
 
 // read more toggle
@@ -89,26 +82,11 @@ $(document).ready(function() {
 End of Material List
 -------------------------------------*/
 
-/*--------------------------------------
- Contact
--------------------------------------*/
-// change iframe default width and height
-
-// $(window).on("load", function() {
-//   $(".contact-section .my-container .google-map iframe").removeAttr("width");
-//   $(".contact-section .my-container .google-map iframe").removeAttr("height");
-//   $(".contact-section .my-container .google-map iframe").attr("width", "100%");
-//   $(".contact-section .my-container .google-map iframe").attr("height", "100%");
-// });
-
-/*--------------------------------------
-End of Contact
--------------------------------------*/
 
 /*--------------------------------------
 Product page
 -------------------------------------*/
-//TODO product archive sidebar for accordion
+//product archive sidebar for accordion
 $(document).ready(function() {
   $(".widget-1 h5.card-title").addClass("plus");
   $(".widget-2 h5.card-title").addClass("plus");
@@ -134,8 +112,7 @@ $(document).ready(function() {
     }
   });
   $(".widget-2 h5.card-title").on("click", function(e) {
-    // event.preventDefault();
-    // alert("hi");
+ 
     if (
       !$(this)
         .siblings(".woocommerce-widget-layered-nav-list")

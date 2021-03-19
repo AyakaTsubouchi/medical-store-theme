@@ -9,8 +9,9 @@
         margin-top: 50px;
 
         h1 {
-            font-weight: 100;
-            line-height: 75px;
+           line-height: 75px;
+            margin-bottom: 30px;
+           
             span {
                 display: inline-block;
                 position: relative;
@@ -68,7 +69,7 @@
             text-align: center;
             h2 {
                 line-height: 75px;
-                font-weight: 100;
+                // font-weight: 100;
                 span {
                     display: inline-block;
                     position: relative;

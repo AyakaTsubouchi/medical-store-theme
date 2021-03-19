@@ -1,7 +1,7 @@
 @import "color";
 .contactus {
     h2 {
-        font-weight: 100;
+        // font-weight: 100;
         line-height: 75px;
         span {
             display: inline-block;
@@ -79,7 +79,6 @@
             label,
             p {
                 font-size: 13px;
-               
             }
         }
         .contactus-form {
@@ -98,10 +97,10 @@
                         color: $accent-color;
                     }
                 }
-                p{
+                p {
                     font-size: 12px;
                     line-height: 1.2;
-                   margin-top: 10px;
+                    margin-top: 10px;
                 }
                 .form-custom-btn {
                     background-color: $accent-color;

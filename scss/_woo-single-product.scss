@@ -31,58 +31,32 @@
         padding-left: 50px;
         padding-right: 50px;
         margin-bottom: 150px;
-        //category archive
-        .cat-image {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        @media (max-width: 380px) {
+            padding-left: 10px;
+            padding-right: 10px;
         }
-        .product_type_simple {
-            display: none;
+
+        @media (max-width: 767px) {
+            .wpgis-slider-nav {
+                display: none;
+            }
         }
        
-     
-      
-        //single product
-        .woocommerce-product-gallery {
-            .woocommerce-product-gallery__image {
-                height: 500px;
-            }
-          
-
-            .flex-control-nav {
-                display: flex;
-                @media (max-width: 992px) {
-                    display: none;
-            }
-                li {
-                    list-style-type: none;
-                    margin-right: 10px;
-
-                    img {
-                        height: 150px;
-                        object-fit: cover;
-                    }
-                }
-            }
-        }
-
     }
- 
 
     .product-main {
-        font-weight: 100;
+        // font-weight: 100;
         margin-top: 50px;
         .product-title {
             border-left: 3px $accent-color solid;
             padding-left: 30px;
             h3 {
                 line-height: 1;
-                font-weight: 100;
+                // font-weight: 100;
             }
             h5 {
                 color: $accent-color;
-                font-weight: 100;
+                // font-weight: 100;
             }
         }
         .attribute-icons {
@@ -109,23 +83,21 @@
             }
         }
         .review-section {
-            h5{
-                font-weight: 100;
+            h5 {
+                // font-weight: 100;
                 color: $accent-color;
-                font-size: 18
-                px;
-                
+                font-size: 18 px;
             }
-            a:hover{
+            a:hover {
                 color: initial;
                 text-decoration: none;
             }
             .share {
                 border-left: 1px solid #ccc;
-                
-                a{
+
+                a {
                     color: $accent-color;
-                    i{
+                    i {
                         color: gray;
                         margin-right: 10px;
                     }
@@ -133,17 +105,16 @@
             }
         }
         .contact-us {
-            a{
+            a {
                 color: $accent-color;
                 i {
                     margin-right: 10px;
                 }
             }
-            a:hover{
+            a:hover {
                 color: $accent-color;
                 text-decoration: none;
             }
-            
         }
         // .resources {
         //     a{
@@ -165,30 +136,32 @@
                 color: gray;
             }
         }
-        
     }
 
     .product-footer {
         .related {
             padding-top: 50px;
-            h2{
+            h2 {
                 color: $accent-color;
             }
-            h2.woocommerce-loop-product__title{
+            h2.woocommerce-loop-product__title {
                 color: black;
             }
         }
         .woocommerce-tabs {
+            margin-top: 30px;
             ul.wc-tabs {
                 display: flex;
                 margin-bottom: 0px;
+                font-size: 13px;
+                padding: 0;
 
                 li {
                     list-style: none;
                     border-top: 1px solid #ccc;
                     border-left: 1px solid #ccc;
                     border-right: 1px solid #ccc;
-                    padding: 10px;
+                    padding: 5px;
                     a:hover {
                         text-decoration: none;
                         color: black;
@@ -198,15 +171,16 @@
                 li.active {
                     background: #ececec;
                 }
-                .reviews_tab{
+                .reviews_tab {
                     scroll-margin-top: 450px;
                 }
             }
             .woocommerce-Tabs-panel {
                 border: 1px solid #ccc;
                 padding: 30px;
-                h2{
+                h2 {
                     font-size: 20px;
+                    display: none;
                 }
             }
         }

@@ -19,7 +19,7 @@ header {
         .container {
             padding-top: 5px;
             padding-bottom: 5px;
-            
+
             p {
                 line-height: 1.3;
                 margin-bottom: 0rem;
@@ -27,10 +27,10 @@ header {
             }
         }
     }
-    .middle-header{
+    .middle-header {
         text-transform: uppercase;
     }
-    
+
     .container {
         a {
             color: #6d6d6d;
@@ -84,123 +84,74 @@ header {
                 margin-right: -5px;
                 background-color: #eae8e8;
 
-                // border-radius: 7px 0px 0px 7px;
             }
             .search-btn {
                 padding-left: 6px;
                 border: none;
                 background: $accent-color;
                 color: white;
-                // border-radius: 0px 7px 7px 0px;
-            }
-        }
-    }
-    .dropdown:hover{
-        .dropdown-menu {
-          
-                display: block;
-        
-        }
-         
-     }
-    // .sub-menu-columns ul.dropdown-menu li {
-    //     display: inline-block;
-    //     float: left;
-    //     width: 200px;
-    //     }
-    // .sub-menu-columns ul.dropdown-menu.show li:nth-child(odd) {
-    // float: left;
-    // margin-right: 10px;
-    // }
-    // .sub-menu-columns ul.dropdown-menu.show li:nth-child(even) {
-    // float: right;
-    // }
-    .dropdown-menu {
-        .cat-second-child {
-            display: block;
-        }
-    }
-    ul.dropdown-menu.show {
-        padding-right: 30px;
-        font-size: 15px;
-        color: gray;
-        font-weight: 100;
-        padding-right: 30px;
-        a{
-            padding: 0;
-            font-weight: 100;
-            padding-left: 10px;
-            font-size: 13px;
-           
-           }
-        li.cat-title {
-            // width: 200px;
-            height: auto;
-            span.menu-image-title {
-                // white-space: pre-wrap;
-            }
-            a::after {
-                display: none;
-            }
-            .dropdown-menu {
-               
-                display: block;
-                border: none;
-                position: relative !important;
-                margin: 0;
-               
-                
 
-                border-bottom: 1px solid #ccc;
-                a {
-                    font-weight: 100;
-                    padding-left: 10px;
-                    font-size: 13px;
-                }
-                .cat-second-child {
-                    a {
-                        color: gray;
-                        font-weight: 100;
-                        font-size: 13px;
-                        padding-left: 10px;
-                    }
-                }
             }
         }
     }
-    .dropdown-menu {
-        @media (max-width: 992px) {
-            border: none;
-            padding: 0;
-            margin: 0;
-            .menu-item.cat-title {
-                a {
-                    font-size: 13px;
-                    color: gray;
-                    font-weight: 100;
-                    padding: 0;
-                    span {
-                        width: 100%;
-                        display: flex;
-                        justify-content: space-between;
-                        img {
-                            height: auto;
-                            width: 23px;
-                            border-radius: 17px;
-                            padding-left: 4px;
-                            padding-right: 4px;
-                            padding-top: 4px;
-                            padding-bottom: 4px;
+
+    .dropdown:hover {
+        .dropdown-menu {
+            display: block;
+           
+            .cat-second-child {
+                display: block;
+            }
+        }
+        .dropdown-menu.depth-0{
+            // position: absolute;
+            top: 30px;
+        }
+        ul.dropdown-menu {
+            padding-right: 30px;
+            font-size: 15px;
+            color: gray;
+            font-weight: 100;
+            padding-right: 30px;
+            a {
+                padding: 0;
+                font-weight: 100;
+                padding-left: 10px;
+                font-size: 13px;
+            }
+            li.cat-title {
+                height: auto;
+                a::after {
+                    display: none;
+                }
+                .dropdown-menu {
+                    display: block;
+                    border: none;
+                    position: relative !important;
+                    margin: 0;
+
+                    border-bottom: 1px solid #ccc;
+                    a {
+                        font-weight: 100;
+                        padding-left: 10px;
+                        font-size: 13px;
+                    }
+                    .cat-second-child {
+                        a {
+                            color: gray;
+                            font-weight: 100;
+                            font-size: 13px;
+                            padding-left: 10px;
                         }
                     }
                 }
             }
-            .menu-item.cat-second-child {
-                display: none;
-            }
-            img {
-            }
         }
+    }
+
+
+    .dropdown-menu {
+         
 
         .cat-title {
             padding-top: 10px;
@@ -215,33 +166,75 @@ header {
             }
             img {
                 border-radius: 26px;
-                padding-right: 10px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+                padding-right: 5px;
+                padding-left: 5px;
+                padding-top: 5px;
+                padding-bottom: 5px;
                 width: 35px;
+                height: 35px;
             }
         }
 
         //TODO want to change to editable from wp
-        .menu-item-3350 {
-            img {
-                background: #dda1a1;
+        // .menu-item-3533 {
+        //     img {
+        //         background: #dda1a1;
+        //     }
+        // }
+        // .menu-item-3304 {
+        //     img {
+        //         background: #9fd677;
+        //     }
+        // }
+        // .menu-item-3336 {
+        //     img {
+        //         background: #6cbccc;
+        //     }
+        // }
+        // .menu-item-3510 {
+        //     img {
+        //         background: #ab73e2;
+        //     }
+        // }
+    }
+    @media (max-width: 992px) {
+        .navbar-collapse.show{
+            .dropdown-menu{
+                .menu-item.cat-second-child {
+                    display: none;
+                }
             }
         }
-        .menu-item-3304 {
-            img {
-                background: #9fd677;
+
+        .dropdown-menu{
+            border: none;
+            padding: 0;
+            margin: 0;
+            .menu-item.cat-title {
+                a {
+                    font-size: 13px;
+                    color: gray;
+                    font-weight: 100;
+                    padding: 0;
+                    span {
+                        width: 100%;
+                        display: flex;
+                        justify-content: space-between;
+                        white-space: break-spaces;
+                        img {
+                            height:  23px;
+                            width: 23px;
+                            border-radius: 17px;
+                            padding-left: 4px;
+                            padding-right: 4px;
+                            padding-top: 4px;
+                            padding-bottom: 4px;
+                        }
+                    }
+                }
             }
+           
         }
-        .menu-item-3336 {
-            img {
-                background: #6cbccc;
-            }
-        }
-        .menu-item-3510 {
-            img {
-                background: #ab73e2;
-            }
-        }
+       
     }
 }

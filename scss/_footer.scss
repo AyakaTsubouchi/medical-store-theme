@@ -5,6 +5,7 @@
     transform: translate(0px, 200px);
     right: 50px;
     text-align: center;
+    z-index: 1;
     .message-button {
      
         background-color: $accent-color;
@@ -13,19 +14,16 @@
         box-shadow: 2px 1px 5px #888887;
         display: inline-block;
         i {
-            padding: 20px;
-            font-size: 30px;
+            padding: 10px;
+            font-size: 35px;
         }
-        @media (max-width: 991px) {
-            i {
-                padding: 3vw;
-                font-size: 3vw;
-            }
-        }
+ 
+ 
         @media (max-width: 540px) {
             i {
-                padding: 3vw;
-                font-size: 3vw;
+
+                padding: 10px;
+                font-size: 25px;
             }
         }
     }
@@ -71,16 +69,33 @@
         }
     }
     li.footer-title {
-        font-size: 17px;
-        font-weight: 600;
+        font-size: 14px;
+        font-weight: 400;
         margin-bottom: 12px;
+    }
+    .menu-item{
+        font-weight: 100;
     }
     .footer4-widget {
         margin-left: 30px;
         margin-top: -10px;
     }
+    .sns-box{
+        padding-left: 35px;
+        margin-top: -10px;
+        i {
+            margin: 3px 3px 3px 0;
+            background: $accent-color;
+            color: white;
+            padding: 10px;
+            border-radius: 22px;
+        }
+        .fa-facebook-f {
+            padding: 10px 13px 10px 13px;
+        }
+    }
     .footer-bottom {
-        background: green;
+        background: $accent-color;
         color: white;
         text-align: center;
         .copyright_txt {

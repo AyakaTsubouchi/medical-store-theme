@@ -68,7 +68,7 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
 			}
 			$indent = str_repeat($t, $depth);
 			// Default class to add to the file.
-			$classes = array('dropdown-menu');
+			$classes = array('dropdown-menu','depth-'.$depth );
 			/**
 			 * Filters the CSS class(es) applied to a menu list element.
 			 *
@@ -218,10 +218,11 @@ if (!class_exists('WP_Bootstrap_Navwalker')) :
 
 			// If the item has_children add atts to <a>.
 			if ($this->has_children) {
-				$atts['href']          = '#';
-				$atts['data-toggle']   = 'dropdown';
-				$atts['aria-haspopup'] = 'true';
-				$atts['aria-expanded'] = 'false';
+				// $atts['href']          = '#';
+				$atts['href'] = ! empty( $item->url ) ? $item->url : ''; // new line
+				// $atts['data-toggle']   = 'dropdown';
+				// $atts['aria-haspopup'] = 'true';
+				// $atts['aria-expanded'] = 'false';
 				$atts['class']         = 'dropdown-toggle nav-link';
 				$atts['id']            = 'menu-item-dropdown-' . $item->ID;
 			} else {

@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="my-archive container">
+<div class="my-archive container min-height">
 
     <?php
     $s = get_search_query();
@@ -10,20 +10,33 @@
     $the_query = new WP_Query($args);
     if ($the_query->have_posts()) { ?>
 
-        <h2 style='font-weight:bold;color:#000'>Search Results for:<?php echo get_query_var('s'); ?></h2>
+        <h2 style='font-weight:bold;color:#000'><span>Search Results for:<?php echo get_query_var('s'); ?></span></h2>
         <div class="row">
             <div class="col-lg-7 col-md-7 col-sm-12">
                 <?php
                 while ($the_query->have_posts()) {
                     $the_query->the_post();
                 ?>
-                    <div>
-                        <a href="<?php the_permalink(); ?>" class="entry-title">
-                            <h4><?php the_title(); ?></h4>
+                
+                    <div class="my-card">
+                        <a href="<?php the_permalink(); ?>">
+                            <h5 class="card-title"><?php the_title(); ?></h5>
                         </a>
-                        <P class="meta-data"><?php echo get_the_date('Y-m-d'); ?>/<?php echo get_the_author(); ?></P>
-                        <?php the_excerpt(); ?>
-                        <hr>
+                        <a href="<?php the_permalink(); ?>"> <img src="
+                                    <?php
+                                    if (get_the_post_thumbnail_url()) {
+                                        echo get_the_post_thumbnail_url();
+                                    } else {
+                                        echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                    };
+
+                                    ?>" alt="<?php the_title(); ?>"></a>
+                        <div class="card-body">
+                            <div class="meta">
+                                <P><?php echo get_the_date('Y-m-d'); ?></P>
+                            </div>
+
+                        </div>
                     </div>
                 <?php
                 } ?>
@@ -43,8 +56,8 @@
 
             <div class="col-lg-5 col-md-5 col-sm-12">
                 <?php
-                if (is_active_sidebar('news-post-sidebar')) {
-                    dynamic_sidebar('news-post-sidebar');
+                if (is_active_sidebar('search-page-sidevar')) {
+                    dynamic_sidebar('search-page-sidevar');
                 }
                 ?>
 

@@ -16,7 +16,7 @@
 			the_posts_navigation();
 
 		else :
-echo 'no post';
+
 echo get_post_type();
 
 			get_template_part( 'template-parts/content', 'none' );

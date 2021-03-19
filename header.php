@@ -63,9 +63,7 @@
 
                </div>
                <nav class="navbar navbar-expand-lg nav-toggler-right no-padding-on-mobile">
-                  <!-- <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                     <i class="fas fa-bars"></i>
-                  </button> -->
+       
                   <?php
                   wp_nav_menu(array(
                      'theme_location'  => 'medical_header_menu',

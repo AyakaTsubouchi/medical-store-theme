@@ -19,7 +19,6 @@
         font-size: 23px;
         color: #008066;
     }
-   
 
     .image-text-two-col {
         h2 {
@@ -103,7 +102,7 @@
         }
 
         .card {
-            h5{
+            h5 {
                 text-align: center;
                 color: $accent-color;
             }
@@ -115,15 +114,14 @@
                 color: $accent-color;
             }
         }
-      
     }
     .image-text-two-col {
         .img-wrapper {
             text-align: center;
         }
-        .custom-btn{
+        .custom-btn {
             margin-top: 35px;
-            a{
+            a {
                 padding: 10px 34px;
             }
         }
@@ -136,7 +134,8 @@
                 color: $accent-color;
                 font-size: 20px;
                 text-align: center;
-                line-height: 60px;
+                margin-top: 30px;
+                margin-bottom: 30px;
             }
             .wp-block-image {
                 font-size: 13px;
@@ -144,8 +143,8 @@
         }
     }
 }
-.tribe-events-widget-events-list{
-    a{
+.tribe-events-widget-events-list {
+    a {
         color: $accent-color;
     }
 }
