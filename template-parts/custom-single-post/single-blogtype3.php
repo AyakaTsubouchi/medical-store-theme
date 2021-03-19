@@ -6,7 +6,7 @@
         do_action('woocommerce_before_main_content');
         ?>
     </div>
-    <div class="contents">
+    <div class="contents min-height">
         <div class="container">
             <h1><?php the_title(); ?></h1>
             <div class="row">

@@ -22,13 +22,15 @@
                 }
             }
         }
-        .card:hover {
-            .read-toggle {
-                cursor: pointer;
-            }
-            .left-container {
-                img {
-                    transform: scale(1.2);
+        @media (min-width: 993px) {
+            .card:hover {
+                .read-toggle {
+                    cursor: pointer;
+                }
+                .left-container {
+                    img {
+                        transform: scale(1.2);
+                    }
                 }
             }
         }

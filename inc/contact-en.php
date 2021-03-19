@@ -79,10 +79,13 @@
 
 			</div>
 			<div class="col-lg-5">
-				<div class="quote">
+				<div class="contactus-form">
 					<div class="form-wrapper">
 						<div class="form-inner">
-							<form action="">
+							<?php echo do_shortcode('	[contact-form-7 id="3503" title="Medical quote form_copy"]');?>
+							
+					
+							<!-- <form action="">
 								<div class="form-row">
 									<div class="col-lg-6 col-md-12">
 										<label for="firstname">First Name*</label>
@@ -149,7 +152,7 @@
 									Privacy Notice: Puritan Medical Products requires the contact information you provide to us in order to send you the requested content and to contact you about our services. You may unsubscribe from these communications at any time. For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please see our Privacy Policy
 								</p>
 								<input class="form-control form-custom-btn" type="submit" value="Submit">
-							</form>
+							</form> -->
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 <?php get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main min-height">
 		<?php
 		if ( have_posts() ) :
 

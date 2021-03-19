@@ -5,7 +5,7 @@ Template name: Contact
 ?>
 <?php get_header(); ?>
 
-<div class="contactus" >
+<div class="contactus min-height" >
 	<div class="container" style="min-height:calc(100vh - 500px);">
 		
 

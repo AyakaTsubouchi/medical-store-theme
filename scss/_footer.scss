@@ -6,6 +6,7 @@
     right: 50px;
     text-align: center;
     .message-button {
+     
         background-color: $accent-color;
         border-radius: 50px;
         color: white;
@@ -31,7 +32,14 @@
     .message-button:hover {
         cursor: pointer;
     }
-
+    
+    .message-button{
+        transform: translate(110%, 0);
+        transition: 0.4s all;
+    }
+   .come-in {
+            transform: translate(0, 0)!important;           
+          }
     .hiring-button {
         a {
             color: white;

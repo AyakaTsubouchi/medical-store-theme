@@ -8,7 +8,7 @@ Template name: About
 if (have_posts()) :
     while (have_posts()) : the_post();
 ?>
-        <div class="about">
+        <div class="about min-height">
             <section class="hero-image" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
                 <div class="content">
                     <?php the_content(); ?>

@@ -75,7 +75,7 @@ remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
 	// do_action('woocommerce_archive_description');
 	?>
 </header>
-<div class="container">
+<div class="container min-height">
 
 
 	<div class="row">

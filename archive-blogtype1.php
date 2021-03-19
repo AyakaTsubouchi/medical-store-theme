@@ -4,7 +4,7 @@ Template name: Blog type1 archive
 */
 ?>
 <?php get_header(); ?>
-<div class="archive-blogtype blogtype1">
+<div class="archive-blogtype blogtype1 min-height">
 
         <?php
 
@@ -15,7 +15,7 @@ Template name: Blog type1 archive
         ?>
 
 
-    <div class="contents">
+    <div class="contents min-height">
         <div class="container">
             <?php
             if (have_posts()) :

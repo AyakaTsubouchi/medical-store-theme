@@ -1,5 +1,5 @@
-@import 'color';
-.contactus{
+@import "color";
+.contactus {
     h2 {
         font-weight: 100;
         line-height: 75px;
@@ -15,27 +15,28 @@
             height: 5px;
             border-top: 2px solid $accent-color;
             top: 39px;
-            width: calc(100% - 100px);
+            width: calc(100% - 00px);
         }
 
         span:after {
             margin-left: 10px;
         }
     }
-    h3,h5{
+    h3,
+    h5 {
         color: $accent-color;
     }
-    .google-map{
+    .google-map {
         height: 400px;
     }
-    img.map{
+    img.map {
         height: 400px;
     }
     input.custom-btn {
         transition: 0.2s;
         color: white;
         background: green;
-        padding:6px 34px;
+        padding: 6px 34px;
         border-radius: 16px;
         text-decoration: none;
     }
@@ -45,41 +46,76 @@
         color: green;
         cursor: pointer;
     }
-    .contact-section{
-        p.title{
+    .contact-section {
+        p.title {
             color: $accent-color;
-          
         }
-        p{
+        p {
             margin-bottom: 0;
         }
-        .get-quote{
+        .get-quote {
             margin-top: 40px;
-            .custom-btn{
+            .custom-btn {
                 margin-top: 15px;
             }
         }
-        .sns{
-            .sns-box{
+        .sns {
+            .sns-box {
                 display: flex;
-                i{
+                i {
                     margin: 10px 10px 10px 0;
                     background: green;
                     color: white;
                     padding: 10px;
                     border-radius: 22px;
                 }
-                .fa-facebook-f{
+                .fa-facebook-f {
                     padding: 10px 13px 10px 13px;
                 }
             }
         }
-        .quote{
-            margin-top: 0px!important;
-            label,p{
+        .quote {
+            margin-top: 0px !important;
+            label,
+            p {
                 font-size: 13px;
+               
             }
-            
+        }
+        .contactus-form {
+            padding: 20px;
+            background: #ccc;
+            color: gray;
+
+            .form-wrapper {
+                background: white;
+                padding: 10px;
+                .form-row {
+                    margin-top: 10px;
+                    label {
+                        margin-bottom: 0;
+                        font-size: 13px;
+                        color: $accent-color;
+                    }
+                }
+                p{
+                    font-size: 12px;
+                    line-height: 1.2;
+                   margin-top: 10px;
+                }
+                .form-custom-btn {
+                    background-color: $accent-color;
+                    color: white;
+                    width: auto;
+                    border-radius: 18px;
+                    margin-top: 10px;
+                }
+                .form-custom-btn:hover {
+                    background-color: white;
+                    color: $accent-color;
+                    border: 1px solid $accent-color;
+                }
+            }
         }
     }
 }

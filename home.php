@@ -4,7 +4,7 @@ Template name: Home
 */
 ?>
 <?php get_header(); ?>
-<div class="home">
+<div class="home min-height">
 
 
     <?php

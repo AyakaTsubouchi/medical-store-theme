@@ -73,7 +73,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
     }
 }
 ?>
-<div class="product-main">
+<div class="product-main min-height">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 left-col">
             <div class="product-title">

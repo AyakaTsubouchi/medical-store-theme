@@ -1032,6 +1032,14 @@ add_filter( 'woocommerce_products_widget_query_args', function( $query_args ){
     add_filter('upload_mimes', 'cc_mime_types');
     
     
-    
+    // function roots_nav_menu_args($args = '') {
+
+    //   $args['depth']      = 8;
+     
+    //   if (!$args['walker']) {
+    //     $args['walker'] = new WP_Nav_Menu_Args ();
+    //   }
+    //   return $args;
+    // }
     
    

@@ -22,3 +22,7 @@
     color: $btn-color!important;
     cursor: pointer;
 }
+
+.min-height{
+  min-height: calc(100vh - 300px);
+}

@@ -4,7 +4,7 @@ Template name: Education
 */
 ?>
 <?php get_header(); ?>
-<div class="archive-blogtype blogtype1">
+<div class="archive-blogtype blogtype1 min-height">
 
         <?php
 
