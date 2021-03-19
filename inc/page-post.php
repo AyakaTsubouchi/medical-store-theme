@@ -71,7 +71,7 @@
             ?>
                 <section class="standard" style="<?php echo $background ?>; color:<?php echo $color; ?>">
                     <div class="container">
-                        <h2 class="lighter"><span><?php the_title(); ?></span></h2>
+                        <h2 class="lighter fancy-both"><span><?php the_title(); ?></span></h2>
                         <div class="content">
                             <div class="container"></div>
                             <?php the_content();
@@ -82,7 +82,7 @@
                                 <?php
                                 $link1 = get_field('post_link1');
                                 $link2 = get_field('post_link2');
-                                // $link3 = get_field('link3');
+                 
                                 $link1 && $link2 ? $link_col = "col-lg-6" : $link_col = "col-lg-12";
                                 if ($link1) :
 
@@ -136,7 +136,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- <section> -->
+   
             <?php
             break;
         default: ?>

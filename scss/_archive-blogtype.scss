@@ -3,33 +3,34 @@
 .archive-blogtype {
   .woocommerce-breadcrumb{
     margin-left: 5vw;
-  
+    font-weight: 100;
+   
   }
     .contents {
         margin-top: 50px;
 
         h1 {
-           line-height: 75px;
+        //    line-height: 75px;
             margin-bottom: 30px;
            
-            span {
-                display: inline-block;
-                position: relative;
-                width: 100%;
-            }
+            // span {
+            //     display: inline-block;
+            //     position: relative;
+            //     width: 100%;
+            // }
 
-            span:after {
-                content: "";
-                position: absolute;
-                height: 5px;
-                border-top: 2px solid $accent-color;
-                top: 39px;
-                width: calc(100% - 300px);
-            }
+            // span:after {
+            //     content: "";
+            //     position: absolute;
+            //     height: 5px;
+            //     border-top: 2px solid $accent-color;
+            //     top: 39px;
+            //     width: calc(100% - 300px);
+            // }
 
-            span:after {
-                margin-left: 10px;
-            }
+            // span:after {
+            //     margin-left: 10px;
+            // }
         }
         h3 {
             color: $accent-color;

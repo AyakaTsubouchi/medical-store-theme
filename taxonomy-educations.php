@@ -2,7 +2,7 @@
 
 <div class="tax-educations">
     <div class="container">
-        <h2><span>
+        <h2 class="fancy-after"><span>
                 <?php
                 $id = get_queried_object()->term_id;
                 echo get_term($id)->name

@@ -10949,6 +10949,72 @@ a {
   min-height: calc(100vh - 300px);
 }
 
+.fancy-after {
+  line-height: 75px;
+}
+
+.fancy-after span {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.fancy-after span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 2px solid #248066;
+  top: 39px;
+  width: calc(100% - 100px);
+}
+
+.fancy-after span:after {
+  margin-left: 10px;
+}
+
+@media (max-width: 400px) {
+  .fancy-after {
+    line-height: 1;
+  }
+
+  .fancy-after span:after {
+    width: 0px;
+    border: none;
+  }
+}
+
+.fancy-both {
+  text-align: center;
+  line-height: 75px;
+}
+
+.fancy-both span {
+  display: inline-block;
+  position: relative;
+}
+
+.fancy-both span:before,
+.fancy-both span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 2px solid #248066;
+  top: 39px;
+  width: 20px;
+}
+
+.fancy-both span:before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.fancy-both span:after {
+  left: 100%;
+  margin-left: 10px;
+}
+
 .sticky {
   position: fixed;
   top: 0;
@@ -11385,36 +11451,6 @@ header .dropdown-menu .cat-title img {
   padding-bottom: 40px;
 }
 
-.page-post .standard h2 {
-  text-align: center;
-  line-height: 75px;
-}
-
-.page-post .standard h2 span {
-  display: inline-block;
-  position: relative;
-}
-
-.page-post .standard h2 span:before,
-.page-post .standard h2 span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-top: 2px solid #248066;
-  top: 39px;
-  width: 20px;
-}
-
-.page-post .standard h2 span:before {
-  right: 100%;
-  margin-right: 10px;
-}
-
-.page-post .standard h2 span:after {
-  left: 100%;
-  margin-left: 10px;
-}
-
 .page-post .standard .content .wp-block-embed.is-type-video {
   text-align: center;
 }
@@ -11840,6 +11876,7 @@ header .dropdown-menu .cat-title img {
 
 .archive-blogtype .woocommerce-breadcrumb {
   margin-left: 5vw;
+  font-weight: 100;
 }
 
 .archive-blogtype .contents {
@@ -11847,27 +11884,7 @@ header .dropdown-menu .cat-title img {
 }
 
 .archive-blogtype .contents h1 {
-  line-height: 75px;
   margin-bottom: 30px;
-}
-
-.archive-blogtype .contents h1 span {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-}
-
-.archive-blogtype .contents h1 span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-top: 2px solid #248066;
-  top: 39px;
-  width: calc(100% - 300px);
-}
-
-.archive-blogtype .contents h1 span:after {
-  margin-left: 10px;
 }
 
 .archive-blogtype .contents h3 {
@@ -11971,7 +11988,11 @@ header .dropdown-menu .cat-title img {
 }
 
 .no-page h3 {
-  color: green;
+  color: #248066;
+}
+
+.no-page a {
+  color: #248066;
 }
 
 .no-page img {
@@ -12343,7 +12364,7 @@ header .dropdown-menu .cat-title img {
   height: 5px;
   border-top: 2px solid #248066;
   top: 39px;
-  width: 130%;
+  width: 150%;
 }
 
 .my-archive h2 span:after {
@@ -12365,7 +12386,7 @@ header .dropdown-menu .cat-title img {
 }
 
 .my-archive .my-card img {
-  height: 300px;
+  height: 200px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -12387,26 +12408,6 @@ header .dropdown-menu .cat-title img {
 
 .tax-educations h2 {
   font-weight: 300;
-  line-height: 75px;
-}
-
-.tax-educations h2 span {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-}
-
-.tax-educations h2 span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-top: 2px solid #248066;
-  top: 39px;
-  width: calc(100% - 100px);
-}
-
-.tax-educations h2 span:after {
-  margin-left: 10px;
 }
 
 .tax-educations .my-card {
@@ -12537,34 +12538,16 @@ header .dropdown-menu .cat-title img {
 
 .single-blog1 .contents {
   margin-top: 50px;
+  font-weight: 100;
 }
 
 .single-blog1 .contents h1 {
   font-weight: 300;
-  line-height: 75px;
-}
-
-.single-blog1 .contents h1 span {
-  display: inline-block;
-  position: relative;
-  width: 100%;
-}
-
-.single-blog1 .contents h1 span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-top: 2px solid #248066;
-  top: 39px;
-  width: calc(100% - 300px);
-}
-
-.single-blog1 .contents h1 span:after {
-  margin-left: 10px;
 }
 
 .single-blog1 .contents h3 {
   color: #248066;
+  font-size: 20px;
 }
 
 .single-blog3 {

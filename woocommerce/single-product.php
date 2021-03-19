@@ -78,9 +78,9 @@ if (!empty($terms) && !is_wp_error($terms)) {
         <div class="col-lg-6 col-md-6 col-sm-12 left-col">
             <div class="product-title">
                 <h3><?php the_title(); ?></h3>
-               
-                <h5><?php echo $desc;?></h5>
-                <p>SKU: <?php echo $sku;?></p>
+
+                <h5><?php echo $desc; ?></h5>
+                <p>SKU: <?php echo $sku; ?></p>
             </div>
             <div class="large-image">
                 <div class="image-gallery">
@@ -91,8 +91,8 @@ if (!empty($terms) && !is_wp_error($terms)) {
                      * @hooked woocommerce_show_product_sale_flash - 10
                      * @hooked woocommerce_show_product_images - 20
                      */
-                   
-                 
+
+
                     do_action('woocommerce_before_single_product_summary');
                     ?>
                 </div>
@@ -105,15 +105,21 @@ if (!empty($terms) && !is_wp_error($terms)) {
                     <?php
                     if ($prdSterile === "Sterile") {
                         echo " <img src='http://localhost:8888/wp-content/uploads/2021/03/sterile.png'>";
-                
                     };
                     ?>
 
                 </div>
+
                 <div class="icon length">
-                    <p> <?php echo $prdLength; ?></p>
-                    <img src='http://localhost:8888/wp-content/uploads/2021/03/overall_length.jpg'>
-               
+
+                    <?php
+                    if ($prdLength) {
+                        echo "<p>" . $prdLength . "</p>
+                        <img src='http://localhost:8888/wp-content/uploads/2021/03/overall_length.jpg'>";
+                    };
+                    ?>
+
+
                 </div>
             </div>
             <hr>
@@ -130,7 +136,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
 
                     </div>
                     <div class="share col-lg-4">
-                       
+
                         <a href="/mail"> <i class="fas fa-share-alt"></i>SHARE</a>
                     </div>
                 </div>
@@ -158,7 +164,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
             <div class="contact-us">
                 <a href="/contact"><i class="fas fa-envelope"></i>Contact Us</a>
             </div>
- 
+
             <hr>
             <table class="attributes">
                 <tr>
@@ -191,7 +197,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
     <div class="product-footer">
 
         <?php
-        
+
         do_action('woocommerce_after_single_product_summary');
         // do_action( 'woocommerce_after_main_content' );
         ?>

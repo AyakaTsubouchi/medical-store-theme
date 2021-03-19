@@ -1,57 +1,53 @@
-.my-archive{
-    
-        margin-top: 30px;
-        h2 {
-            line-height: 75px;
-            font-weight: 400;
-            span {
-                display: inline-block;
-                position: relative;
-            }
-
-           
-            span:after {
-                content: "";
-                position: absolute;
-                height: 5px;
-                border-top: 2px solid $accent-color;
-                top: 39px;
-                width: 130%;
-            }
-          
-            span:after {
-                left: 100%;
-                margin-left: 10px;
-            }
+.my-archive {
+    margin-top: 30px;
+    h2 {
+        line-height: 75px;
+        font-weight: 400;
+        span {
+            display: inline-block;
+            position: relative;
         }
-        .my-card{
 
+        span:after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            border-top: 2px solid $accent-color;
+            top: 39px;
+            width: 150%;
+        }
+
+        span:after {
+            left: 100%;
+            margin-left: 10px;
+        }
+    }
+    .my-card {
+        width: 100%;
+        margin: 30px 10px;
+        border: 1px solid gray;
+        h5 {
+            font-size: 20px;
+            color: $accent-color;
+            padding: 10px;
+            text-align: center;
+            // font-weight: 100;
+        }
+        img {
+            height: 200px;
             width: 100%;
-            margin: 30px 10px;
-            border: 1px solid gray;
-            h5{
-                font-size: 20px;
-                color: $accent-color;
-                padding: 10px;
-                text-align: center;
-                // font-weight: 100;
-            }
-            img{
-                height: 300px;
-                width: 100%;
-                object-fit: cover;
-            }
-            p{
-                text-align: end;
-            }
+            object-fit: cover;
         }
-        .card{
-           border: none;
-           ul{
-               list-style: none;
-               padding-left: 10px;
-               font-weight: 100;
-           }
+        p {
+            text-align: end;
         }
-   
+    }
+    .card {
+        border: none;
+        ul {
+            list-style: none;
+            padding-left: 10px;
+            font-weight: 100;
+        }
+    }
 }

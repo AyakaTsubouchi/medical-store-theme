@@ -23,7 +23,7 @@ Template name: Blog type1 archive
                 while (have_posts()) : the_post();
 
             ?>
-                    <h1><span><?php the_title(); ?></span></h1>
+                    <h1 class="fancy-after"><span><?php the_title(); ?></span></h1>
                     <?php the_content(); ?>
 
                     <div class="flex-container">

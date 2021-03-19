@@ -2,25 +2,7 @@
 .tax-educations{
     h2 {
         font-weight: 300;
-        line-height: 75px;
-        span {
-            display: inline-block;
-            position: relative;
-            width: 100%;
-        }
-
-        span:after {
-            content: "";
-            position: absolute;
-            height: 5px;
-            border-top: 2px solid $accent-color;
-            top: 39px;
-            width: calc(100% - 100px);
-        }
-
-        span:after {
-            margin-left: 10px;
-        }
+    
     }
     .my-card{
 
@@ -32,7 +14,6 @@
             color: $accent-color;
             padding: 10px;
             text-align: center;
-            // font-weight: 100;
         }
         img{
             height: 300px;
@@ -52,12 +33,9 @@
         .contact{
             margin-bottom: 50px;
         }
-        .card-title{
-            // font-weight: 100;
-        }
+
         ul{
             list-style: none;
-            // font-weight: 100;
         }
         .widget-1, .widget-2{
             border: none;
