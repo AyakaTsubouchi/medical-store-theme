@@ -79,7 +79,39 @@
                 font-weight: 400;
             }
         }
+h1.page-title{
+    line-height: 75px;
+  span {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+      font-weight: 400;
 
+      font-size: 35px;
+  }
+
+  span:after {
+      content: "";
+      position: absolute;
+      height: 5px;
+      border-top: 2px solid $accent-color;
+      top: 39px;
+      width: calc(100% - 100px);
+  }
+
+  span:after {
+      margin-left: 10px;
+  }
+  @media (max-width: 400px) {
+   
+        line-height: 1;
+   
+    span:after {
+        width: 0px;
+        border: none;
+    }
+  }
+}
         .contact-for-mobile {
             display: none;
             @media (max-width: 992px) {

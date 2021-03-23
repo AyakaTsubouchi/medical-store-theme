@@ -107,6 +107,12 @@ header {
             // position: absolute;
             top: 30px;
         }
+        .dropdown-menu.depth-1{
+            padding-left: 10px;
+            a{
+                display: inline-block;
+            }
+        }
         ul.dropdown-menu {
             padding-right: 30px;
             font-size: 15px;
@@ -175,27 +181,6 @@ header {
             }
         }
 
-        //TODO want to change to editable from wp
-        // .menu-item-3533 {
-        //     img {
-        //         background: #dda1a1;
-        //     }
-        // }
-        // .menu-item-3304 {
-        //     img {
-        //         background: #9fd677;
-        //     }
-        // }
-        // .menu-item-3336 {
-        //     img {
-        //         background: #6cbccc;
-        //     }
-        // }
-        // .menu-item-3510 {
-        //     img {
-        //         background: #ab73e2;
-        //     }
-        // }
     }
     @media (max-width: 992px) {
         .navbar-collapse.show{
@@ -216,6 +201,7 @@ header {
                     color: gray;
                     font-weight: 100;
                     padding: 0;
+            
                     span {
                         width: 100%;
                         display: flex;

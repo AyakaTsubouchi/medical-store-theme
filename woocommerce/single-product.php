@@ -104,7 +104,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
                 <div class="icon">
                     <?php
                     if ($prdSterile === "Sterile") {
-                        echo " <img src='http://localhost:8888/wp-content/uploads/2021/03/sterile.png'>";
+                        echo " <img src='http://medproducts.goopter.com/wp-content/uploads/2021/03/sterile.png'>";
                     };
                     ?>
 
@@ -115,7 +115,7 @@ if (!empty($terms) && !is_wp_error($terms)) {
                     <?php
                     if ($prdLength) {
                         echo "<p>" . $prdLength . "</p>
-                        <img src='http://localhost:8888/wp-content/uploads/2021/03/overall_length.jpg'>";
+                        <img src='http://medproducts.goopter.com/wp-content/uploads/2021/03/overall_length.jpg'>";
                     };
                     ?>
 

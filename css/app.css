@@ -11137,6 +11137,14 @@ header .dropdown:hover .dropdown-menu.depth-0 {
   top: 30px;
 }
 
+header .dropdown:hover .dropdown-menu.depth-1 {
+  padding-left: 10px;
+}
+
+header .dropdown:hover .dropdown-menu.depth-1 a {
+  display: inline-block;
+}
+
 header .dropdown:hover ul.dropdown-menu {
   padding-right: 30px;
   font-size: 15px;
@@ -12037,7 +12045,7 @@ header .dropdown-menu .cat-title img {
 }
 
 .fixed-btn-wrapper .message-button {
-  transform: translate(110%, 0);
+  transform: translate(410%, 0);
   transition: 0.4s all;
 }
 
@@ -12072,6 +12080,7 @@ header .dropdown-menu .cat-title img {
 .site-footer {
   background: #CCCCCC;
   padding-top: 20px;
+  margin-top: 30px;
 }
 
 .site-footer a {
@@ -12873,6 +12882,42 @@ header .dropdown-menu .cat-title img {
 
 .woocommerce .container .contact h3 {
   font-weight: 400;
+}
+
+.woocommerce .container h1.page-title {
+  line-height: 75px;
+}
+
+.woocommerce .container h1.page-title span {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  font-weight: 400;
+  font-size: 35px;
+}
+
+.woocommerce .container h1.page-title span:after {
+  content: "";
+  position: absolute;
+  height: 5px;
+  border-top: 2px solid #248066;
+  top: 39px;
+  width: calc(100% - 100px);
+}
+
+.woocommerce .container h1.page-title span:after {
+  margin-left: 10px;
+}
+
+@media (max-width: 400px) {
+  .woocommerce .container h1.page-title {
+    line-height: 1;
+  }
+
+  .woocommerce .container h1.page-title span:after {
+    width: 0px;
+    border: none;
+  }
 }
 
 .woocommerce .container .contact-for-mobile {

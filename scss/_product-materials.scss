@@ -1,46 +1,46 @@
-@import 'color';
+@import "color";
 .pm-post {
-    .hero-image{
+    .hero-image {
         overflow: hidden;
         height: 400px;
-        background-size:cover;
-        .content{
+        background-size: cover;
+        .content {
             background: $main-color;
-            width: 45%;               
-            transform: translate(20% ,30%);
+            width: 45%;
+            transform: translate(20%, 30%);
             color: white;
             padding: 20px;
-            h2{
+            h2 {
                 padding-left: 20px;
                 color: white;
                 // font-weight: 100;
             }
-            p{
+            p {
                 font-size: 14px;
                 border-left: 2px solid $accent-color;
                 padding-left: 20px;
                 font-size: 11px;
             }
-            }
-            @media (max-width: 992px) {
-                .content{
-                    width: 70%; 
-                    transform: translate(15%, 60%);
-                }
-             }
-            @media (max-width: 600px) {
-                .content{
-                    width: 90%; 
-                    transform: translate(5%, 100px);
-                }
-             }
-            @media (max-width: 400px) {
-                .content{
-                    width: 100%; 
-                    transform: translate(0%, 30px);
-                }
-             }
         }
+        @media (max-width: 992px) {
+            .content {
+                width: 70%;
+                transform: translate(15%, 60%);
+            }
+        }
+        @media (max-width: 600px) {
+            .content {
+                width: 90%;
+                transform: translate(5%, 100px);
+            }
+        }
+        @media (max-width: 400px) {
+            .content {
+                width: 100%;
+                transform: translate(0%, 30px);
+            }
+        }
+    }
     h2 {
         text-align: center;
         line-height: 75px;
@@ -69,58 +69,53 @@
             margin-left: 10px;
         }
     }
-    .featured-material-one{
-        .align-left{
-            text-align: left!important;
+    .featured-material-one {
+        .align-left {
+            text-align: left !important;
         }
-        .align-right{
-            text-align: right!important;
+        .align-right {
+            text-align: right !important;
         }
     }
-    figure{
-        img{
+    figure {
+        img {
             // transform: translate(-100%, 0px);
             opacity: 0;
             // transition: 0.9s all;
         }
-     
     }
-   
-    .left-image{
+
+    .left-image {
         .come-in {
             transform: translate(-150%, 0px);
             opacity: 1;
             // transform: translateY(150px);
             animation: come-in 0.8s ease forwards;
             // opacity: 1;
-          }
+        }
     }
-    .right-image{
+    .right-image {
         .come-in {
             transform: translate(150%, 0px);
             opacity: 0;
-            // transform: translateY(150px);
             animation: come-in 0.8s ease forwards;
-            // opacity: 1;
-          }
+        }
     }
-    .one-image{
+    .one-image {
         .come-in {
             transform: translate(0, 150%);
             opacity: 0;
-            // transform: translateY(150px);
             animation: come-in 0.8s ease forwards;
-            // opacity: 1;
-          }
+        }
     }
-  
-   
-      
-      @keyframes come-in {
-        to {  transform: translate(0px, 0px); 
-        opacity:1}
-      }
-    .standard{
+
+    @keyframes come-in {
+        to {
+            transform: translate(0px, 0px);
+            opacity: 1;
+        }
+    }
+    .standard {
         h2 {
             text-align: left;
             line-height: 75px;
@@ -130,7 +125,7 @@
                 display: inline-block;
                 position: relative;
             }
-    
+
             span:before,
             span:after {
                 content: "";

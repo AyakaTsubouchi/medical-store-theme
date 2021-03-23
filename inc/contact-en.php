@@ -8,7 +8,7 @@
 						<div class="map">
 							<div class="google-map">
 								<!-- <?php echo get_field("embed_googld_map", 533); ?> -->
-								<img class="map" src="http://localhost:8888/wp-content/uploads/2021/03/contact-us-map.png" alt="">
+								<img class="map" src="http://medproducts.goopter.com/wp-content/uploads/2021/03/contact-us-map.png" alt="map">
 							</div>
 						</div>
 					</div>
@@ -52,7 +52,7 @@
 					<h5>Need a Quote?</h5>
 					<p>Contact us to request a quote.</p>
 					<div class="custom-btn">
-						<a href="/request_quote">Request a Quote</a>
+						<a href="/request-quote">Request a Quote</a>
 					</div>
 				</div>
 				<hr>
@@ -158,7 +158,7 @@
 				</div>
 			</div>
 		</div>
-		<?php echo do_shortcode('[freeworldhtml5map id="0"]') ?>
+	
 		<?php
 		// include('contact_sales_for_mobile.php');
 		?>

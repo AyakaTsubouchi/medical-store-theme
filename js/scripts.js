@@ -36,21 +36,15 @@ End of Footer
 -------------------------------------*/
 //slide in animation
 $(document).ready(function() {
-  // if ($('body.pm-post').length > 0)
-  // {
     $(window).scroll(function() {
-   
       var scrollPos = $(document).scrollTop();
-      var clumn = $(".wp-block-image img").offset().top - 500; // .offset() ...
-  
-  
+      
+      var clumn = $(".wp-block-image img").offset().top - 500; 
       if (scrollPos > clumn) {
         $(".pm-post .wp-block-columns img").addClass("come-in");
         $(".pm-post .wp-block-image img").addClass("come-in");
       }
     });
-  // }
- 
 });
 
 // read more toggle

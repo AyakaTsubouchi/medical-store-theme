@@ -45,18 +45,17 @@
     }
 
     .product-main {
-        // font-weight: 100;
         margin-top: 50px;
         .product-title {
             border-left: 3px $accent-color solid;
             padding-left: 30px;
             h3 {
                 line-height: 1;
-                // font-weight: 100;
+
             }
             h5 {
                 color: $accent-color;
-                // font-weight: 100;
+
             }
         }
         .attribute-icons {
@@ -84,7 +83,6 @@
         }
         .review-section {
             h5 {
-                // font-weight: 100;
                 color: $accent-color;
                 font-size: 18 px;
             }
@@ -116,18 +114,7 @@
                 text-decoration: none;
             }
         }
-        // .resources {
-        //     a{
-        //         color: $accent-color;
-        //         i {
-        //             margin-right: 10px;
-        //         }
-        //     }
-        //     a:hover{
-        //         color: $accent-color;
-        //         text-decoration: none;
-        //     }
-        // }
+
         table.attributes {
             td {
                 padding: 0 40px 0 0;

@@ -4,7 +4,7 @@
          <i class="far fa-envelope"></i>
       </div>
       <div class="hiring-button">
-         <a href="/contact"><img src="http://localhost:8888/wp-content/uploads/2021/03/announcement-1.svg" alt="hiring"></a>
+         <a href="/contact"><img src="http://medproducts.goopter.com/wp-content/uploads/2021/03/announcement-1.svg" alt="hiring"></a>
       </div>
    </section>
    <?php include('inc/message-modal.php'); ?>
@@ -55,7 +55,6 @@
    <div class="footer-bottom">
 
       <div class="copyright_txt">
-         <p></p>
          <p>© 2014-<?php
                      echo date("Y")
                      ?> All rights reserved, Powered by <a href="https://www.goopter.com/">Goopter</a></p>

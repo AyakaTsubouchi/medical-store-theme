@@ -4,28 +4,12 @@
 
 function load_stylesheets()
 {
-  
-    
-  // wp_register_style('camera', get_template_directory_uri() . '/css/camera.css', array(), false, 'all');
-  // wp_enqueue_style('camera');
   wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), false, 'all');
   wp_enqueue_style('bootstrap');
-  
-
   wp_register_style('fontawsome', get_template_directory_uri() . '/css/fontawesome.min.css', array(), false, 'all');
   wp_enqueue_style('fontawsome');
-  
-  // wp_register_style('owlcarousel', get_template_directory_uri() . '/css/owl.carousel.min.css', array(), false, 'all');
-  // wp_enqueue_style('owlcarousel');
-
-  // wp_register_style('owltheme', get_template_directory_uri() . '/css/owl.theme.default.min.css', array(), false, 'all');
-  // wp_enqueue_style('owltheme');
-
-  
   wp_register_style('custom', get_template_directory_uri() . '/css/app.css', '', 1, 'all');
   wp_enqueue_style('custom');
-
-
 }
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
@@ -61,10 +45,6 @@ function load_js()
   wp_register_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', '', 1, true);
   wp_enqueue_script('jquery-ui');
 
-    
-    // wp_register_script('camera', get_template_directory_uri() . '/js/camera.min.js', '', 1, true);
-    // wp_enqueue_script('camera');
-  
   wp_register_script('customjs', get_template_directory_uri() . '/js/scripts.js', '', 1, true);
   wp_enqueue_script('customjs');
 
@@ -76,9 +56,7 @@ function load_js()
 
   wp_register_script('kit.fontawesome', get_template_directory_uri() . '/js/kit.fontawesome.js', '', 1, true);
   wp_enqueue_script('kit.fontawesome');
-  
-  // wp_register_script('owlcarousel', get_template_directory_uri() . '/js/owl.carousel.min.js', '', 1, true);
-  // wp_enqueue_script('owlcarousel');
+wp_enqueue_script('owlcarousel');
 
 }
 add_action('wp_enqueue_scripts', 'load_js');
@@ -304,7 +282,6 @@ function homepost_post_type()
     'labels' =>  $homepost_labels,
     'public' => true,
     'show_ui' => true,
-    // 'rewrite' => array('slug' => 'homepost'),
     'capability_type' => 'post',
     'menu_position' => null,
     'show_in_rest' => true,
@@ -787,47 +764,7 @@ function header_slider_post_type()
 
 add_action('init', 'header_slider_post_type');
 
-/*Added header_slider Post in Wordpress*/
 
-/*Added gallery Post in Wordpress*/
-function gallery_post_type()
-{
-
-  $gallery_labels = array(
-    'name' => __('Gallery', 'medicalStore_site'),
-    'singular_name' => __('Gallery', 'medicalStore_site'),
-    'add_new' => __('Add new Gallery', 'medicalStore_site'),
-    'add_new_item' => __('Add new Gallery', 'medicalStore_site'),
-    'featured_image' => __('Gallery post image', 'medicalStore_site'),
-    'set_featured_image' => __('Set Gallery image', 'medicalStore_site'),
-
-  );
-
-  $gallery_args = array(
-
-    'labels' =>  $gallery_labels,
-    'public' => true,
-    'show_ui' => true,
-    'show_in_rest' => true,
-    'rewrite' => array('slug' => 'gallery'),
-    'capability_type' => 'post',
-    'menu_position' => null,
-    'supports' => array(
-      'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
-      'comments', 'revisions', 'custom-fields'
-    ),
-    'taxonomies'          => array('category', 'post_tag'),
-
-  );
-
-  register_post_type('gallery', $gallery_args);
-}
-
-add_action('init', 'gallery_post_type');
-
-/*Added gallery Post in Wordpress*/
-
-/*Added mtlist Post in Wordpress*/
 function mtlist_post_type()
 {
 
@@ -986,62 +923,6 @@ add_filter( 'woocommerce_products_widget_query_args', function( $query_args ){
   return $query_args;
 }, 10, 1 );
 
-
-    // add_filter( 'pre_get_posts', 'slug_cpt_category_archives' );
-    // function slug_cpt_category_archives( $query ) {
-    // if ( $query->is_category() && $query->is_main_query()  )  {
-    //     $query->set( 'post_type',
-    //         array(
-    //             'post',
-    //             'blogtype2'
-    //         )
-    //     );
-    // }
-
-    // return $query;
-
-    // }
-    // add_action( 'pre_get_posts', 'slug_cpt_category_archives' );
-    // function slug_cpt_category_archives( $query ) {
-    //     if ( is_tax( 'educations') )  {
-    //         $tax_query = $query->tax_query->queries;
-    //         $tax_query['include_children'] = 0;
-    //         $query->set( 'tax_query', $tax_query );
-    //     };
-      
-    // }
-
-    //woocommerce disable the image zoom
-    function remove_image_zoom_support()
-    {
-      remove_theme_support('wc-product-gallery-zoom');
-    }
-    add_action('wp', 'remove_image_zoom_support', 100);
-    
-    //woocommerce: add navigation for gallery slider
-    add_filter( 'woocommerce_single_product_carousel_options', 'sf_update_woo_flexslider_options' );
-/** 
- * Filer WooCommerce Flexslider options - Add Navigation Arrows
- */
-// function sf_update_woo_flexslider_options( $options ) {
-
-//     $options = array(
-//       'rtl'            => is_rtl(),
-//       'animation'      => 'slide',
-//       'smoothHeight'   => true,
-//       'directionNav'   => true,
-//       'controlNav'     => 'thumbnails',
-     
-//       'slideshow'      => false,
-//       'animationSpeed' => 500,
-//       'animationLoop'  => false, // Breaks photoswipe pagination if true.
-//       'allowOneSlide'  => true,
-//     );
-
-//     return $options;
-// }
-    
-    
     //allow to upload svg file
     function cc_mime_types($mimes) {
       $mimes['svg'] = 'image/svg+xml';
