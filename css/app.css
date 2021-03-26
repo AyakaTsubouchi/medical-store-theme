@@ -12141,6 +12141,17 @@ header .dropdown-menu .cat-title img {
   line-height: 40px;
 }
 
+@media (max-width: 348px) {
+  .site-footer .footer-bottom .copyright_txt {
+    height: auto;
+  }
+
+  .site-footer .footer-bottom .copyright_txt p {
+    line-height: 25px;
+    margin-bottom: 0px;
+  }
+}
+
 .slider_section .button-wrapper {
   background: rgba(255, 255, 255, 0.8);
   display: inline-block;

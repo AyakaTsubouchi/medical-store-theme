@@ -58,7 +58,7 @@ Template name: Education
                                     if ($term_img) {
                                         echo $term_img;
                                     } else {
-                                        echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                        echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
                                     };
 
                                     ?>" alt="<?php  echo  $category->name; ?>"></a>

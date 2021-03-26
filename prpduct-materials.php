@@ -119,7 +119,7 @@ if (have_posts()) :
                                                                             if (get_the_post_thumbnail_url($link1)) {
                                                                                 echo get_the_post_thumbnail_url($link1);
                                                                             } else {
-                                                                                echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                                                                echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
                                                                             };
                                                                             ?>" class="card-img-top" alt="<?php echo $link1->post_title; ?>">
                                                                 <div class="card-body">
@@ -138,7 +138,7 @@ if (have_posts()) :
                                                                             if (get_the_post_thumbnail_url($link2)) {
                                                                                 echo get_the_post_thumbnail_url($link2);
                                                                             } else {
-                                                                                echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                                                                echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
                                                                             };
 
                                                                             ?>" class="card-img-top" alt="<?php echo $link2->post_title; ?>">
@@ -181,7 +181,7 @@ if (have_posts()) :
                                                                                 if (get_the_post_thumbnail_url($link1)) {
                                                                                     echo get_the_post_thumbnail_url($link1);
                                                                                 } else {
-                                                                                    echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                                                                    echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
                                                                                 };
                                                                                 ?>" class="card-img-top" alt="<?php echo $link1->post_title; ?>">
                                                                     <div class="card-body">
@@ -200,7 +200,7 @@ if (have_posts()) :
                                                                                 if (get_the_post_thumbnail_url($link2)) {
                                                                                     echo get_the_post_thumbnail_url($link2);
                                                                                 } else {
-                                                                                    echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                                                                    echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
                                                                                 };
 
                                                                                 ?>" class="card-img-top" alt="<?php echo $link2->post_title; ?>">

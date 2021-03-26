@@ -114,7 +114,7 @@ add_action('after_setup_theme', 'consilting_register_nav_menu');
 function html5_search_form( $form ) { 
   $form = '<section class="search"><form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
  <label class="screen-reader-text" for="s">' . __('',  'domain') . '</label>
-  <input class="search-text" type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search for Products, Category, ETC" />
+  <input class="search-text" type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search for Products" />
   <button class="search-btn" type="submit" id="searchsubmit" ><i class="fas fa-search"></i></button>
   </form></section>';
   return $form;

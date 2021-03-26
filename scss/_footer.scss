@@ -104,6 +104,13 @@
             p {
                 line-height: 40px;
             }
+            @media (max-width:348px) {
+                height: auto;
+                p {
+                    line-height: 25px;
+                    margin-bottom: 0px;
+                }
+            }
         }
     }
 }

@@ -51,7 +51,7 @@ Template name: Home
                                                     if (get_the_post_thumbnail_url()) {
                                                         echo get_the_post_thumbnail_url();
                                                     } else {
-                                                        echo "http://localhost:8888/wp-content/uploads/2021/03/no-photo.png";
+                                                        echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
                                                     };
                                                     ?>" class="card-img-top" alt="<?php echo the_title(); ?>">
                                         <div class="card-body">

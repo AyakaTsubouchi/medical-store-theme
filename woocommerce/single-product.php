@@ -79,7 +79,8 @@ if (!empty($terms) && !is_wp_error($terms)) {
             <div class="product-title">
                 <h3><?php the_title(); ?></h3>
 
-                <h5><?php echo $desc; ?></h5>
+                <!-- <h5><?php echo $desc; ?></h5> -->
+                <h5><?php the_excerpt(); ?></h5>
                 <p>SKU: <?php echo $sku; ?></p>
             </div>
             <div class="large-image">
