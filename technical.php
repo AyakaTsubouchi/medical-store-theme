@@ -1,6 +1,6 @@
 <?php
 /*
-Template name: Education
+Template name: Technical
 */
 ?>
 <?php get_header(); ?>
@@ -31,50 +31,46 @@ Template name: Education
                     <div class="flex-container">
 
 
+
                         <?php
-                        $args = array(
-                            'type'                     => 'education',
-                            'child_of'                 => 0,
-                            'parent'                   => '',
-                            'orderby'                  => 'name',
-                            'order'                    => 'ASC',
-                            'hide_empty'               => 0,
-                            'hierarchical'             => 1,
-                            'taxonomy'                 => 'educations',
-                            'pad_counts'               => false
-                        );
-                        $categories = get_categories($args);
+                        global $post;
+     
 
+                        $technical_posts = get_posts(array(
+                            'post_type' => 'blogtype1',
+                            'posts_per_page' => 10
 
-                        foreach ($categories as $category) {
-                            $url = get_term_link($category);
-                            $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+                        ));
 
-                            if ($imgurl) {
-                                $image = $imgurl;
-                            } else {
-                                $image = "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
-                            };
-                            $term_img = wp_get_attachment_url($category->term_id);
-                        ?>
-                            <div class="my-card">
+                        if ($technical_posts) {
+                         
+                            foreach ($technical_posts as $post) :
+                                setup_postdata($post);
+                                $image = get_the_post_thumbnail_url(); ?>
 
-
-                                <a href="<?php echo $url; ?>"> <img src="
+                                <div class="my-card">
+                                    <a href="<?php the_permalink(); ?>"> <img src="
                                     <?php
-                                    echo the_field('image', 'educations_' . $category->term_id);
+                                    if ($image) {
+                                        echo $image;
+                                    } else {
+                                        echo "http://medproducts.goopter.com/wp-content/uploads/2021/03/images-square-outlined-interface-button-symbol.png";
+                                    };
 
+                                    ?>" alt="<?php the_title(); ?>"></a>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php the_title(); ?></h5>
 
-                                    ?>" alt="<?php echo  $category->name; ?>"></a>
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo  $category->name; ?></h5>
-
+                                    </div>
                                 </div>
-                            </div>
+                              
                         <?php
-
+                            endforeach;
+                           
+                            wp_reset_postdata();
                         }
                         ?>
+                    
                     </div>
 
                     <?php

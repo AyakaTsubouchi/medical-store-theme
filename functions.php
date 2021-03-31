@@ -19,12 +19,11 @@ function include_jquery()
   wp_deregister_script('jquery');
   wp_register_script('jquery', get_template_directory_uri() . '/js/jquery-3.5.1.js', '', 1, true);
   wp_enqueue_script('jquery');
-  
-  
+
+
   wp_deregister_script('jquery-migrate');
   wp_register_script('jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate.min.js', '', 1, true);
   wp_enqueue_script('jquery-migrate');
-
 }
 add_action('wp_enqueue_scripts', 'include_jquery');
 
@@ -33,15 +32,15 @@ function load_js()
 
   wp_register_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', '', 1, true);
   wp_enqueue_script('bootstrap');
-  
-  
+
+
   wp_register_script('bootstrap-hover-dropdown', get_template_directory_uri() . '/js/bootstrap-hover-dropdown.min.js', '', 1, true);
   wp_enqueue_script('bootstrap-hover-dropdown');
-  
-  
+
+
   wp_register_script('jquery-mobile', get_template_directory_uri() . '/js/jquery.mobile.custom.min.js', '', 1, true);
   wp_enqueue_script('jquery-mobile');
-  
+
   wp_register_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', '', 1, true);
   wp_enqueue_script('jquery-ui');
 
@@ -56,8 +55,7 @@ function load_js()
 
   wp_register_script('kit.fontawesome', get_template_directory_uri() . '/js/kit.fontawesome.js', '', 1, true);
   wp_enqueue_script('kit.fontawesome');
-wp_enqueue_script('owlcarousel');
-
+  wp_enqueue_script('owlcarousel');
 }
 add_action('wp_enqueue_scripts', 'load_js');
 
@@ -111,8 +109,9 @@ add_action('after_setup_theme', 'consilting_register_nav_menu');
 
 
 // edit the search widget
-function html5_search_form( $form ) { 
-  $form = '<section class="search"><form role="search" method="get" id="search-form" action="' . home_url( '/' ) . '" >
+function html5_search_form($form)
+{
+  $form = '<section class="search"><form role="search" method="get" id="search-form" action="' . home_url('/') . '" >
  <label class="screen-reader-text" for="s">' . __('',  'domain') . '</label>
   <input class="search-text" type="search" value="' . get_search_query() . '" name="s" id="s" placeholder="Search for Products" />
   <button class="search-btn" type="submit" id="searchsubmit" ><i class="fas fa-search"></i></button>
@@ -120,7 +119,7 @@ function html5_search_form( $form ) {
   return $form;
 }
 
-add_filter( 'get_search_form', 'html5_search_form' );
+add_filter('get_search_form', 'html5_search_form');
 // edit the search widget
 
 
@@ -198,8 +197,8 @@ function sidebar_widgets_init()
     'after_widget'  => '</div>',
     'before_title'  => '<div class="middle-bar"><h4 class="sidebar-title">',
     'after_title'   => '</h4></div>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'sidebar_widgets_init');
@@ -214,8 +213,8 @@ function product_sidebar_init()
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'product_sidebar_init');
@@ -290,8 +289,8 @@ function homepost_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -312,8 +311,8 @@ function homepost_widget_init()
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'homepost_widget_init');
@@ -346,8 +345,8 @@ function pmpost_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -368,13 +367,13 @@ function pmpost_widget_init()
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'pmpost_widget_init');
 
-/*Added blogtype1 Post in Wordpress*/
+
 /*Add aboutpost Post in Wordpress*/
 function aboutpost_post_type()
 {
@@ -403,8 +402,8 @@ function aboutpost_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -425,23 +424,243 @@ function aboutpost_widget_init()
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'aboutpost_widget_init');
+
+// /*Added technical Post in Wordpress*/
+// function technical_post_type()
+// {
+
+//   $technical_labels = array(
+//     'name' => __('technical', 'medicalStore_site'),
+//     'singular_name' => __('technical', 'medicalStore_site'),
+//     'add_new' => __('Add new technical', 'medicalStore_site'),
+//     'add_new_item' => __('Add new technical', 'medicalStore_site'),
+//     'featured_image' => __('technical post image', 'medicalStore_site'),
+//     'set_featured_image' => __('Set technical image', 'medicalStore_site'),
+
+//   );
+
+//   $technical_args = array(
+
+//     'labels' =>  $technical_labels,
+//     'public' => true,
+//     'show_ui' => true,
+//     // 'rewrite' => array('slug' => 'aboutpost'),
+//     'capability_type' => 'post',
+//     'menu_position' => null,
+//     'show_in_rest' => true,
+
+//     'supports' => array(
+//       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+//       'comments', 'revisions', 'custom-fields'
+//     ),
+//     'taxonomies'          => array('category','post_tag'),
+
+
+//   );
+
+//   register_post_type('technical', $technical_args);
+// }
+
+// add_action('init', 'technical_post_type');
+
+// /*Added technical Post in Wordpress*/
+// /*register technical sidebar in Wordpress*/
+// function technical_widget_init()
+
+// {
+//   register_sidebar(array(
+//     'name'          => 'technical Post Sidebar',
+//     'id'            => 'technical-post-sidebar',
+//     'before_widget' => '<div class="card">',
+//     'after_widget'  => '</div>',
+//     'before_title'  => '<h5 class="card-title">',
+//     'after_title'   => '</h5>',
+
+
+//   ));
+// }
+// add_action('widgets_init', 'technical_widget_init');
+
+/*Added education Post in Wordpress*/
+// function education_post_type()
+// {
+
+//   $education_labels = array(
+//     'name' => __('education', 'medicalStore_site'),
+//     'singular_name' => __('education', 'medicalStore_site'),
+//     'add_new' => __('Add new education', 'medicalStore_site'),
+//     'add_new_item' => __('Add new education', 'medicalStore_site'),
+//     'featured_image' => __('education post image', 'medicalStore_site'),
+//     'set_featured_image' => __('Set education image', 'medicalStore_site'),
+
+//   );
+
+//   $education_args = array(
+
+//     'labels' =>  $education_labels,
+//     'public' => true,
+//     'show_ui' => true,
+//     // 'rewrite' => array('slug' => 'education'),
+//     'capability_type' => 'post',
+//     'menu_position' => null,
+//     'supports' => array(
+//       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+//       'comments', 'revisions', 'custom-fields'
+//     ),
+//     'taxonomies'          => array('category','post_tag'),
+
+
+//   );
+
+//   register_post_type('education', $education_args);
+// }
+
+// add_action('init', 'education_post_type');
+
+/*Added education Post in Wordpress*/
+/*register education sidebar in Wordpress*/
+// function education_widget_init()
+
+// {
+//   register_sidebar(array(
+//     'name'          => 'education Post Sidebar',
+//     'id'            => 'education-post-sidebar',
+//     'before_widget' => '<div class="card">',
+//     'after_widget'  => '</div>',
+//     'before_title'  => '<h5 class="card-title">',
+//     'after_title'   => '</h5>',
+
+
+//   ));
+// }
+// add_action('widgets_init', 'education_widget_init');
+
+
+/*Added newsfeed Post in Wordpress*/
+// function newsfeed_post_type()
+// {
+
+//   $newsfeed_labels = array(
+//     'name' => __('newsfeed', 'medicalStore_site'),
+//     'singular_name' => __('newsfeed', 'medicalStore_site'),
+//     'add_new' => __('Add new newsfeed', 'medicalStore_site'),
+//     'add_new_item' => __('Add new newsfeed', 'medicalStore_site'),
+//     'featured_image' => __('newsfeed post image', 'medicalStore_site'),
+//     'set_featured_image' => __('Set newsfeed image', 'medicalStore_site'),
+
+//   );
+
+//   $newsfeed_args = array(
+
+//     'labels' =>  $newsfeed_labels,
+//     'public' => true,
+//     'show_ui' => true,
+//     // 'rewrite' => array('slug' => 'newsfeed'),
+//     'capability_type' => 'post',
+//     'menu_position' => null,
+//     'supports' => array(
+//       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+//       'comments', 'revisions', 'custom-fields'
+//     ),
+//     'taxonomies'          => array('category','post_tag'),
+
+
+//   );
+
+//   register_post_type('newsfeed', $newsfeed_args);
+// }
+
+// add_action('init', 'newsfeed_post_type');
+
+/*Added newsfeed Post in Wordpress*/
+/*register newsfeed sidebar in Wordpress*/
+// function newsfeed_widget_init()
+
+// {
+//   register_sidebar(array(
+//     'name'          => 'newsfeed Post Sidebar',
+//     'id'            => 'newsfeed-post-sidebar',
+//     'before_widget' => '<div class="card">',
+//     'after_widget'  => '</div>',
+//     'before_title'  => '<h5 class="card-title">',
+//     'after_title'   => '</h5>',
+
+
+//   ));
+// }
+// add_action('widgets_init', 'newsfeed_widget_init');
+
+
+/*Added event Post in Wordpress*/
+// function event_post_type()
+// {
+
+//   $event_labels = array(
+//     'name' => __('event', 'medicalStore_site'),
+//     'singular_name' => __('event', 'medicalStore_site'),
+//     'add_new' => __('Add new event', 'medicalStore_site'),
+//     'add_new_item' => __('Add new event', 'medicalStore_site'),
+//     'featured_image' => __('event post image', 'medicalStore_site'),
+//     'set_featured_image' => __('Set event image', 'medicalStore_site'),
+
+//   );
+
+//   $event_args = array(
+
+//     'labels' =>  $event_labels,
+//     'public' => true,
+//     'show_ui' => true,
+//     // 'rewrite' => array('slug' => 'event'),
+//     'capability_type' => 'post',
+//     'menu_position' => null,
+//     'supports' => array(
+//       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
+//       'comments', 'revisions', 'custom-fields'
+//     ),
+//     'taxonomies'          => array('category','post_tag'),
+
+
+//   );
+
+//   register_post_type('event', $event_args);
+// }
+
+// add_action('init', 'event_post_type');
+
+// /*Added event Post in Wordpress*/
+// /*register event sidebar in Wordpress*/
+// function event_widget_init()
+
+// {
+//   register_sidebar(array(
+//     'name'          => 'event Post Sidebar',
+//     'id'            => 'event-post-sidebar',
+//     'before_widget' => '<div class="card">',
+//     'after_widget'  => '</div>',
+//     'before_title'  => '<h5 class="card-title">',
+//     'after_title'   => '</h5>',
+
+
+//   ));
+// }
+// add_action('widgets_init', 'event_widget_init');
 
 /*Added blogtype1 Post in Wordpress*/
 function blogtype1_post_type()
 {
 
   $blogtype1_labels = array(
-    'name' => __('blogtype1', 'medicalStore_site'),
-    'singular_name' => __('blogtype1', 'medicalStore_site'),
-    'add_new' => __('Add new blogtype1', 'medicalStore_site'),
-    'add_new_item' => __('Add new blogtype1', 'medicalStore_site'),
-    'featured_image' => __('blogtype1 post image', 'medicalStore_site'),
-    'set_featured_image' => __('Set blogtype1 image', 'medicalStore_site'),
+    'name' => __('Technical', 'medicalStore_site'),
+    'singular_name' => __('Technical', 'medicalStore_site'),
+    'add_new' => __('Add new Technical', 'medicalStore_site'),
+    'add_new_item' => __('Add new Technical', 'medicalStore_site'),
+    'featured_image' => __('Technical post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set Technical image', 'medicalStore_site'),
 
   );
 
@@ -450,17 +669,16 @@ function blogtype1_post_type()
     'labels' =>  $blogtype1_labels,
     'public' => true,
     'show_ui' => true,
-    // 'rewrite' => array('slug' => 'aboutpost'),
     'capability_type' => 'post',
     'menu_position' => null,
     'show_in_rest' => true,
-
+    'rewrite' => array('slug' => 'blogtype1'),
     'supports' => array(
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -475,14 +693,14 @@ function blogtype1_widget_init()
 
 {
   register_sidebar(array(
-    'name'          => 'blogtype1 Post Sidebar',
+    'name'          => 'Technical Post Sidebar',
     'id'            => 'blogtype1-post-sidebar',
     'before_widget' => '<div class="card">',
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'blogtype1_widget_init');
@@ -492,12 +710,12 @@ function blogtype2_post_type()
 {
 
   $blogtype2_labels = array(
-    'name' => __('blogtype2', 'medicalStore_site'),
-    'singular_name' => __('blogtype2', 'medicalStore_site'),
-    'add_new' => __('Add new blogtype2', 'medicalStore_site'),
-    'add_new_item' => __('Add new blogtype2', 'medicalStore_site'),
-    'featured_image' => __('blogtype2 post image', 'medicalStore_site'),
-    'set_featured_image' => __('Set blogtype2 image', 'medicalStore_site'),
+    'name' => __('Education', 'medicalStore_site'),
+    'singular_name' => __('Education', 'medicalStore_site'),
+    'add_new' => __('Add new Education', 'medicalStore_site'),
+    'add_new_item' => __('Add new Education', 'medicalStore_site'),
+    'featured_image' => __('Education post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set Education image', 'medicalStore_site'),
 
   );
 
@@ -513,8 +731,8 @@ function blogtype2_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('post_tag'),
+
 
   );
 
@@ -529,14 +747,14 @@ function blogtype2_widget_init()
 
 {
   register_sidebar(array(
-    'name'          => 'blogtype2 Post Sidebar',
+    'name'          => 'Education Post Sidebar',
     'id'            => 'blogtype2-post-sidebar',
     'before_widget' => '<div class="card">',
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'blogtype2_widget_init');
@@ -547,12 +765,12 @@ function blogtype3_post_type()
 {
 
   $blogtype3_labels = array(
-    'name' => __('blogtype3', 'medicalStore_site'),
-    'singular_name' => __('blogtype3', 'medicalStore_site'),
-    'add_new' => __('Add new blogtype3', 'medicalStore_site'),
-    'add_new_item' => __('Add new blogtype3', 'medicalStore_site'),
-    'featured_image' => __('blogtype3 post image', 'medicalStore_site'),
-    'set_featured_image' => __('Set blogtype3 image', 'medicalStore_site'),
+    'name' => __('News Feed', 'medicalStore_site'),
+    'singular_name' => __('News Feed', 'medicalStore_site'),
+    'add_new' => __('Add new News Feed', 'medicalStore_site'),
+    'add_new_item' => __('Add new News Feed', 'medicalStore_site'),
+    'featured_image' => __('News Feed post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set News Feed image', 'medicalStore_site'),
 
   );
 
@@ -568,8 +786,8 @@ function blogtype3_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -584,14 +802,14 @@ function blogtype3_widget_init()
 
 {
   register_sidebar(array(
-    'name'          => 'blogtype3 Post Sidebar',
+    'name'          => 'News Feed Post Sidebar',
     'id'            => 'blogtype3-post-sidebar',
     'before_widget' => '<div class="card">',
     'after_widget'  => '</div>',
     'before_title'  => '<h5 class="card-title">',
     'after_title'   => '</h5>',
-    
-    
+
+
   ));
 }
 add_action('widgets_init', 'blogtype3_widget_init');
@@ -602,12 +820,12 @@ function blogtype4_post_type()
 {
 
   $blogtype4_labels = array(
-    'name' => __('blogtype4', 'medicalStore_site'),
-    'singular_name' => __('blogtype4', 'medicalStore_site'),
-    'add_new' => __('Add new blogtype4', 'medicalStore_site'),
-    'add_new_item' => __('Add new blogtype4', 'medicalStore_site'),
-    'featured_image' => __('blogtype4 post image', 'medicalStore_site'),
-    'set_featured_image' => __('Set blogtype4 image', 'medicalStore_site'),
+    'name' => __('Event', 'medicalStore_site'),
+    'singular_name' => __('Event', 'medicalStore_site'),
+    'add_new' => __('Add new Event', 'medicalStore_site'),
+    'add_new_item' => __('Add new Event', 'medicalStore_site'),
+    'featured_image' => __('Event post image', 'medicalStore_site'),
+    'set_featured_image' => __('Set Event image', 'medicalStore_site'),
 
   );
 
@@ -623,8 +841,8 @@ function blogtype4_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -634,77 +852,7 @@ function blogtype4_post_type()
 add_action('init', 'blogtype4_post_type');
 
 /*Added blogtype4 Post in Wordpress*/
-/*register blogtype4 sidebar in Wordpress*/
-function blogtype4_widget_init()
 
-{
-  register_sidebar(array(
-    'name'          => 'blogtype4 Post Sidebar',
-    'id'            => 'blogtype4-post-sidebar',
-    'before_widget' => '<div class="card">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="card-title">',
-    'after_title'   => '</h5>',
-    
-    
-  ));
-}
-add_action('widgets_init', 'blogtype4_widget_init');
-
-
-/*Added blogtype5 Post in Wordpress*/
-function blogtype5_post_type()
-{
-
-  $blogtype5_labels = array(
-    'name' => __('blogtype5', 'medicalStore_site'),
-    'singular_name' => __('blogtype5', 'medicalStore_site'),
-    'add_new' => __('Add new blogtype5', 'medicalStore_site'),
-    'add_new_item' => __('Add new blogtype5', 'medicalStore_site'),
-    'featured_image' => __('blogtype5 post image', 'medicalStore_site'),
-    'set_featured_image' => __('Set blogtype5 image', 'medicalStore_site'),
-
-  );
-
-  $blogtype5_args = array(
-
-    'labels' =>  $blogtype5_labels,
-    'public' => true,
-    'show_ui' => true,
-    // 'rewrite' => array('slug' => 'blogtype5'),
-    'capability_type' => 'post',
-    'menu_position' => null,
-    'supports' => array(
-      'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
-      'comments', 'revisions', 'custom-fields'
-    ),
-    'taxonomies'          => array('category','post_tag'),
-  
-
-  );
-
-  register_post_type('blogtype5', $blogtype5_args);
-}
-
-add_action('init', 'blogtype5_post_type');
-
-/*Added blogtype5 Post in Wordpress*/
-/*register blogtype5 sidebar in Wordpress*/
-function blogtype5_widget_init()
-
-{
-  register_sidebar(array(
-    'name'          => 'blogtype5 Post Sidebar',
-    'id'            => 'blogtype5-post-sidebar',
-    'before_widget' => '<div class="card">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h5 class="card-title">',
-    'after_title'   => '</h5>',
-    
-    
-  ));
-}
-add_action('widgets_init', 'blogtype5_widget_init');
 
 
 // get post image url
@@ -792,8 +940,8 @@ function mtlist_post_type()
       'title', 'editor', 'thumbnail', 'excerpt', 'author', 'permalinks',
       'comments', 'revisions', 'custom-fields'
     ),
-    'taxonomies'          => array('category','post_tag'),
-  
+    'taxonomies'          => array('category', 'post_tag'),
+
 
   );
 
@@ -896,64 +1044,137 @@ load_theme_textdomain('themify', TEMPLATEPATH . '/languages');
 function mytheme_add_woocommerce_support()
 {
   add_theme_support('woocommerce');
-  
 }
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
 
 
- 
-function yourtheme_setup() {
-    add_theme_support( 'wc-product-gallery-zoom' );
-    add_theme_support( 'wc-product-gallery-lightbox' );
-    add_theme_support( 'wc-product-gallery-slider' );
+
+function yourtheme_setup()
+{
+  add_theme_support('wc-product-gallery-zoom');
+  add_theme_support('wc-product-gallery-lightbox');
+  add_theme_support('wc-product-gallery-slider');
 }
-add_action( 'after_setup_theme', 'yourtheme_setup' );
+add_action('after_setup_theme', 'yourtheme_setup');
 
 // make the Woocommerce Products Widget display Products of a specific Category only
-add_filter( 'woocommerce_products_widget_query_args', function( $query_args ){
+add_filter('woocommerce_products_widget_query_args', function ($query_args) {
   // Set HERE your product category slugs 
-  $categories = array( 'blinds', 'draperies','motorization' );
+  $categories = array('blinds', 'draperies', 'motorization');
 
-  $query_args['tax_query'] = array( array(
-      'taxonomy' => 'product_cat',
-      'field'    => 'slug',
-      'terms'    => $categories,
+  $query_args['tax_query'] = array(array(
+    'taxonomy' => 'product_cat',
+    'field'    => 'slug',
+    'terms'    => $categories,
   ));
 
   return $query_args;
-}, 10, 1 );
+}, 10, 1);
 
-    //allow to upload svg file
-    function cc_mime_types($mimes) {
-      $mimes['svg'] = 'image/svg+xml';
-      return $mimes;
+//allow to upload svg file
+function cc_mime_types($mimes)
+{
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+//add image icon to the nav menu
+add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+
+function my_wp_nav_menu_objects($items, $args)
+{
+
+  // loop
+  foreach ($items as &$item) {
+
+    // vars
+    $icon = get_field('icon', $item);
+    $iconBg = get_field('icon_background', $item);
+
+
+    // append icon
+    if ($icon) {
+
+      $item->title .= ' <img src="' . $icon . '" style="background:' . $iconBg . '"}>';
     }
-    add_filter('upload_mimes', 'cc_mime_types');
-    
-    //add image icon to the nav menu
-    add_filter('wp_nav_menu_objects', 'my_wp_nav_menu_objects', 10, 2);
+  }
 
-function my_wp_nav_menu_objects( $items, $args ) {
-	
-	// loop
-	foreach( $items as &$item ) {
-		
-		// vars
-		$icon = get_field('icon', $item);
-		$iconBg = get_field('icon_background', $item);
-		
-		
-		// append icon
-		if( $icon ) {
-			
-			$item->title .= ' <img src="'.$icon.'" style="background:'.$iconBg.'"}>';
-			
-		}
-		
-	}
-	
-	
-	// return
-	return $items;
-	
+
+  // return
+  return $items;
+}
+
+
+
+
+//try
+function wpbeginner_numeric_posts_nav()
+{
+
+  if (is_singular())
+    return;
+
+  global $wp_query;
+
+  /** Stop execution if there's only 1 page */
+  if ($wp_query->max_num_pages <= 1)
+    return;
+
+  $paged = get_query_var('paged') ? absint(get_query_var('paged')) : 1;
+  $max   = intval($wp_query->max_num_pages);
+
+  /** Add current page to the array */
+  if ($paged >= 1)
+    $links[] = $paged;
+
+  /** Add the pages around the current page to the array */
+  if ($paged >= 3) {
+    $links[] = $paged - 1;
+    $links[] = $paged - 2;
+  }
+
+  if (($paged + 2) <= $max) {
+    $links[] = $paged + 2;
+    $links[] = $paged + 1;
+  }
+
+  echo '<div class="navigation"><ul>' . "\n";
+
+  /** Previous Post Link */
+  if (get_previous_posts_link())
+    printf('<li>%s</li>' . "\n", get_previous_posts_link());
+
+
+  /** Link to first page, plus ellipses if necessary */
+  if (!in_array(1, $links)) {
+    $class = 1 == $paged ? ' class="active"' : '';
+
+    printf('<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link(1)), '1');
+
+    if (!in_array(2, $links))
+      echo '<li>…</li>';
+  }
+
+  /** Link to current page, plus 2 pages in either direction if necessary */
+  sort($links);
+  foreach ((array) $links as $link) {
+    $class = $paged == $link ? ' class="active"' : '';
+    printf('<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($link)), $link);
+  }
+
+  /** Link to last page, plus ellipses if necessary */
+  if (!in_array($max, $links)) {
+    if (!in_array($max - 1, $links))
+      echo '<li>…</li>' . "\n";
+
+    $class = $paged == $max ? ' class="active"' : '';
+    printf('<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url(get_pagenum_link($max)), $max);
+  }
+
+  /** Next Post Link */
+  if (get_next_posts_link())
+    printf('<li>%s</li>' . "\n", get_next_posts_link());
+
+  echo '</ul></div>' . "\n";
 }

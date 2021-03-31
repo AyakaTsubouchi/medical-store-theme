@@ -1,53 +1,68 @@
-.my-archive {
-    margin-top: 30px;
-    h2 {
-        line-height: 75px;
-        font-weight: 400;
-        span {
-            display: inline-block;
-            position: relative;
+.search-results {
+    .my-archive {
+        margin-top: 30px;
+        h2 {
+        
+            font-weight: 300;
+            line-height: 1.1;
+            letter-spacing: 1.1px;
+            font-size: 1.6rem;
+            word-spacing: -2px;
         }
-
-        span:after {
-            content: "";
-            position: absolute;
-            height: 5px;
-            border-top: 2px solid $accent-color;
-            top: 39px;
-            width: 150%;
+        .row.border-bottom {
+            padding-bottom: 20px;
+            border-bottom: 1px solid #d0d0d0;
         }
-
-        span:after {
-            left: 100%;
-            margin-left: 10px;
-        }
-    }
-    .my-card {
-        width: 100%;
-        margin: 30px 10px;
-        border: 1px solid gray;
-        h5 {
-            font-size: 20px;
-            color: $accent-color;
-            padding: 10px;
-            text-align: center;
-            // font-weight: 100;
-        }
-        img {
-            height: 200px;
+        .my-card {
             width: 100%;
-            object-fit: cover;
+            margin: 30px 10px;
+            @media (max-width: 767px) {
+                margin: 0px;
+                margin-top: 10px;
+            }
+            border: 1px solid gray;
+            h5 {
+                font-size: 20px;
+                color: $accent-color;
+                padding: 10px;
+                text-align: center;
+                // font-weight: 100;
+            }
+            img {
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+            }
+            p {
+                // text-align: end;
+            }
         }
-        p {
-            text-align: end;
+        .card {
+            border: none;
+            ul {
+                list-style: none;
+                padding-left: 10px;
+                font-weight: 100;
+            }
+        }
+        .custom-sm-screen {
+            @media (max-width: 571px) {
+                width: 50% !important;
+            }
         }
     }
-    .card {
-        border: none;
-        ul {
-            list-style: none;
-            padding-left: 10px;
-            font-weight: 100;
+    .wp-pagenavi {
+        margin-top: 10px;
+        text-align: end;
+        .current,
+        .page,
+        .extend {
+            border: none;
+            border-right: 1px solid rgb(184, 184, 184);
+        }
+        .nextpostslink,
+        .previouspostslink{
+            border: none;
         }
     }
 }

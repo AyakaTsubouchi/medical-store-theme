@@ -38,14 +38,16 @@
                <div class="row">
                   <div class="logo col-lg-4 col-md-6">
                      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
+                        <!-- <i class="fas fa-bars"></i> -->
+                        <img src="http://medproducts.goopter.com/wp-content/uploads/2021/03/menu.png">
+                       
                      </button>
                      <div class="logo-wrapper">
                         <?php echo get_custom_logo(); ?>
                      </div>
                   </div>
                   <div class="search-btn-for-mobile col-md-6">
-                     <!-- <i class="fas fa-search"></i> -->
+                    
                      <?php
                      if (is_active_sidebar('custom-header-widget')) {
                         dynamic_sidebar('custom-header-widget');

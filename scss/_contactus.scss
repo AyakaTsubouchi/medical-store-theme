@@ -35,15 +35,16 @@
     input.custom-btn {
         transition: 0.2s;
         color: white;
-        background: green;
-        padding: 6px 34px;
+        background: $accent-color;
+        // padding: 6px 34px;
         border-radius: 16px;
         text-decoration: none;
+        width: 100px;
     }
     input.custom-btn:hover {
         background: white;
-        border: 1px solid green;
-        color: green;
+        border: 1px solid $accent-color;
+        color: $accent-color;
         cursor: pointer;
     }
     .contact-section {

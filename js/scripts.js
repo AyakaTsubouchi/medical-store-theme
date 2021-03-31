@@ -160,9 +160,20 @@ $(document).ready(function() {
       $(".message-button").addClass('come-in');
     }, 1000);
   });
- 
-    
+});
 
+// to show the button after scrolling
+$(document).ready(function() {
+  $(window).scroll(function() {
+    var scrollPos = $(document).scrollTop();
+
+    if (scrollPos < 100) {
+      $(".back-to-top").removeClass("show");
+    } else if (scrollPos >= 100) {
+      $(".back-to-top").addClass("show");
+    }
+  });
+  
 });
 
 /*--------------------------------------

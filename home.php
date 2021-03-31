@@ -28,7 +28,7 @@ Template name: Home
         wp_reset_postdata();
     }
 
-    $blogtype3_posts = get_posts(array(
+    $newsfeed_posts = get_posts(array(
         'post_type' => 'blogtype3',
         'posts_per_page' => 2
 
@@ -40,8 +40,8 @@ Template name: Home
             <div class="content">
                 <div class="row">
                     <?php
-                    if ($blogtype3_posts) {
-                        foreach ($blogtype3_posts as $post) {
+                    if ($newsfeed_posts) {
+                        foreach ($newsfeed_posts as $post) {
                             setup_postdata($post); ?>
                             <div class=" col-lg-6 col-md-12">
                                 <div class="card">
@@ -70,9 +70,9 @@ Template name: Home
             <?php
 
 
-            $blogtype4_posts = get_posts(array(
+            $event_posts = get_posts(array(
                 'post_type' => 'blogtype4',
-                'posts_per_page' => 4
+                'posts_per_page' => 3
 
             ));
             ?>
@@ -83,8 +83,8 @@ Template name: Home
                 <h2>Upcoming Events</h2>
 
                 <hr>
-                <?php if ($blogtype4_posts) {
-                    foreach ($blogtype4_posts as $post) {
+                <?php if ($event_posts) {
+                    foreach ($event_posts as $post) {
                         setup_postdata($post); ?>
                         <div class="card">
                             <div class="card-body">
@@ -94,6 +94,8 @@ Template name: Home
                                     </div>
                                     <div class="col-lg-9 col-md-9 col-sm-12">
                                         <h5><?php echo the_title(); ?></h5>
+                                        <p><?php the_field('location'); ?></p>
+                                        <p><?php the_field('venue'); ?></p>
                                     </div>
                                 </div>
 

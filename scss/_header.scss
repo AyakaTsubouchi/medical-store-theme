@@ -23,7 +23,10 @@ header {
             p {
                 line-height: 1.3;
                 margin-bottom: 0rem;
-                font-size: 10px;
+                font-size: 13px;
+                padding-left: 15px;
+                padding-right: 15px;
+                text-align: center;
             }
         }
     }
@@ -48,7 +51,11 @@ header {
             display: flex;
             .navbar-toggler {
                 display: none;
+                img{
+                    width: 30px;
+                }
             }
+          
             @media (max-width: 992px) {
                 .navbar-toggler {
                     display: block;
@@ -61,6 +68,9 @@ header {
                 img {
                     width: 200px;
                     height: auto;
+                    @media (max-width: 479px) {
+                        width: 130px;
+                    }
                 }
             }
         }
@@ -75,22 +85,40 @@ header {
         }
         .search {
             padding-top: 30px;
+            form {
+                text-align: center;
+            }
 
             .search-text {
                 width: 60%;
                 max-width: 400px;
-                padding-right: 0px;
                 border: none;
                 margin-right: -5px;
                 background-color: #eae8e8;
-
+                padding-right: 0px;
+                padding: 0 9px;
+                height: 32px;
+                font-size: 14px;
+                @media (max-width: 767px) {
+                    width: 85%;
+                }
+                @media (max-width: 257px) {
+                    width: 80%;
+                }
+            }
+            .search-text::placeholder {
+                color: rgb(175, 175, 175);
+                opacity: 1;
             }
             .search-btn {
                 padding-left: 6px;
                 border: none;
                 background: $accent-color;
                 color: white;
-
+                border-radius: 0px 5px 5px 0px;
+                i{
+                    padding: 6px 0px 9px 4px;
+                }
             }
         }
     }
@@ -98,18 +126,18 @@ header {
     .dropdown:hover {
         .dropdown-menu {
             display: block;
-           
+
             .cat-second-child {
                 display: block;
             }
         }
-        .dropdown-menu.depth-0{
+        .dropdown-menu.depth-0 {
             // position: absolute;
             top: 30px;
         }
-        .dropdown-menu.depth-1{
+        .dropdown-menu.depth-1 {
             padding-left: 10px;
-            a{
+            a {
                 display: inline-block;
             }
         }
@@ -155,10 +183,7 @@ header {
         }
     }
 
-
     .dropdown-menu {
-         
-
         .cat-title {
             padding-top: 10px;
             a {
@@ -180,18 +205,17 @@ header {
                 height: 35px;
             }
         }
-
     }
     @media (max-width: 992px) {
-        .navbar-collapse.show{
-            .dropdown-menu{
+        .navbar-collapse.show {
+            .dropdown-menu {
                 .menu-item.cat-second-child {
                     display: none;
                 }
             }
         }
 
-        .dropdown-menu{
+        .dropdown-menu {
             border: none;
             padding: 0;
             margin: 0;
@@ -201,14 +225,14 @@ header {
                     color: gray;
                     font-weight: 100;
                     padding: 0;
-            
+
                     span {
                         width: 100%;
                         display: flex;
                         justify-content: space-between;
                         white-space: break-spaces;
                         img {
-                            height:  23px;
+                            height: 23px;
                             width: 23px;
                             border-radius: 17px;
                             padding-left: 4px;
@@ -219,8 +243,6 @@ header {
                     }
                 }
             }
-           
         }
-       
     }
 }

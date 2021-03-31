@@ -9,7 +9,7 @@
 	} elseif ('blogtype2' == get_post_type()) {
 		include('custom-single-post/single-blogtype1.php');
 	} elseif ('blogtype3' == get_post_type()) {
-		include('custom-single-post/single-blogtype3.php');
+		include('custom-single-post/single-blogtype1.php');
 	
 	} else {
 

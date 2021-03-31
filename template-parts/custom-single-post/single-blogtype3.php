@@ -28,8 +28,8 @@
                             </div>
                         </div>
                         <?php
-                        if (is_active_sidebar('blogtype3-post-sidebar')) {
-                            dynamic_sidebar('blogtype3-post-sidebar');
+                        if (is_active_sidebar('newsfeed-post-sidebar')) {
+                            dynamic_sidebar('newsfeed-post-sidebar');
                         }
                         ?>
                     </div>

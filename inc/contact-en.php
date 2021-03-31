@@ -35,15 +35,13 @@
 				<hr>
 				<div class="row">
 					<div class="col">
-						<p class="title">Phone</p>
-						<p><?php echo get_field("phone_label", 533);
-							echo get_field("phone", 533); ?></p>
+						<p class="title"><?php echo get_field("phone_label", 533);?></p>
+						<p><?php echo get_field("phone", 533); ?></p>
 
 					</div>
 					<div class="col">
-						<p class="title">Fax</p>
-						<p><?php echo get_field("fax_label", 533);
-							echo get_field("fax", 533); ?></p>
+						<p class="title"><?php echo get_field("fax_label", 533); ?></p>
+						<p><?php echo get_field("fax", 533); ?></p>
 
 					</div>
 				</div>
@@ -82,7 +80,8 @@
 				<div class="contactus-form">
 					<div class="form-wrapper">
 						<div class="form-inner">
-							<?php echo do_shortcode('	[contact-form-7 id="3503" title="Medical quote form_copy"]');?>
+							<?php echo do_shortcode('[contact-form-7 id="4977" title="medical contact page form (EN)"]');?>
+				
 							
 					
 							<!-- <form action="">

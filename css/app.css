@@ -11042,7 +11042,10 @@ header .top-header .container {
 header .top-header .container p {
   line-height: 1.3;
   margin-bottom: 0rem;
-  font-size: 10px;
+  font-size: 13px;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
 }
 
 header .middle-header {
@@ -11075,6 +11078,10 @@ header .container .logo .navbar-toggler {
   display: none;
 }
 
+header .container .logo .navbar-toggler img {
+  width: 30px;
+}
+
 @media (max-width: 992px) {
   header .container .logo .navbar-toggler {
     display: block;
@@ -11089,6 +11096,12 @@ header .container .logo .logo-wrapper {
 header .container .logo .logo-wrapper img {
   width: 200px;
   height: auto;
+}
+
+@media (max-width: 479px) {
+  header .container .logo .logo-wrapper img {
+    width: 130px;
+  }
 }
 
 header .container .navbar-collapse {
@@ -11109,13 +11122,47 @@ header .container .search {
   padding-top: 30px;
 }
 
+header .container .search form {
+  text-align: center;
+}
+
 header .container .search .search-text {
   width: 60%;
   max-width: 400px;
-  padding-right: 0px;
   border: none;
   margin-right: -5px;
   background-color: #eae8e8;
+  padding-right: 0px;
+  padding: 0 9px;
+  height: 32px;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  header .container .search .search-text {
+    width: 85%;
+  }
+}
+
+@media (max-width: 257px) {
+  header .container .search .search-text {
+    width: 80%;
+  }
+}
+
+header .container .search .search-text::-moz-placeholder {
+  color: #afafaf;
+  opacity: 1;
+}
+
+header .container .search .search-text:-ms-input-placeholder {
+  color: #afafaf;
+  opacity: 1;
+}
+
+header .container .search .search-text::placeholder {
+  color: #afafaf;
+  opacity: 1;
 }
 
 header .container .search .search-btn {
@@ -11123,6 +11170,11 @@ header .container .search .search-btn {
   border: none;
   background: #248066;
   color: white;
+  border-radius: 0px 5px 5px 0px;
+}
+
+header .container .search .search-btn i {
+  padding: 6px 0px 9px 4px;
 }
 
 header .dropdown:hover .dropdown-menu {
@@ -11382,6 +11434,12 @@ header .dropdown-menu .cat-title img {
   text-align: center;
   color: black;
   min-height: 0px;
+}
+
+.home .events .card p {
+  margin-bottom: 0;
+  line-height: 1rem;
+  text-align: center;
 }
 
 .page-post section {
@@ -11787,16 +11845,16 @@ header .dropdown-menu .cat-title img {
 .contactus input.custom-btn {
   transition: 0.2s;
   color: white;
-  background: green;
-  padding: 6px 34px;
+  background: #248066;
   border-radius: 16px;
   text-decoration: none;
+  width: 100px;
 }
 
 .contactus input.custom-btn:hover {
   background: white;
-  border: 1px solid green;
-  color: green;
+  border: 1px solid #248066;
+  color: #248066;
   cursor: pointer;
 }
 
@@ -12009,6 +12067,31 @@ header .dropdown-menu .cat-title img {
   -o-object-fit: contain;
      object-fit: contain;
   margin: 30px auto;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 30px;
+  background-color: #248066;
+  opacity: 0.3;
+  padding: 10px;
+  border-radius: 10px;
+  padding: 5px 8px;
+  z-index: 1;
+  font-size: 13px;
+}
+
+.back-to-top a {
+  color: white;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+}
+
+.show {
+  display: block !important;
 }
 
 .fixed-btn-wrapper {
@@ -12364,66 +12447,81 @@ header .dropdown-menu .cat-title img {
   margin-top: 100px;
 }
 
-.my-archive {
+.search-results .my-archive {
   margin-top: 30px;
 }
 
-.my-archive h2 {
-  line-height: 75px;
-  font-weight: 400;
+.search-results .my-archive h2 {
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 1.1px;
+  font-size: 1.6rem;
+  word-spacing: -2px;
 }
 
-.my-archive h2 span {
-  display: inline-block;
-  position: relative;
+.search-results .my-archive .row.border-bottom {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #d0d0d0;
 }
 
-.my-archive h2 span:after {
-  content: "";
-  position: absolute;
-  height: 5px;
-  border-top: 2px solid #248066;
-  top: 39px;
-  width: 150%;
-}
-
-.my-archive h2 span:after {
-  left: 100%;
-  margin-left: 10px;
-}
-
-.my-archive .my-card {
+.search-results .my-archive .my-card {
   width: 100%;
   margin: 30px 10px;
   border: 1px solid gray;
 }
 
-.my-archive .my-card h5 {
+@media (max-width: 767px) {
+  .search-results .my-archive .my-card {
+    margin: 0px;
+    margin-top: 10px;
+  }
+}
+
+.search-results .my-archive .my-card h5 {
   font-size: 20px;
   color: #248066;
   padding: 10px;
   text-align: center;
 }
 
-.my-archive .my-card img {
+.search-results .my-archive .my-card img {
   height: 200px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.my-archive .my-card p {
-  text-align: end;
-}
-
-.my-archive .card {
+.search-results .my-archive .card {
   border: none;
 }
 
-.my-archive .card ul {
+.search-results .my-archive .card ul {
   list-style: none;
   padding-left: 10px;
   font-weight: 100;
+}
+
+@media (max-width: 571px) {
+  .search-results .my-archive .custom-sm-screen {
+    width: 50% !important;
+  }
+}
+
+.search-results .wp-pagenavi {
+  margin-top: 10px;
+  text-align: end;
+}
+
+.search-results .wp-pagenavi .current,
+.search-results .wp-pagenavi .page,
+.search-results .wp-pagenavi .extend {
+  border: none;
+  border-right: 1px solid #b8b8b8;
+}
+
+.search-results .wp-pagenavi .nextpostslink,
+.search-results .wp-pagenavi .previouspostslink {
+  border: none;
 }
 
 .tax-educations h2 {
@@ -12473,6 +12571,22 @@ header .dropdown-menu .cat-title img {
 .tax-educations .side-bar .widget-1,
 .tax-educations .side-bar .widget-2 {
   border: none;
+}
+
+.flex-container.events {
+  margin-bottom: 30px;
+}
+
+.flex-container.events .card {
+  width: 100%;
+}
+
+.flex-container.events .card .card-body {
+  padding: 0.8rem;
+}
+
+.flex-container.events .card .card-body p {
+  margin-bottom: 0;
 }
 
 .product-cat {

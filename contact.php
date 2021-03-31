@@ -32,12 +32,8 @@ Template name: Contact
 					if ($businessInfo_post) {
 						foreach ($businessInfo_post as $post) :
 							setup_postdata($post);
-							$current_lang = pll_current_language();
-							if ($current_lang === 'zh') {
-								include('inc/contact-zh.php');
-							} else {
-								include('inc/contact-en.php');
-							}
+							include('inc/contact-en.php');
+							
 						endforeach;
 						wp_reset_postdata();
 					}

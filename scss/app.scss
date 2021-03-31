@@ -17,6 +17,7 @@
 @import "form-mail";
 @import "search-result";
 @import "taxonomy-educations";
+@import "events";
 
 
 //inc
@@ -29,6 +30,5 @@
 @import "single-blogtype3";
 
 //woocommerce
-// @import "woo-product-category";
 @import "_woo-single-product";
 @import "woo-product-archive";
