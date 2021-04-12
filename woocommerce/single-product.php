@@ -75,13 +75,13 @@ if (!empty($terms) && !is_wp_error($terms)) {
 ?>
 <div class="product-main min-height">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 left-col">
+        <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12 left-col">
             <div class="product-title">
                 <h3><?php the_title(); ?></h3>
 
-                <!-- <h5><?php echo $desc; ?></h5> -->
-                <h5><?php the_excerpt(); ?></h5>
-                <p>SKU: <?php echo $sku; ?></p>
+
+                <?php the_excerpt(); ?>
+                <p class="sku">SKU: <?php echo $sku; ?></p>
             </div>
             <div class="large-image">
                 <div class="image-gallery">
@@ -98,8 +98,9 @@ if (!empty($terms) && !is_wp_error($terms)) {
                     ?>
                 </div>
             </div>
+
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-12 right-col">
+        <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12 right-col">
 
             <div class="attribute-icons">
                 <div class="icon">
@@ -144,15 +145,18 @@ if (!empty($terms) && !is_wp_error($terms)) {
             </div>
             <hr>
             <div class="packaging">
-                <div class="row">
-                    <div class="col">
+                <div class="flex-box">
+                    <div class="title">
                         <p>PACKAGING</p>
                     </div>
-                    <div class="col">
-                        <div class="box">
-                            <?php echo $packaging; ?>
-                        </div>
-                    </div>
+
+                    <?php 
+                    if($packaging!==""){
+                        echo "<div class='box'>".
+                        $packaging ."</div>";
+                    };
+                    ?>
+
                 </div>
             </div>
             <div class="custom-btn where-to-buy">
@@ -194,16 +198,20 @@ if (!empty($terms) && !is_wp_error($terms)) {
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12 left-col">
+            <div class="product-footer">
 
-    <div class="product-footer">
+                <?php
 
-        <?php
+                do_action('woocommerce_after_single_product_summary');
+                // do_action( 'woocommerce_after_main_content' );
+                ?>
 
-        do_action('woocommerce_after_single_product_summary');
-        // do_action( 'woocommerce_after_main_content' );
-        ?>
-
+            </div>
+        </div>
     </div>
+
 
 </div>
 </div>

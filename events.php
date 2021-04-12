@@ -31,22 +31,18 @@ Template name: Events
                     <div class="flex-container events">
 
 
-
                         <?php
-                        global $post;
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
+                        $args = array(
+                            'post_type' => 'blogtype4', // Your post type name
+                            'posts_per_page' => 6,
+                            'paged' => $paged,
+                        );
 
-                        $event_posts = get_posts(array(
-                            'post_type' => 'blogtype4',
-                            'posts_per_page' => 10
-
-                        ));
-
-                        if ($event_posts) {
-
-                            foreach ($event_posts as $post) :
-                                setup_postdata($post);
-                                $image = get_the_post_thumbnail_url(); ?>
+                        $loop = new WP_Query($args);
+                        if ($loop->have_posts()) {
+                            while ($loop->have_posts()) : $loop->the_post(); ?>
 
                                 <div class="card">
                                     <div class="card-body">
@@ -66,13 +62,25 @@ Template name: Events
 
                                 </div>
 
-                        <?php
-                            endforeach;?>
-                                    <?php wp_pagenavi(); ?>
-                          
-                            <?php
-                            wp_reset_postdata();
+                        <?php endwhile;
+
+                            $total_pages = $loop->max_num_pages;
+
+                            if ($total_pages > 1) {
+
+                                $current_page = max(1, get_query_var('paged'));
+
+                                echo paginate_links(array(
+                                    'base' => get_pagenum_link(1) . '%_%',
+                                    'format' => '/page/%#%',
+                                    'current' => $current_page,
+                                    'total' => $total_pages,
+                                    'prev_text'    => __('« prev'),
+                                    'next_text'    => __('next »'),
+                                ));
+                            }
                         }
+                        wp_reset_postdata();
                         ?>
 
                     </div>

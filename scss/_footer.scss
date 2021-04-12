@@ -1,5 +1,5 @@
 @import "color";
-.back-to-top{
+.back-to-top {
     position: fixed;
     right: 20px;
     bottom: 30px;
@@ -10,16 +10,15 @@
     padding: 5px 8px;
     z-index: 1;
     font-size: 13px;
-    a{
+    a {
         color: white;
     }
 }
-.back-to-top:hover{
+.back-to-top:hover {
     opacity: 1;
-    
 }
-.show{
-    display: block!important;
+.show {
+    display: block !important;
 }
 
 .fixed-btn-wrapper {
@@ -29,8 +28,11 @@
     right: 50px;
     text-align: center;
     z-index: 1;
+    @media (max-width: 540px) {
+        right: 10px;
+    }
+
     .message-button {
-     
         background-color: $accent-color;
         border-radius: 50px;
         color: white;
@@ -40,11 +42,9 @@
             padding: 10px;
             font-size: 35px;
         }
- 
- 
+
         @media (max-width: 540px) {
             i {
-
                 padding: 10px;
                 font-size: 25px;
             }
@@ -53,14 +53,14 @@
     .message-button:hover {
         cursor: pointer;
     }
-    
-    .message-button{
+
+    .message-button {
         transform: translate(410%, 0);
         transition: 0.4s all;
     }
-   .come-in {
-            transform: translate(0, 0)!important;           
-          }
+    .come-in {
+        transform: translate(0, 0) !important;
+    }
     .hiring-button {
         a {
             color: white;
@@ -79,11 +79,12 @@
         }
     }
 }
+
 .site-footer {
     background: $secondary-color;
     padding-top: 20px;
     margin-top: 30px;
-    a{
+    a {
         color: white;
     }
     li {
@@ -97,14 +98,14 @@
         font-weight: 400;
         margin-bottom: 12px;
     }
-    .menu-item{
+    .menu-item {
         font-weight: 100;
     }
     .footer4-widget {
         margin-left: 30px;
         margin-top: -10px;
     }
-    .sns-box{
+    .sns-box {
         padding-left: 35px;
         margin-top: -10px;
         i {
@@ -127,7 +128,7 @@
             p {
                 line-height: 40px;
             }
-            @media (max-width:348px) {
+            @media (max-width: 348px) {
                 height: auto;
                 p {
                     line-height: 25px;

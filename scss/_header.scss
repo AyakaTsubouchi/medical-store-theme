@@ -49,17 +49,18 @@ header {
         }
         .logo {
             display: flex;
-            .navbar-toggler {
+            .open {
                 display: none;
-                img{
+                background: none;
+                border: none;
+                img {
                     width: 30px;
                 }
             }
-          
+
             @media (max-width: 992px) {
-                .navbar-toggler {
+                .open {
                     display: block;
-                    color: gray;
                 }
             }
 
@@ -76,6 +77,23 @@ header {
         }
         .navbar-collapse {
             justify-content: flex-end;
+            .navbar-nav {
+                width: 100%;
+                .prod-menu-wp {
+                    display: none;
+                    @media (max-width: 992px) {
+                        display: block;
+                    }
+                }
+                li {
+                    margin-left: 10px;
+                }
+                .nav-item {
+                    .dropdown-toggle::after {
+                        display: none;
+                    }
+                }
+            }
         }
         .search-wrapper {
             text-align: end;
@@ -116,7 +134,7 @@ header {
                 background: $accent-color;
                 color: white;
                 border-radius: 0px 5px 5px 0px;
-                i{
+                i {
                     padding: 6px 0px 9px 4px;
                 }
             }
@@ -170,6 +188,7 @@ header {
                         padding-left: 10px;
                         font-size: 13px;
                     }
+
                     .cat-second-child {
                         a {
                             color: gray;
@@ -219,6 +238,17 @@ header {
             border: none;
             padding: 0;
             margin: 0;
+            a:hover,
+            a:active,
+            a:visited,
+            a:focus {
+                text-decoration: none !important;
+                -webkit-text-decoration: none !important;
+                span {
+                    text-decoration: none !important;
+                    -webkit-text-decoration: none !important;
+                }
+            }
             .menu-item.cat-title {
                 a {
                     font-size: 13px;
@@ -244,5 +274,170 @@ header {
                 }
             }
         }
+    }
+}
+.prod-menu:hover {
+    cursor: pointer;
+}
+.prod-menu {
+    margin-bottom: 0;
+    @media (max-width: 992px) {
+        display: none;
+    }
+    li {
+        list-style: none;
+        color: #6d6d6d;
+    }
+
+    .prod-dropdown {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        box-shadow: -7px 7px 9px -5px rgb(0 0 0 / 64%);
+    }
+    .flex-box {
+        display: flex;
+        width: 768px;
+        flex-wrap: wrap;
+        background: white;
+        .card {
+            width: 256px;
+            padding: 10px;
+            a {
+                text-decoration: none;
+            }
+            a:hover,
+            a:active,
+            a:visited,
+            a:focus {
+                text-decoration: none !important;
+            }
+            a:hover {
+                color: $accent-color;
+            }
+            .title {
+                display: flex;
+                justify-content: space-between;
+                h5 {
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    color: #000;
+                    font-size: 15px;
+                }
+                a:hover {
+                    h5 {
+                        font-weight: 500;
+                    }
+                }
+                img {
+                    width: 35px;
+                    height: 35px;
+
+                    padding: 5px;
+                    border-radius: 16px;
+                }
+            }
+            p {
+                margin-bottom: 0px;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #F5F5F5; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    a {
+        h5{
+            
+            padding: 0px;
+            line-height: 0.7;
+            text-decoration: none;
+            font-size: 20px;
+            color: #1c1c1c;
+            display: block;
+            transition: 0.3s;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    }
+    .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+        color: rgb(129, 129, 129);
+    }
+    .closebtn:hover {
+        color: #f1f1f1;
+    }
+    li {
+        list-style: none;
+    }
+    .cat-title {
+        display: flex;
+        .card {
+            a {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 14px;
+            }
+        }
+        .card.show {
+            display: flex;
+        }
+    }
+    .card {
+        background-color: #F5F5F5;
+        a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        a:hover {
+            color: $accent-color;
+        }
+
+        .child {
+            display: none;
+            p {
+                margin-bottom: 0;
+            }
+        }
+        .child.show {
+            display: block !important;
+        }
+    }
+}
+
+#main {
+    transition: margin-left 0.5s;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
     }
 }
