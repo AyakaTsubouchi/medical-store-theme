@@ -18088,8 +18088,8 @@ __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Applications/MAMP/htdocs/wp-content/themes/medical-store-theme/scss/app.js */"./scss/app.js");
-module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/wp-content/themes/medical-store-theme/scss/app.scss */"./scss/app.scss");
+__webpack_require__(/*! /Applications/MAMP/htdocs/wp-content/themes/cbd/scss/app.js */"./scss/app.js");
+module.exports = __webpack_require__(/*! /Applications/MAMP/htdocs/wp-content/themes/cbd/scss/app.scss */"./scss/app.scss");
 
 
 /***/ })
